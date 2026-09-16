@@ -11,8 +11,19 @@ document.addEventListener("DOMContentLoaded", () => {
   initVATCalculator();
   initVATChecklist();
   initPrayerTimes();
+  initLivePrayerTicker();
   renderPediamilProducts("all");
   initSearch();
+
+  // Escape key listener to dismiss open drawers, hub sheets, and product modals
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      closeMobileDrawer();
+      closeMobileHubSheet();
+      closeProductSpecs();
+      closeSearchOverlay();
+    }
+  });
 });
 
 // ==========================================
@@ -94,7 +105,7 @@ function initCountdown() {
 }
 
 // ==========================================
-// 2. APP NAVIGATION (Tabs, Drawer, Bottom Bar)
+// 2. APP NAVIGATION (Tabs, Drawer, Bottom Bar & Hub)
 // ==========================================
 let currentTab = "overview";
 
@@ -146,6 +157,34 @@ function initNavigation() {
       }
     }
   });
+
+  // Mobile Hub Trigger ("All Tabs" Bottom Nav & Any Extra Triggers)
+  const hubBtn = document.getElementById("mobile-hub-btn");
+  if (hubBtn) {
+    const handleHubTrigger = (e) => {
+      if (e) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+      openMobileHubSheet(e);
+    };
+    hubBtn.addEventListener("click", handleHubTrigger);
+    hubBtn.addEventListener("touchend", handleHubTrigger, { passive: false });
+  }
+
+  const hubCloseBtn = document.querySelector(".hub-close-btn");
+  if (hubCloseBtn) {
+    hubCloseBtn.addEventListener("click", (e) => {
+      closeMobileHubSheet(e);
+    });
+  }
+
+  const hubBackdrop = document.getElementById("mobile-hub-backdrop");
+  if (hubBackdrop) {
+    hubBackdrop.addEventListener("click", (e) => {
+      closeMobileHubSheet(e);
+    });
+  }
 }
 
 function closeMobileDrawer() {
@@ -170,32 +209,85 @@ function switchTab(tabId) {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
-  // Update active state in desktop header tabs
+  // 1. Update active state in desktop header tabs
   document.querySelectorAll(".desktop-tab-btn").forEach(btn => {
-    if (btn.getAttribute("data-nav-tab") === tabId) {
-      btn.classList.add("active");
-    } else {
-      btn.classList.remove("active");
+    btn.classList.toggle("active", btn.getAttribute("data-nav-tab") === tabId);
+  });
+
+  // 2. Update active state in mobile top sticky pill bar and auto-center into viewport
+  document.querySelectorAll(".mobile-pill-tab").forEach(pill => {
+    const isActive = pill.getAttribute("data-nav-tab") === tabId;
+    pill.classList.toggle("active", isActive);
+    if (isActive) {
+      pill.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
     }
   });
 
-  // Update active state in mobile bottom bar
+  // 3. Update active state in mobile bottom bar (skip central Hub button)
   document.querySelectorAll(".bottom-nav-item").forEach(item => {
-    if (item.getAttribute("data-nav-tab") === tabId) {
-      item.classList.add("active");
-    } else {
-      item.classList.remove("active");
-    }
+    if (item.classList.contains("bottom-hub-trigger")) return;
+    item.classList.toggle("active", item.getAttribute("data-nav-tab") === tabId);
   });
 
-  // Update active state in drawer
+  // 4. Update active state in drawer
   document.querySelectorAll(".drawer-nav-item").forEach(item => {
-    if (item.getAttribute("data-nav-tab") === tabId) {
-      item.classList.add("active");
-    } else {
-      item.classList.remove("active");
-    }
+    item.classList.toggle("active", item.getAttribute("data-nav-tab") === tabId);
   });
+
+  // Automatically close mobile hub sheet if open
+  closeMobileHubSheet();
+}
+
+// Executive Mobile Hub Sheet (All 9 Modules Sheet)
+let lastHubOpenTimestamp = 0;
+
+function openMobileHubSheet(e) {
+  if (e && e.preventDefault) {
+    e.preventDefault();
+    e.stopPropagation();
+  }
+  lastHubOpenTimestamp = Date.now();
+  const sheet = document.getElementById("mobile-hub-sheet");
+  const backdrop = document.getElementById("mobile-hub-backdrop");
+  if (sheet) {
+    sheet.classList.add("active");
+    sheet.setAttribute("aria-hidden", "false");
+  }
+  if (backdrop) {
+    backdrop.classList.add("active");
+    backdrop.setAttribute("aria-hidden", "false");
+  }
+  document.body.style.overflow = "hidden";
+  try {
+    updateHubLivePrayerStatus();
+  } catch (err) {
+    console.warn("Hub live prayer status update error:", err);
+  }
+}
+
+function closeMobileHubSheet(e) {
+  // If triggered by backdrop click, ignore ghost clicks within 350ms of opening
+  if (e && e.target && e.target.id === "mobile-hub-backdrop") {
+    if (Date.now() - lastHubOpenTimestamp < 350) {
+      if (e.preventDefault) e.preventDefault();
+      if (e.stopPropagation) e.stopPropagation();
+      return;
+    }
+  }
+  if (e && e.stopPropagation) {
+    e.stopPropagation();
+  }
+  const sheet = document.getElementById("mobile-hub-sheet");
+  const backdrop = document.getElementById("mobile-hub-backdrop");
+  if (sheet) {
+    sheet.classList.remove("active");
+    sheet.setAttribute("aria-hidden", "true");
+  }
+  if (backdrop) {
+    backdrop.classList.remove("active");
+    backdrop.setAttribute("aria-hidden", "true");
+  }
+  document.body.style.overflow = "";
 }
 
 // ==========================================
@@ -276,10 +368,10 @@ function renderTimelineEvents(events) {
             <h4 class="event-title">${ev.title}</h4>
             <div class="event-action-buttons">
               <a href="${ev.mapsUrl}" target="_blank" rel="noopener" class="map-link-btn" title="Open in Google Maps">
-                <i class="fas fa-map-marker-alt"></i> <span>Map</span>
+                <i class="fas fa-map-marker-alt"></i> <span>Directions</span>
               </a>
               <button class="cal-sync-btn" onclick="downloadICS('${encodeURIComponent(ev.title)}', '${encodeURIComponent(ev.description)}', '${encodeURIComponent(ev.location)}', '${activeDayIndex}', '${ev.time}')" title="Add to Calendar">
-                <i class="fas fa-calendar-plus"></i>
+                <i class="fas fa-calendar-plus"></i> <span>Add to Cal</span>
               </button>
             </div>
           </div>
@@ -452,40 +544,127 @@ function downloadFullItineraryICS() {
 // ==========================================
 // 4. TAX REFUND (VAT) CALCULATOR & CHECKLIST
 // ==========================================
+let vatInputCurrency = "EUR"; // "EUR" or "EGP"
+
+function setVATInputCurrency(currency) {
+  vatInputCurrency = currency;
+  const btnEur = document.getElementById("btn-curr-eur");
+  const btnEgp = document.getElementById("btn-curr-egp");
+  const labelEl = document.getElementById("vat-input-label");
+  const symEl = document.getElementById("vat-currency-sym");
+  const amountInput = document.getElementById("vat-amount-input");
+  const presetsContainer = document.getElementById("vat-presets-container");
+
+  const exchangeRate = VAT_CONFIG.defaultEURtoEGP || 52.5;
+
+  if (currency === "EUR") {
+    if (btnEur) btnEur.classList.add("active");
+    if (btnEgp) btnEgp.classList.remove("active");
+    if (labelEl) labelEl.textContent = "Total Purchase Amount (€)";
+    if (symEl) symEl.textContent = "€";
+
+    if (amountInput) {
+      let currentVal = parseFloat(amountInput.value) || 0;
+      if (currentVal > 1500) {
+        amountInput.value = Math.round(currentVal / exchangeRate);
+      } else if (currentVal === 0) {
+        amountInput.value = "250";
+      }
+      amountInput.step = "5";
+      amountInput.min = "50";
+    }
+
+    if (presetsContainer) {
+      presetsContainer.innerHTML = `
+        <button type="button" class="vat-preset-btn" data-preset="100">€100</button>
+        <button type="button" class="vat-preset-btn" data-preset="250">€250</button>
+        <button type="button" class="vat-preset-btn" data-preset="500">€500</button>
+        <button type="button" class="vat-preset-btn" data-preset="1000">€1,000</button>
+        <button type="button" class="vat-preset-btn" data-preset="2000">€2,000</button>
+      `;
+      bindVATPresetButtons();
+    }
+  } else {
+    // EGP
+    if (btnEur) btnEur.classList.remove("active");
+    if (btnEgp) btnEgp.classList.add("active");
+    if (labelEl) labelEl.textContent = "Total Purchase Amount in Egyptian Pounds (EGP)";
+    if (symEl) symEl.textContent = "ج.م";
+
+    if (amountInput) {
+      let currentVal = parseFloat(amountInput.value) || 0;
+      if (currentVal < 1000 && currentVal > 0) {
+        amountInput.value = Math.round(currentVal * exchangeRate);
+      } else if (currentVal === 0) {
+        amountInput.value = "15000";
+      }
+      amountInput.step = "500";
+      amountInput.min = "2650";
+    }
+
+    if (presetsContainer) {
+      presetsContainer.innerHTML = `
+        <button type="button" class="vat-preset-btn" data-preset="5000">5,000 EGP</button>
+        <button type="button" class="vat-preset-btn" data-preset="15000">15,000 EGP</button>
+        <button type="button" class="vat-preset-btn" data-preset="30000">30,000 EGP</button>
+        <button type="button" class="vat-preset-btn" data-preset="60000">60,000 EGP</button>
+        <button type="button" class="vat-preset-btn" data-preset="100000">100,000 EGP</button>
+      `;
+      bindVATPresetButtons();
+    }
+  }
+
+  // Trigger calculation update
+  if (amountInput) {
+    const event = new Event("input");
+    amountInput.dispatchEvent(event);
+  }
+}
+
+function bindVATPresetButtons() {
+  const amountInput = document.getElementById("vat-amount-input");
+  document.querySelectorAll(".vat-preset-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const val = btn.getAttribute("data-preset");
+      if (amountInput) {
+        amountInput.value = val;
+        const event = new Event("input");
+        amountInput.dispatchEvent(event);
+      }
+    });
+  });
+}
+
 function initVATCalculator() {
   const amountInput = document.getElementById("vat-amount-input");
   const rateSelect = document.getElementById("vat-rate-select");
   const methodInputs = document.querySelectorAll("input[name='vat-refund-method']");
-  const ratePresets = document.querySelectorAll(".vat-preset-btn");
 
   function runCalculation() {
-    const amount = parseFloat(amountInput?.value) || 0;
+    let rawAmount = parseFloat(amountInput?.value) || 0;
     const rate = parseFloat(rateSelect?.value) || 0.21;
     let method = "card";
     methodInputs.forEach(i => { if (i.checked) method = i.value; });
 
-    const result = calculateVATRefund(amount, rate, method, VAT_CONFIG.defaultEURtoEGP);
-    updateVATDisplay(result);
+    const exchangeRate = VAT_CONFIG.defaultEURtoEGP || 52.5;
+    let amountEUR = rawAmount;
+    if (vatInputCurrency === "EGP") {
+      amountEUR = rawAmount / exchangeRate;
+    }
+
+    const result = calculateVATRefund(amountEUR, rate, method, exchangeRate);
+    updateVATDisplay(result, rawAmount, vatInputCurrency);
   }
 
   if (amountInput) amountInput.addEventListener("input", runCalculation);
   if (rateSelect) rateSelect.addEventListener("change", runCalculation);
   methodInputs.forEach(i => i.addEventListener("change", runCalculation));
 
-  ratePresets.forEach(btn => {
-    btn.addEventListener("click", () => {
-      const val = btn.getAttribute("data-preset");
-      if (amountInput) {
-        amountInput.value = val;
-        runCalculation();
-      }
-    });
-  });
-
-  runCalculation(); // initial calculation with default €250
+  bindVATPresetButtons();
+  runCalculation(); // initial calculation with default value
 }
 
-function updateVATDisplay(res) {
+function updateVATDisplay(res, rawInputAmount = 0, currency = "EUR") {
   const resultCard = document.getElementById("vat-calc-results");
   if (!resultCard) return;
 
@@ -493,7 +672,7 @@ function updateVATDisplay(res) {
     resultCard.innerHTML = `
       <div class="calc-warning">
         <i class="fas fa-exclamation-triangle"></i>
-        <span>${res.message}</span>
+        <span>${res.message} ${currency === 'EGP' ? '(Equivalent to ~2,650 EGP minimum spend)' : ''}</span>
       </div>
     `;
     return;
@@ -509,17 +688,17 @@ function updateVATDisplay(res) {
       <div class="metric-box">
         <span class="metric-label">Gross VAT (Invoice)</span>
         <span class="metric-value">€${res.vatGross.toFixed(2)}</span>
-        <span class="metric-sub">${res.rateApplied}% rate</span>
+        <span class="metric-sub">${res.rateApplied}% standard rate</span>
       </div>
       <div class="metric-box">
         <span class="metric-label">Operator Admin Fee</span>
         <span class="metric-value">€${res.feeEUR.toFixed(2)}</span>
-        <span class="metric-sub">${res.method === 'cash' ? 'Cash payout' : 'Card payout'}</span>
+        <span class="metric-sub">${res.method === 'cash' ? 'Cash payout fee' : 'Credit card payout'}</span>
       </div>
       <div class="metric-box">
         <span class="metric-label">Net Return Ratio</span>
         <span class="metric-value">${res.percentage.toFixed(1)}%</span>
-        <span class="metric-sub">of gross purchase</span>
+        <span class="metric-sub">Exchange: 1€ ≈ ${VAT_CONFIG.defaultEURtoEGP} EGP</span>
       </div>
     </div>
   `;
@@ -715,10 +894,119 @@ function initQiblaBearing() {
 function switchPrayerCity(cityKey) {
   renderPrayerSchedule(cityKey);
   initQiblaBearing();
+  updateLivePrayerCountdown();
+}
+
+// Live Prayer Countdown Ticker Engine
+function parseTimeToMinutes(timeStr) {
+  const match = timeStr.match(/^(\d{1,2}):(\d{2})\s*(AM|PM)$/i);
+  if (!match) return 0;
+  let hours = parseInt(match[1], 10);
+  const minutes = parseInt(match[2], 10);
+  const meridian = match[3].toUpperCase();
+  if (meridian === "PM" && hours !== 12) hours += 12;
+  if (meridian === "AM" && hours === 12) hours = 0;
+  return hours * 60 + minutes;
+}
+
+function getNextPrayerInfo(cityKey = activePrayerCity) {
+  const citySchedule = PRAYER_SCHEDULE[cityKey] || PRAYER_SCHEDULE.brussels;
+  const daySchedule = citySchedule.days[0];
+
+  // Get current Brussels local time
+  const now = new Date();
+  const brusselsTimeStr = now.toLocaleTimeString("en-US", {
+    timeZone: "Europe/Brussels",
+    hour12: false,
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit"
+  });
+  const [bHours, bMinutes, bSeconds] = brusselsTimeStr.split(":").map(Number);
+  const nowMinutes = bHours * 60 + bMinutes;
+  const nowTotalSeconds = (bHours * 60 + bMinutes) * 60 + bSeconds;
+
+  const prayers = [
+    { name: "Fajr", time: daySchedule.fajr, minutes: parseTimeToMinutes(daySchedule.fajr) },
+    { name: "Sunrise (Shuruq)", time: daySchedule.sunrise, minutes: parseTimeToMinutes(daySchedule.sunrise) },
+    { name: daySchedule.isJumuah ? "Jumu'ah / Dhuhr" : "Dhuhr", time: daySchedule.dhuhr, minutes: parseTimeToMinutes(daySchedule.dhuhr) },
+    { name: "Asr", time: daySchedule.asr, minutes: parseTimeToMinutes(daySchedule.asr) },
+    { name: "Maghrib (Sunset)", time: daySchedule.maghrib, minutes: parseTimeToMinutes(daySchedule.maghrib) },
+    { name: "Isha", time: daySchedule.isha, minutes: parseTimeToMinutes(daySchedule.isha) }
+  ];
+
+  let nextPrayer = null;
+  for (const p of prayers) {
+    if (p.minutes > nowMinutes) {
+      nextPrayer = p;
+      break;
+    }
+  }
+
+  let diffSeconds = 0;
+  if (nextPrayer) {
+    diffSeconds = nextPrayer.minutes * 60 - nowTotalSeconds;
+  } else {
+    // Next prayer is tomorrow's Fajr
+    nextPrayer = prayers[0];
+    diffSeconds = (24 * 60 + nextPrayer.minutes) * 60 - nowTotalSeconds;
+  }
+
+  if (diffSeconds < 0) diffSeconds += 24 * 3600;
+
+  const diffHours = Math.floor(diffSeconds / 3600);
+  const diffMins = Math.floor((diffSeconds % 3600) / 60);
+  const diffSecs = diffSeconds % 60;
+
+  let timerFormatted = "";
+  if (diffHours > 0) {
+    timerFormatted = `${diffHours}h ${diffMins}m`;
+  } else if (diffMins > 0) {
+    timerFormatted = `${diffMins}m ${diffSecs}s`;
+  } else {
+    timerFormatted = `${diffSecs}s`;
+  }
+
+  return {
+    name: nextPrayer.name,
+    time: nextPrayer.time,
+    timerText: `in ${timerFormatted}`,
+    diffHours,
+    diffMins,
+    diffSecs
+  };
+}
+
+function updateLivePrayerCountdown() {
+  const info = getNextPrayerInfo(activePrayerCity);
+  const headlineEl = document.getElementById("prayer-countdown-headline");
+  const timerTextEl = document.getElementById("prayer-timer-text");
+  const cityName = activePrayerCity === "ghent" ? "Ghent" : "Brussels";
+
+  if (headlineEl) {
+    headlineEl.innerHTML = `<span style="color:var(--gold-champagne);">${cityName}:</span> Next: ${info.name} <small style="font-weight:400; opacity:0.85;">(${info.time})</small>`;
+  }
+  if (timerTextEl) {
+    timerTextEl.textContent = info.timerText;
+  }
+
+  updateHubLivePrayerStatus();
+}
+
+function updateHubLivePrayerStatus() {
+  const hubPrayerEl = document.getElementById("hub-prayer-status");
+  if (!hubPrayerEl) return;
+  const info = getNextPrayerInfo(activePrayerCity);
+  hubPrayerEl.textContent = `Next: ${info.name} (${info.time})`;
+}
+
+function initLivePrayerTicker() {
+  updateLivePrayerCountdown();
+  setInterval(updateLivePrayerCountdown, 1000);
 }
 
 // ==========================================
-// 6. PEDIAMIL PRODUCTS SHOWCASE
+// 6. PEDIAMIL PRODUCTS SHOWCASE & CLINICAL DRAWER
 // ==========================================
 function renderPediamilProducts(filter = "all") {
   const container = document.getElementById("pediamil-products-grid");
@@ -743,6 +1031,8 @@ function renderPediamilProducts(filter = "all") {
     if (p.logoKey === "pediamum") logoSrc = "assets/images/pediamum-logo.png";
     if (p.logoKey === "pediastart") logoSrc = "assets/images/pediastart-logo.png";
 
+    const waMsg = encodeURIComponent(`Hello Dr. Seif El Awamry, inquiry regarding Pediamil ${p.name}: `);
+
     return `
       <div class="product-clinical-card ${p.category}">
         <div class="product-card-badge">${p.badge}</div>
@@ -765,9 +1055,139 @@ function renderPediamilProducts(filter = "all") {
           <strong><i class="fas fa-stethoscope"></i> Clinical Indications:</strong>
           <span>${p.indications}</span>
         </div>
+
+        <div class="product-card-actions">
+          <button type="button" class="fetch-spec-btn" onclick="openProductSpecs('${p.id}')">
+            <i class="fas fa-microscope"></i> Fetch Clinical Specs & Dilution
+          </button>
+          <a href="https://wa.me/201006942226?text=${waMsg}" target="_blank" rel="noopener" class="product-inquire-btn" title="Direct WhatsApp Consult">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+          </a>
+        </div>
       </div>
     `;
   }).join("");
+}
+
+// Pediamil Clinical Specification Drawer
+function openProductSpecs(productId) {
+  const product = PEDIAMIL_PORTFOLIO.find(p => p.id === productId);
+  if (!product) return;
+
+  const modal = document.getElementById("pediamil-spec-modal");
+  const backdrop = document.getElementById("pediamil-modal-backdrop");
+  const modalLogo = document.getElementById("spec-modal-logo");
+  const modalBadge = document.getElementById("spec-modal-badge");
+  const modalBody = document.getElementById("spec-modal-body");
+
+  if (!modal || !modalBody) return;
+
+  // Set logo & badge
+  let logoSrc = "assets/images/pediamil-logo.png";
+  if (product.logoKey === "pediamum") logoSrc = "assets/images/pediamum-logo.png";
+  if (product.logoKey === "pediastart") logoSrc = "assets/images/pediastart-logo.png";
+
+  if (modalLogo) modalLogo.src = logoSrc;
+  if (modalBadge) modalBadge.textContent = product.badge;
+
+  // Dilution protocol
+  let dilutionContent = "";
+  if (product.id === "pediamum") {
+    dilutionContent = `
+      <div class="spec-dilution-box">
+        <h5><i class="fas fa-prescription-bottle-alt"></i> Maternal Preparation Protocol:</h5>
+        <p style="font-size:0.85rem; line-height:1.5; color:var(--text-main); margin-bottom:6px;">
+          <strong>Standard Serving:</strong> Add 4 level scoops (~36g) into 180 ml of warm or cold previously boiled drinking water. Stir thoroughly until fully dissolved.
+        </p>
+        <p style="font-size:0.85rem; line-height:1.5; color:var(--text-main); margin:0;">
+          <strong>Recommended Intake:</strong> 2 servings daily throughout pre-conception, pregnancy, and active lactation.
+        </p>
+      </div>
+    `;
+  } else if (product.id === "pediamil-lbw") {
+    dilutionContent = `
+      <div class="spec-dilution-box">
+        <h5><i class="fas fa-prescription-bottle-alt"></i> Caloric Density & Neonatal Protocol:</h5>
+        <p style="font-size:0.85rem; line-height:1.5; color:var(--text-main); margin-bottom:6px;">
+          <strong>Caloric Yield:</strong> 1 level scoop (approx. 4.5g) to 30 ml boiled water yields approx. <strong>80 kcal / 100 ml</strong> (higher energy density for catch-up growth).
+        </p>
+        <p style="font-size:0.85rem; line-height:1.5; color:var(--text-main); margin:0;">
+          <strong>Clinical Administration:</strong> 150 – 180 ml/kg/day divided into 8–10 feeds under direct neonatologist supervision.
+        </p>
+      </div>
+    `;
+  } else {
+    dilutionContent = `
+      <div class="spec-dilution-box">
+        <h5><i class="fas fa-prescription-bottle-alt"></i> Clinical Feeding & Dilution Reference Table:</h5>
+        <div class="spec-table-wrap">
+          <div class="spec-table-row"><strong>Infant Age</strong><strong>Boiled Water</strong><strong>Level Scoops</strong><strong>Feeds / 24h</strong></div>
+          <div class="spec-table-row"><span>1st – 2nd week</span><span>90 ml</span><span>3 scoops</span><span>6</span></div>
+          <div class="spec-table-row"><span>3rd – 4th week</span><span>120 ml</span><span>4 scoops</span><span>5 – 6</span></div>
+          <div class="spec-table-row"><span>2nd month</span><span>150 ml</span><span>5 scoops</span><span>5</span></div>
+          <div class="spec-table-row"><span>3rd – 4th month</span><span>180 ml</span><span>6 scoops</span><span>5</span></div>
+          <div class="spec-table-row"><span>5th – 6th month</span><span>210 ml</span><span>7 scoops</span><span>4 – 5</span></div>
+        </div>
+        <p style="font-size:0.75rem; color:var(--text-muted); margin-top:8px; line-height:1.4;">
+          *Standard dilution: 1 level scoop (approx. 4.3g) per 30 ml (1 fl oz) of lukewarm boiled water. Always use enclosed scoop.
+        </p>
+      </div>
+    `;
+  }
+
+  const waMsg = encodeURIComponent(`Hello Dr. Seif El Awamry, regarding Pediamil ${product.name} at the Brussels & Ghent 2026 Standalone Event, I have a clinical question: `);
+
+  modalBody.innerHTML = `
+    <div class="spec-modal-headline">
+      <h3>${product.name}</h3>
+      <span class="spec-stage-badge">${product.stage}</span>
+    </div>
+    <p class="spec-tagline-text">${product.tagline}</p>
+
+    <div class="spec-section-card">
+      <h4><i class="fas fa-microscope" style="color:var(--gold-primary);"></i> Scientific Rationale</h4>
+      <p style="font-size:0.88rem; line-height:1.6; color:var(--text-main); margin:0;">${product.description}</p>
+    </div>
+
+    <div class="spec-section-card">
+      <h4><i class="fas fa-dna" style="color:var(--gold-primary);"></i> Key Clinical Composition</h4>
+      <ul class="spec-bullet-list">
+        ${product.highlights.map(h => `<li><i class="fas fa-check-circle"></i> <span>${h}</span></li>`).join("")}
+      </ul>
+    </div>
+
+    <div class="spec-section-card">
+      <h4><i class="fas fa-stethoscope" style="color:var(--gold-primary);"></i> Clinical Indications</h4>
+      <p style="font-size:0.88rem; color:var(--text-main); line-height:1.5; margin:0;">${product.indications}</p>
+    </div>
+
+    ${dilutionContent}
+
+    <div class="spec-consult-card">
+      <div class="consult-info">
+        <i class="fab fa-whatsapp" style="font-size:1.8rem; color:#25D366;"></i>
+        <div>
+          <strong>Liptis Medical & Scientific Consult</strong>
+          <p style="font-size:0.76rem; color:var(--text-muted); margin:0;">Direct WhatsApp with Dr. Seif El Awamry (Senior Product Manager)</p>
+        </div>
+      </div>
+      <a href="https://wa.me/201006942226?text=${waMsg}" target="_blank" rel="noopener" class="spec-wa-direct-btn">
+        <i class="fab fa-whatsapp"></i> Inquire via WhatsApp
+      </a>
+    </div>
+  `;
+
+  modal.classList.add("active");
+  backdrop.classList.add("active");
+  document.body.style.overflow = "hidden";
+}
+
+function closeProductSpecs() {
+  const modal = document.getElementById("pediamil-spec-modal");
+  const backdrop = document.getElementById("pediamil-modal-backdrop");
+  if (modal) modal.classList.remove("active");
+  if (backdrop) backdrop.classList.remove("active");
+  document.body.style.overflow = "";
 }
 
 // ==========================================
