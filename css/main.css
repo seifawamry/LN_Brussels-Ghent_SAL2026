@@ -2306,26 +2306,12 @@ img {
   line-height: 1.4;
 }
 
-/* Product Pack / Can Thumbnail */
-.product-can-thumbnail {
+/* Product Card Brand Branding */
+.product-clinical-card .product-header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  padding: 10px 0;
-  margin: 4px 0;
-  background: radial-gradient(circle, rgba(212, 166, 45, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
-}
-
-.product-can-thumbnail img {
-  max-height: 140px;
-  width: auto;
-  object-fit: contain;
-  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.15));
-  transition: transform 0.25s ease;
-}
-
-.product-clinical-card:hover .product-can-thumbnail img {
-  transform: scale(1.05);
+  margin-bottom: 8px;
 }
 
 /* ==========================================
