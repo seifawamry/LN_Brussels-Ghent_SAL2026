@@ -12,6 +12,9 @@ const ASSETS_TO_CACHE = [
   "./assets/images/pediamil-logo.png",
   "./assets/images/pediamum-logo.png",
   "./assets/images/pediastart-logo.png",
+  "./assets/images/pedia-start-1.png",
+  "./assets/images/pedia-start-2.png",
+  "./assets/images/pedia-start-stamp.png",
   "./manifest.json"
 ];
 

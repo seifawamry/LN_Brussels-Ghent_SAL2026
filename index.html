@@ -1258,7 +1258,7 @@
       <!-- Portfolio Category Filter Strip -->
       <div class="portfolio-filter-strip">
         <button class="product-filter-btn active" data-filter="all" onclick="renderPediamilProducts('all')">
-          All Products (9)
+          All Products (10)
         </button>
         <button class="product-filter-btn" data-filter="standard" onclick="renderPediamilProducts('standard')">
           Standard Infant (Pediamil 1 & 2)
@@ -1270,13 +1270,129 @@
           Maternal Nutrition (Pediamum)
         </button>
         <button class="product-filter-btn" data-filter="starter" onclick="renderPediamilProducts('starter')">
-          Starter Nutrition (Pedia-Start)
+          Starter Nutrition (Pedia-Start 1 & 2)
         </button>
       </div>
 
       <!-- Dynamic Products Grid -->
       <div class="pediamil-products-grid" id="pediamil-products-grid">
         <!-- Injected dynamically via JS -->
+      </div>
+
+      <!-- Pedia-Start® Clinical Science Center (Sourced from www.pedia-start.com) -->
+      <div class="pedia-start-spotlight-card">
+        <div class="pedia-start-spotlight-header">
+          <div class="ps-header-left">
+            <img src="assets/images/pediastart-logo.png" alt="Pedia-Start Official Logo" class="ps-spotlight-logo">
+            <div>
+              <span style="font-size:0.75rem; text-transform:uppercase; letter-spacing:1px; font-weight:800; color:var(--blue-royal); display:block;">
+                Scientific Spotlight &bull; Clinical Evidence
+              </span>
+              <h3 style="font-size:1.35rem; font-weight:900; color:var(--navy-deep); margin:2px 0 0 0;">
+                The Science Behind Pedia-Start®: Micro-Encapsulated Iron
+              </h3>
+            </div>
+          </div>
+          <div style="display:flex; align-items:center; gap:12px;">
+            <img src="assets/images/pedia-start-stamp.png" alt="Micro-Encapsulated Iron Certified Stamp" class="ps-stamp-img">
+            <span class="section-badge-tag" style="background:#ffebee; color:#c62828; border-color:#ef9a9a;">
+              <i class="fas fa-check-double"></i> Verified Clinical Dossier
+            </span>
+          </div>
+        </div>
+
+        <!-- Infant Nutrition Philosophy -->
+        <div style="background:rgba(212, 166, 45, 0.08); border-left:4px solid var(--gold-primary); padding:14px 18px; border-radius:var(--radius-sm); margin-bottom:18px;">
+          <p style="font-size:0.88rem; line-height:1.6; color:var(--navy-deep); margin:0;">
+            <strong>Liptis Nutrition Philosophy on Infant Nutrition:</strong> Liptis Nutrition strongly supports breast milk as the best nutrition for infants. The World Health Organization (WHO) recommends exclusive breastfeeding during the first 6 months of life, continuing up to 2 years or as long as possible. When formula is needed, <strong>Pedia-Start®</strong> offers complete, wholesome European nutrition with Micro-Encapsulated Iron for maximum iron bioavailability, proven iron deficiency anemia protection, and proper mental development.
+          </p>
+        </div>
+
+        <!-- Epidemiology & Egyptian Clinical Context -->
+        <div class="ps-epidemiology-banner">
+          <h4 style="font-size:1.05rem; font-weight:800; color:var(--navy-deep); margin-bottom:10px; display:flex; align-items:center; gap:8px;">
+            <i class="fas fa-chart-line" style="color:var(--gold-dark);"></i> Iron Deficiency Anemia (IDA): Global &amp; Egyptian Reality
+          </h4>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:14px;">
+            <div style="background:#ffffff; padding:12px 14px; border-radius:var(--radius-sm); border:1px solid var(--border-light);">
+              <span style="font-size:1.5rem; font-weight:900; color:#c62828; display:block;">42%</span>
+              <p style="font-size:0.84rem; color:var(--text-main); margin:4px 0 0 0; line-height:1.4;">
+                WHO estimates <strong>42% of children under 5 years</strong> are affected by anemia globally.
+              </p>
+            </div>
+            <div style="background:#ffffff; padding:12px 14px; border-radius:var(--radius-sm); border:1px solid var(--border-light);">
+              <span style="font-size:1.5rem; font-weight:900; color:#c62828; display:block;">43%</span>
+              <p style="font-size:0.84rem; color:var(--text-main); margin:4px 0 0 0; line-height:1.4;">
+                IDA affects <strong>43% of Egyptian infants aged 6 to 24 months</strong>, representing the single most prevalent cause of infantile anemia.
+              </p>
+            </div>
+            <div style="background:#ffffff; padding:12px 14px; border-radius:var(--radius-sm); border:1px solid var(--border-light);">
+              <span style="font-size:1.1rem; font-weight:800; color:var(--blue-royal); display:block; margin-bottom:4px;">
+                <i class="fas fa-brain"></i> Neurodevelopment
+              </span>
+              <p style="font-size:0.84rem; color:var(--text-main); margin:0; line-height:1.4;">
+                Early iron deficit causes long-term diminished mental, motor, and cognitive development.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5 Clinical Pillars Grid -->
+        <h4 style="font-size:1.1rem; font-weight:800; color:var(--navy-deep); margin:24px 0 12px 0;">
+          <i class="fas fa-atom" style="color:var(--gold-primary); margin-right:6px;"></i> The 5 Scientific Pillars of Pedia-Start®
+        </h4>
+        <div class="ps-pillars-grid">
+          <div class="ps-pillar-card">
+            <h5><i class="fas fa-capsules" style="color:var(--gold-primary);"></i> 1. Micro-Encapsulated Iron</h5>
+            <p>Protects the elemental iron core from premature gastric acid dissolution, ensuring optimal enterocyte absorption in the duodenum while preventing constipation, abdominal colic, and dark stool discoloration.</p>
+          </div>
+
+          <div class="ps-pillar-card">
+            <h5><i class="fas fa-lemon" style="color:var(--gold-primary);"></i> 2. Vitamin C : Iron Ratio (&gt;10:1)</h5>
+            <p>Maintains an optimum ascorbic acid to iron ratio exceeding 10:1, which exponentially boosts non-heme iron absorption and further reduces the incidence of constipation.</p>
+          </div>
+
+          <div class="ps-pillar-card">
+            <h5><i class="fas fa-brain" style="color:var(--gold-primary);"></i> 3. Hippocampal Cognitive Complex</h5>
+            <p>Fortified with <strong>Choline</strong> (nurturing the developing hippocampus for memory &amp; concentration), <strong>Taurine</strong> (brain &amp; retinal development), and <strong>Inositol</strong> (glucose &amp; lipid cellular metabolism).</p>
+          </div>
+
+          <div class="ps-pillar-card">
+            <h5><i class="fas fa-eye" style="color:var(--gold-primary);"></i> 4. Essential Fatty Acids (LA:ALA 10:1)</h5>
+            <p>Balanced Linoleic Acid and Alpha-Linolenic Acid at the physiological 10:1 ratio for neural myelin sheath integrity, synaptic signaling, and retinal visual acuity.</p>
+          </div>
+
+          <div class="ps-pillar-card">
+            <h5><i class="fas fa-leaf" style="color:var(--gold-primary);"></i> 5. Pure European Clean Formulation</h5>
+            <p>Strictly compliant with Codex Alimentarius Commission (CAC): 100% Free of antibiotics, artificial growth hormones, gluten, sucrose, and Genetically Modified Ingredients (Non-GMO).</p>
+          </div>
+
+          <div class="ps-pillar-card">
+            <h5><i class="fas fa-bone" style="color:var(--gold-primary);"></i> Calcium, Phosphorus &amp; D3</h5>
+            <p>Optimized Ca:P ratio with Vitamin D3 preventing rickets and supporting rapid skeletal mineralization and tooth eruption during the critical first year.</p>
+          </div>
+        </div>
+
+        <!-- External Link & Product Can Showcase Banner -->
+        <div style="background:linear-gradient(135deg, var(--navy-midnight) 0%, var(--navy-deep) 100%); border-radius:var(--radius-md); padding:20px 24px; color:#ffffff; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; margin-top:20px;">
+          <div style="display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
+            <div style="display:flex; gap:10px;">
+              <img src="assets/images/pedia-start-1.png" alt="Pedia-Start 1 Can" style="height:80px; width:auto; filter:drop-shadow(0 4px 8px rgba(0,0,0,0.4));">
+              <img src="assets/images/pedia-start-2.png" alt="Pedia-Start 2 Can" style="height:80px; width:auto; filter:drop-shadow(0 4px 8px rgba(0,0,0,0.4));">
+            </div>
+            <div>
+              <h4 style="font-size:1.15rem; font-weight:800; color:var(--gold-champagne); margin:0;">
+                Pedia-Start® 1 (0–6m) &bull; Pedia-Start® 2 (6–12m)
+              </h4>
+              <p style="font-size:0.85rem; color:rgba(255,255,255,0.85); margin:4px 0 0 0;">
+                Available in 350g Powder Cans &bull; Manufactured to the highest global pediatric nutraceutical standards
+              </p>
+            </div>
+          </div>
+          <a href="https://www.pedia-start.com" target="_blank" rel="noopener" class="ps-web-link-btn">
+            <i class="fas fa-external-link-alt"></i> Visit www.pedia-start.com
+          </a>
+        </div>
       </div>
 
     </section>
@@ -1624,7 +1740,7 @@
           <h4>Pediamil Portfolio</h4>
           <p>Clinical formulas, DHA/ARA &amp; science</p>
         </div>
-        <span class="hub-item-badge gold">9 Formulas</span>
+        <span class="hub-item-badge gold">10 Formulas</span>
       </div>
 
       <div class="hub-grid-item" onclick="switchTab('contacts'); closeMobileHubSheet();">
