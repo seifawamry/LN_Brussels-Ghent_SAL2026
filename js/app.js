@@ -1033,12 +1033,6 @@ function renderPediamilProducts(filter = "all") {
 
     const waMsg = encodeURIComponent(`Hello Dr. Seif El Awamry, inquiry regarding ${p.name}: `);
 
-    const packImgHtml = p.packImage ? `
-      <div class="product-can-thumbnail">
-        <img src="${p.packImage}" alt="${p.name} Pack" loading="lazy">
-      </div>
-    ` : "";
-
     return `
       <div class="product-clinical-card ${p.category}">
         <div class="product-card-badge">${p.badge}</div>
@@ -1046,7 +1040,6 @@ function renderPediamilProducts(filter = "all") {
           <img src="${logoSrc}" alt="${p.brand}" class="product-brand-logo ${p.logoKey}-logo">
           <span class="product-stage-pill">${p.stage}</span>
         </div>
-        ${packImgHtml}
         <h4 class="product-full-name">${p.name}</h4>
         <p class="product-tagline">${p.tagline}</p>
         <p class="product-desc">${p.description}</p>
@@ -1189,20 +1182,20 @@ function openProductSpecs(productId) {
     `;
   }
 
+  let modalLogoSrc = "assets/images/pediamil-logo.png";
+  if (product.logoKey === "pediamum") modalLogoSrc = "assets/images/pediamum-logo.png";
+  if (product.logoKey === "pediastart") modalLogoSrc = "assets/images/pediastart-logo.png";
+
   const waMsg = encodeURIComponent(`Hello Dr. Seif El Awamry, regarding Pediamil ${product.name} at the Brussels & Ghent 2026 Standalone Event, I have a clinical question: `);
 
-  const modalPackImg = product.packImage ? `
-    <div style="text-align:center; margin:12px 0 16px 0;">
-      <img src="${product.packImage}" alt="${product.name} Tin" style="max-height:180px; width:auto; filter:drop-shadow(0 8px 16px rgba(0,0,0,0.18));">
-    </div>
-  ` : "";
-
   modalBody.innerHTML = `
-    <div class="spec-modal-headline">
-      <h3>${product.name}</h3>
+    <div class="spec-modal-headline" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:14px; padding-bottom:12px; border-bottom:1px solid #eef2f6;">
+      <div style="display:flex; align-items:center; gap:12px;">
+        <img src="${modalLogoSrc}" alt="${product.brand}" style="height:36px; width:auto; object-fit:contain;">
+        <h3 style="margin:0; font-size:1.25rem; font-weight:800; color:var(--navy-midnight);">${product.name}</h3>
+      </div>
       <span class="spec-stage-badge">${product.stage}</span>
     </div>
-    ${modalPackImg}
     <p class="spec-tagline-text">${product.tagline}</p>
 
     <div class="spec-section-card">
