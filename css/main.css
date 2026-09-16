@@ -2306,6 +2306,161 @@ img {
   line-height: 1.4;
 }
 
+/* Product Pack / Can Thumbnail */
+.product-can-thumbnail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+  margin: 4px 0;
+  background: radial-gradient(circle, rgba(212, 166, 45, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+}
+
+.product-can-thumbnail img {
+  max-height: 140px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.15));
+  transition: transform 0.25s ease;
+}
+
+.product-clinical-card:hover .product-can-thumbnail img {
+  transform: scale(1.05);
+}
+
+/* ==========================================
+   PEDIA-START® CLINICAL SCIENCE CENTER
+   ========================================== */
+.pedia-start-spotlight-card {
+  background: linear-gradient(135deg, #ffffff 0%, #fdfbf7 100%);
+  border: 2px solid var(--gold-border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  margin-top: 36px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  position: relative;
+  overflow: hidden;
+}
+
+.pedia-start-spotlight-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  border-bottom: 1px solid rgba(212, 166, 45, 0.3);
+  padding-bottom: 18px;
+  margin-bottom: 20px;
+}
+
+.ps-header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.ps-spotlight-logo {
+  height: 42px;
+  width: auto;
+}
+
+.ps-stamp-img {
+  height: 60px;
+  width: auto;
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.12));
+}
+
+.ps-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.ps-pillar-card {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-left: 4px solid var(--gold-primary);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  box-shadow: var(--shadow-sm);
+}
+
+.ps-pillar-card h5 {
+  color: var(--navy-deep);
+  font-size: 0.95rem;
+  font-weight: 800;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ps-pillar-card p {
+  color: var(--text-main);
+  font-size: 0.84rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.ps-epidemiology-banner {
+  background: rgba(13, 44, 74, 0.04);
+  border: 1px dashed var(--gold-primary);
+  border-radius: var(--radius-md);
+  padding: 18px;
+  margin: 20px 0;
+}
+
+.ps-badges-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 14px 0;
+}
+
+.ps-badge-pill {
+  background: var(--blue-light);
+  color: var(--blue-royal);
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(13, 110, 253, 0.2);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ps-web-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
+  color: #ffffff !important;
+  font-weight: 800;
+  font-size: 0.88rem;
+  padding: 12px 22px;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(211, 47, 47, 0.35);
+  transition: all 0.2s ease;
+}
+
+.ps-web-link-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(211, 47, 47, 0.5);
+  color: #ffffff !important;
+}
+
+.pedia-start-science-highlight {
+  background: linear-gradient(135deg, rgba(255, 235, 238, 0.6) 0%, rgba(255, 255, 255, 0.9) 100%);
+  border: 1px solid #ef9a9a;
+  border-radius: var(--radius-md);
+  padding: 18px;
+  margin-top: 14px;
+}
+
 /* ==========================================
    HOTEL, DINING & SIGHTSEEING MODULES
    ========================================== */

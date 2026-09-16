@@ -153,21 +153,99 @@ const PEDIAMIL_PORTFOLIO = [
     indications: "Nutritional supplementation during pre-conception, pregnancy, and breastfeeding."
   },
   {
-    id: "pedia-start",
-    name: "Pedia-Start",
+    id: "pedia-start-1",
+    name: "Pedia-Start 1",
     brand: "Pedia-Start",
     logoKey: "pediastart",
+    packImage: "assets/images/pedia-start-1.png",
     category: "starter",
-    stage: "From Birth",
-    tagline: "Gentle Early Starter Formula for Newborn Vitality",
-    badge: "Gentle Beginning",
-    description: "Pedia-Start provides gentle, clinically balanced nutritional initiation for neonates requiring formula support from day one. Formulated to foster smooth digestive adaptation, gastrointestinal tolerance, and balanced immune development.",
+    stage: "Stage 1 • From Birth to 6 Months",
+    form: "Powder (350 gm)",
+    tagline: "Infant Milk Formula with Micro-Encapsulated Iron for Maximum Bioavailability & Brain Development",
+    badge: "Micro-Encapsulated Iron",
+    description: "Pedia-Start 1 is the highest quality infant milk formula with Micro-Encapsulated Iron for maximum iron bioavailability, proven iron deficiency anemia protection, and proper mental development. Trusted by pediatricians and parents to deliver balanced, wholesome nutrition during the first 6 months when breastfeeding is not possible.",
     highlights: [
-      "Ultra-pure European dairy origin adhering to highest global pediatric standards",
-      "Balanced lipid profile with essential fatty acids for cellular membrane integrity",
-      "Gentle protein matrix minimizing gastric discomfort and stool hardening",
-      "Fortified with prebiotics and essential trace elements"
+      "Micro-Encapsulated Iron: Enhances iron absorption, lowers anemia incidence, and prevents constipation & gastric distress",
+      "Optimum Vitamin C to Iron Ratio (>10:1): Maximizes intestinal iron bioavailability and reduces incidence of hard stools",
+      "Hippocampal Cognitive Complex: Choline to enhance concentration, learning skills, attention, and memory",
+      "Taurine & Inositol: Supports brain and retinal development, protects nerve pathways, and enhances fat/glucose absorption",
+      "Essential Fatty Acids (LA & ALA at 10:1 Ratio): Optimal essential fatty acid ratio for brain and visual development",
+      "Selenium & Zinc: Antioxidant action reducing risk of allergic disease while reinforcing cellular immunity",
+      "Clean Formula Purity: Strictly no hormones, no antibiotics, no gluten, no sucrose, and Non-GMO"
     ],
-    indications: "Newborn infants requiring gentle formula initiation."
+    indications: "Complete, balanced infant milk formula for healthy term infants from birth up to 6 months when breastfeeding is not possible, offering proven protection against Iron Deficiency Anemia (IDA) and promoting cognitive growth.",
+    preparation: "Standard dilution: 1 level scoop (approx. 4.3g) per 30 ml of lukewarm previously boiled drinking water. Package size: 350 gm powder.",
+    website: "https://www.pedia-start.com"
+  },
+  {
+    id: "pedia-start-2",
+    name: "Pedia-Start 2",
+    brand: "Pedia-Start",
+    logoKey: "pediastart",
+    packImage: "assets/images/pedia-start-2.png",
+    category: "starter",
+    stage: "Stage 2 • From 6 to 12 Months",
+    form: "Powder (350 gm)",
+    tagline: "Follow-on Formula with Micro-Encapsulated Iron for Cognitive Growth & Weaning Anemia Protection",
+    badge: "Follow-on Iron Protection",
+    description: "Pedia-Start 2 is the highest quality follow-on formula engineered with Micro-Encapsulated Iron to safeguard infants aged 6 to 12 months against the high prevalence of weaning iron deficiency anemia (affecting 43% of infants). Provides complete, balanced nutrition with enhanced cognitive nutrients and immune factors during the introduction of complementary foods.",
+    highlights: [
+      "Micro-Encapsulated Iron: Clinically protects against the peak 6-12 month anemia window without metallic aftertaste or constipation",
+      "Optimum Vitamin C to Iron Ratio (>10:1): Guarantees superior bioavailability and enterocyte absorption during weaning",
+      "Cognitive & Motor Enhancement: Choline, Taurine, and Inositol supporting rapid language acquisition and memory retention",
+      "Bone Mineralization Complex: Balanced Calcium and Phosphorus with Vitamin D3 to prevent rickets and ensure dense skeletal development",
+      "Erythropoiesis & Visual Acuity: Vitamin A and Vitamin B12 to support healthy red blood cell production and prevent deficiency complications",
+      "Balanced Protein Content: Tailored to maturing infant renal solute load, ensuring healthy physical growth",
+      "Clean Formula Purity: Strictly no hormones, no antibiotics, no gluten, no sucrose, and Non-GMO"
+    ],
+    indications: "Follow-on formula for older infants from 6 to 12 months as the liquid nutritional component of a diversified weaning diet, preventing nutritional iron deficiency anemia and failure to thrive.",
+    preparation: "Standard serving: 7 level scoops in 210 ml previously boiled drinking water, 3-4 feeds daily as solid foods are gradually introduced. Package size: 350 gm powder.",
+    website: "https://www.pedia-start.com"
   }
 ];
+
+/**
+ * Pedia-Start Scientific Rationale & Clinical Evidence
+ * Sourced directly from www.pedia-start.com
+ */
+const PEDIA_START_SCIENCE = {
+  headline: "Micro-Encapsulated Iron for Maximum Bioavailability & Cognitive Protection",
+  sourceUrl: "https://www.pedia-start.com",
+  stampImage: "assets/images/pedia-start-stamp.png",
+  philosophy: "Liptis Nutrition strongly supports breast milk as the best nutrition for infants (WHO recommends exclusive breastfeeding during the first 6 months). When formula is needed, Pedia-Start offers complete, wholesome nutrition designed to prevent Iron Deficiency Anemia (IDA) and nurture cognitive development.",
+  epidemiology: {
+    globalStat: "WHO estimates that 42% of children under 5 years of age worldwide are anemic.",
+    egyptStat: "Iron deficiency anemia is the most common cause of anemia among Egyptian infants 6 to 24 months, affecting 43% of infants (exceeding 60% in certain African nations).",
+    riskFactors: [
+      "Maternal iron deficiency during pregnancy",
+      "Delayed introduction of iron-rich complementary solid foods",
+      "Genetic predisposition & family history",
+      "Early umbilical cord clamping",
+      "Premature birth & low neonatal iron stores",
+      "Premature introduction of whole cow's milk before 12 months"
+    ]
+  },
+  clinicalPillars: [
+    {
+      title: "Micro-Encapsulated Iron",
+      desc: "Protects the iron core through gastric transit, enhancing duodenal absorption, preventing constipation, eliminating metallic taste, and preventing lipid oxidation in the formula."
+    },
+    {
+      title: "Optimum Vitamin C : Iron Ratio (>10:1)",
+      desc: "Significantly enhances non-heme iron absorption while minimizing gastrointestinal discomfort and reducing the incidence of hard stools."
+    },
+    {
+      title: "Hippocampal Cognitive Complex",
+      desc: "Choline, Taurine, and Inositol directly nourish the developing hippocampus—the brain center for learning, attention, concentration, and memory formation."
+    },
+    {
+      title: "Essential Fatty Acid Balance (LA:ALA 10:1)",
+      desc: "Linoleic Acid and Alpha-Linolenic Acid balanced at the optimal 10:1 ratio for neural myelin sheath formation and retinal visual acuity."
+    },
+    {
+      title: "Clean Formula Purity Standard",
+      desc: "100% Free of antibiotics, artificial growth hormones, gluten, sucrose, and Genetically Modified Organisms (Non-GMO)."
+    }
+  ]
+};
+
