@@ -157,6 +157,34 @@ function initNavigation() {
       }
     }
   });
+
+  // Mobile Hub Trigger ("All Tabs" Bottom Nav & Any Extra Triggers)
+  const hubBtn = document.getElementById("mobile-hub-btn");
+  if (hubBtn) {
+    const handleHubTrigger = (e) => {
+      if (e) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+      openMobileHubSheet(e);
+    };
+    hubBtn.addEventListener("click", handleHubTrigger);
+    hubBtn.addEventListener("touchend", handleHubTrigger, { passive: false });
+  }
+
+  const hubCloseBtn = document.querySelector(".hub-close-btn");
+  if (hubCloseBtn) {
+    hubCloseBtn.addEventListener("click", (e) => {
+      closeMobileHubSheet(e);
+    });
+  }
+
+  const hubBackdrop = document.getElementById("mobile-hub-backdrop");
+  if (hubBackdrop) {
+    hubBackdrop.addEventListener("click", (e) => {
+      closeMobileHubSheet(e);
+    });
+  }
 }
 
 function closeMobileDrawer() {
@@ -211,20 +239,54 @@ function switchTab(tabId) {
 }
 
 // Executive Mobile Hub Sheet (All 9 Modules Sheet)
-function openMobileHubSheet() {
+let lastHubOpenTimestamp = 0;
+
+function openMobileHubSheet(e) {
+  if (e && e.preventDefault) {
+    e.preventDefault();
+    e.stopPropagation();
+  }
+  lastHubOpenTimestamp = Date.now();
   const sheet = document.getElementById("mobile-hub-sheet");
   const backdrop = document.getElementById("mobile-hub-backdrop");
-  if (sheet) sheet.classList.add("active");
-  if (backdrop) backdrop.classList.add("active");
+  if (sheet) {
+    sheet.classList.add("active");
+    sheet.setAttribute("aria-hidden", "false");
+  }
+  if (backdrop) {
+    backdrop.classList.add("active");
+    backdrop.setAttribute("aria-hidden", "false");
+  }
   document.body.style.overflow = "hidden";
-  updateHubLivePrayerStatus();
+  try {
+    updateHubLivePrayerStatus();
+  } catch (err) {
+    console.warn("Hub live prayer status update error:", err);
+  }
 }
 
-function closeMobileHubSheet() {
+function closeMobileHubSheet(e) {
+  // If triggered by backdrop click, ignore ghost clicks within 350ms of opening
+  if (e && e.target && e.target.id === "mobile-hub-backdrop") {
+    if (Date.now() - lastHubOpenTimestamp < 350) {
+      if (e.preventDefault) e.preventDefault();
+      if (e.stopPropagation) e.stopPropagation();
+      return;
+    }
+  }
+  if (e && e.stopPropagation) {
+    e.stopPropagation();
+  }
   const sheet = document.getElementById("mobile-hub-sheet");
   const backdrop = document.getElementById("mobile-hub-backdrop");
-  if (sheet) sheet.classList.remove("active");
-  if (backdrop) backdrop.classList.remove("active");
+  if (sheet) {
+    sheet.classList.remove("active");
+    sheet.setAttribute("aria-hidden", "true");
+  }
+  if (backdrop) {
+    backdrop.classList.remove("active");
+    backdrop.setAttribute("aria-hidden", "true");
+  }
   document.body.style.overflow = "";
 }
 

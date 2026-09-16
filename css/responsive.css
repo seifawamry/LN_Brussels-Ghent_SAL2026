@@ -166,18 +166,22 @@ h1, h2, h3, h4, h5, h6, p, span, strong, em, div, a, label {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 8px 14px;
+    gap: 6px 12px;
   }
 
   .single-clock {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: 4px;
   }
 
-  .time-diff-badge {
-    text-align: center;
-    width: auto;
+  .clock-city {
+    font-size: 0.70rem;
+  }
+
+  .clock-time {
+    font-size: 0.72rem;
+    padding: 1px 5px;
   }
 
   .flight-rhythm-ticker {
@@ -826,11 +830,13 @@ h1, h2, h3, h4, h5, h6, p, span, strong, em, div, a, label {
   }
 
   .clocks-group {
-    flex-direction: column;
-    gap: 6px;
+    flex-direction: row;
+    justify-content: center;
+    gap: 8px;
   }
 
-  .time-diff-badge {
-    font-size: 0.68rem;
+  .clock-time {
+    font-size: 0.70rem;
+    padding: 1px 4px;
   }
 }

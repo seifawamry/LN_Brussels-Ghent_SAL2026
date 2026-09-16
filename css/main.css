@@ -264,10 +264,10 @@ img {
    LIVE DUAL CLOCKS RIBBON
    ========================================== */
 .dual-clock-bar {
-  background: linear-gradient(90deg, #091f33 0%, #112233 50%, #091f33 100%);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--navy-midnight);
+  color: #ffffff;
   border-bottom: 1px solid rgba(212, 166, 45, 0.2);
-  padding: 6px 24px;
+  padding: 4px 18px;
 }
 
 .clock-bar-content {
@@ -277,40 +277,41 @@ img {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 10px;
-  font-size: 0.78rem;
+  gap: 8px;
+  font-size: 0.72rem;
 }
 
 .clocks-group {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
 }
 
 .single-clock {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
 }
 
 .clock-flag {
-  font-size: 1rem;
+  font-size: 0.85rem;
 }
 
 .clock-city {
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.8);
   font-weight: 600;
+  font-size: 0.72rem;
 }
 
 .clock-time {
   color: var(--gold-light);
   font-weight: 700;
   font-family: monospace;
-  font-size: 0.88rem;
+  font-size: 0.74rem;
   background: rgba(0, 0, 0, 0.35);
-  padding: 2px 8px;
+  padding: 1px 6px;
   border-radius: 4px;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 }
 
 .time-diff-badge {
@@ -328,6 +329,7 @@ img {
   display: flex;
   align-items: center;
   gap: 8px;
+  font-size: 0.72rem;
 }
 
 .flight-rhythm-ticker i {
@@ -420,6 +422,15 @@ img {
   font-weight: 600;
   gap: 3px;
   transition: all 0.15s ease;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .bottom-nav-item i {
@@ -2923,6 +2934,19 @@ img {
 .bottom-hub-trigger {
   position: relative;
   overflow: visible;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  outline: none;
+  z-index: 1005;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.bottom-hub-trigger * {
+  pointer-events: none;
 }
 
 .hub-icon-circle {
@@ -2965,12 +2989,14 @@ img {
   z-index: 2000;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s ease;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .mobile-hub-backdrop.active {
   opacity: 1;
   pointer-events: auto;
+  visibility: visible;
 }
 
 .mobile-hub-sheet {
@@ -2984,14 +3010,18 @@ img {
   border-radius: 24px 24px 0 0;
   z-index: 2001;
   transform: translateY(105%);
-  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.32s;
   box-shadow: 0 -12px 40px rgba(0, 0, 0, 0.3);
   padding: 16px 18px 36px 18px;
   -webkit-overflow-scrolling: touch;
+  pointer-events: none;
+  visibility: hidden;
 }
 
 .mobile-hub-sheet.active {
   transform: translateY(0);
+  pointer-events: auto;
+  visibility: visible;
 }
 
 .hub-drag-handle {
