@@ -306,10 +306,10 @@ function renderTimelineEvents(events) {
             <h4 class="event-title">${ev.title}</h4>
             <div class="event-action-buttons">
               <a href="${ev.mapsUrl}" target="_blank" rel="noopener" class="map-link-btn" title="Open in Google Maps">
-                <i class="fas fa-map-marker-alt"></i> <span>Map</span>
+                <i class="fas fa-map-marker-alt"></i> <span>Directions</span>
               </a>
               <button class="cal-sync-btn" onclick="downloadICS('${encodeURIComponent(ev.title)}', '${encodeURIComponent(ev.description)}', '${encodeURIComponent(ev.location)}', '${activeDayIndex}', '${ev.time}')" title="Add to Calendar">
-                <i class="fas fa-calendar-plus"></i>
+                <i class="fas fa-calendar-plus"></i> <span>Add to Cal</span>
               </button>
             </div>
           </div>
