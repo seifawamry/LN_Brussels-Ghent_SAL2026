@@ -1,0 +1,359 @@
+/**
+ * Liptis Nutrition Brussels & Ghent Standalone Program
+ * Responsive Stylesheet for Mobile Phones, Tablets & Phablets
+ */
+
+/* ==========================================
+   TABLET & INTERMEDIATE BREAKPOINTS (<= 1024px)
+   ========================================== */
+@media screen and (max-width: 1024px) {
+  .header-top-bar {
+    padding: 10px 16px;
+  }
+
+  .search-input {
+    width: 180px;
+  }
+
+  .search-input:focus {
+    width: 220px;
+  }
+
+  .hero-executive-banner {
+    padding: 30px 24px;
+  }
+
+  .hero-main-title {
+    font-size: 1.8rem;
+  }
+
+  .hotel-hero-card {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .vat-calc-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .qibla-compass-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+    justify-items: center;
+  }
+
+  .qibla-metric-row {
+    justify-content: center;
+  }
+
+  .qibla-info-details {
+    text-align: center;
+  }
+}
+
+/* ==========================================
+   MOBILE PHONES & SMALL TABLETS (<= 768px)
+   ========================================== */
+@media screen and (max-width: 768px) {
+  /* Show Mobile Bottom Nav */
+  .mobile-bottom-nav {
+    display: block;
+  }
+
+  /* Hide Desktop Top Navigation Tabs */
+  .desktop-nav-bar {
+    display: none;
+  }
+
+  /* Header adjustments */
+  .header-top-bar {
+    padding: 8px 12px;
+  }
+
+  .main-brand-logo {
+    height: 32px;
+  }
+
+  .brand-tagline {
+    font-size: 0.55rem;
+    letter-spacing: 1px;
+  }
+
+  .event-sub-label {
+    font-size: 0.75rem;
+  }
+
+  .search-box-wrap {
+    display: none; /* hidden on small mobile top bar to save space; drawer has search */
+  }
+
+  .pdf-print-btn {
+    display: none; /* mobile users use browser share/print */
+  }
+
+  .mobile-drawer-btn {
+    display: block;
+  }
+
+  /* Clocks Ribbon */
+  .dual-clock-bar {
+    padding: 6px 12px;
+  }
+
+  .clock-bar-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .clocks-group {
+    width: 100%;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .flight-rhythm-ticker {
+    font-size: 0.72rem;
+  }
+
+  /* Main Container */
+  .app-main-content {
+    margin: 16px auto;
+    padding: 0 12px;
+  }
+
+  /* Hero Banner */
+  .hero-executive-banner {
+    padding: 24px 18px;
+    border-radius: var(--radius-md);
+  }
+
+  .hero-main-title {
+    font-size: 1.5rem;
+  }
+
+  .hero-desc {
+    font-size: 0.92rem;
+    line-height: 1.45;
+  }
+
+  .countdown-strip {
+    width: 100%;
+    justify-content: space-between;
+    padding: 12px 14px;
+    gap: 10px;
+  }
+
+  .cd-num {
+    font-size: 1.2rem;
+  }
+
+  .cd-box {
+    padding: 4px 6px;
+    min-width: 40px;
+  }
+
+  /* At a Glance */
+  .at-a-glance-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .glance-card {
+    padding: 14px;
+  }
+
+  /* Welcome Card */
+  .welcome-letter-card {
+    padding: 22px 18px;
+  }
+
+  .welcome-title {
+    font-size: 1.35rem;
+  }
+
+  .welcome-quote-box {
+    padding: 14px 16px;
+    font-size: 0.95rem;
+  }
+
+  /* Section Header */
+  .section-header-banner {
+    padding: 18px 16px;
+    border-radius: var(--radius-md);
+  }
+
+  .section-header-left h2 {
+    font-size: 1.3rem;
+  }
+
+  /* Itinerary Day Selector */
+  .day-selector-strip {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .day-tab-btn {
+    padding: 10px 8px;
+  }
+
+  .itinerary-sub-controls {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .coordinator-toggle-btn {
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* Timeline Events on Mobile */
+  .timeline-event-card {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .event-time-column {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-right: none;
+    border-bottom: 1px solid var(--border-light);
+    padding-right: 0;
+    padding-bottom: 10px;
+    width: 100%;
+  }
+
+  .category-pill {
+    margin-top: 0;
+  }
+
+  .event-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .event-action-buttons {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  /* Tax Refund */
+  .vat-overview-banner {
+    padding: 20px 16px;
+  }
+
+  .vat-overview-banner h3 {
+    font-size: 1.25rem;
+  }
+
+  .vat-calculator-section {
+    padding: 20px 16px;
+  }
+
+  .calc-metrics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .metric-box.highlight-box {
+    grid-column: span 1;
+  }
+
+  .vat-checklist-card {
+    padding: 20px 16px;
+  }
+
+  /* Prayer Times */
+  .prayer-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .prayer-times-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+  }
+
+  .slot-name {
+    font-size: 0.62rem;
+  }
+
+  .slot-time {
+    font-size: 0.88rem;
+  }
+
+  .qibla-compass-card {
+    padding: 20px 16px;
+  }
+
+  .compass-dial {
+    width: 180px;
+    height: 180px;
+  }
+
+  .compass-needle {
+    height: 120px;
+  }
+
+  .compass-needle::before, .compass-needle::after {
+    height: 60px;
+  }
+
+  /* Products Grid */
+  .pediamil-products-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-clinical-card {
+    padding: 18px 16px;
+  }
+
+  /* Dining & Sightseeing */
+  .dining-venues-grid, .sightseeing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hotel-hero-card {
+    padding: 20px 16px;
+  }
+
+  .hotel-amenities-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 14px;
+  }
+
+  .footer-brand {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .footer-links {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+/* ==========================================
+   EXTRA COMPACT SCREENS (<= 380px)
+   ========================================== */
+@media screen and (max-width: 380px) {
+  .day-btn-name {
+    font-size: 0.82rem;
+  }
+
+  .event-title {
+    font-size: 1.05rem;
+  }
+
+  .metric-value-large {
+    font-size: 1.7rem;
+  }
+}

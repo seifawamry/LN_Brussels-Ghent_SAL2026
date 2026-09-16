@@ -1,0 +1,24 @@
+{
+  "name": "Liptis Nutrition Brussels & Ghent Standalone",
+  "short_name": "Liptis Belgium",
+  "description": "Interactive Program & Travel Manual for Egypt Eminent Pediatricians",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0d2c4a",
+  "theme_color": "#0d2c4a",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "assets/images/pediamil-logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/images/pediamil-logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

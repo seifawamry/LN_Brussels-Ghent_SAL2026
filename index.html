@@ -1,0 +1,1501 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>LIPTIS Nutrition — Brussels & Ghent Standalone Event Guide</title>
+  <meta name="description" content="Executive interactive program for Egypt Eminent Pediatricians attending the Liptis Nutrition Standalone Event in Brussels & Ghent (8-11 October 2026).">
+  <meta name="theme-color" content="#0d2c4a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Liptis Belgium">
+
+  <!-- Manifest for PWA -->
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="assets/images/pediamil-logo.png">
+  <link rel="apple-touch-icon" href="assets/images/pediamil-logo.png">
+
+  <!-- Google Fonts: Montserrat & Cairo -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
+
+  <!-- Core App Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- ==========================================
+       APP HEADER & BRAND SUITE
+       ========================================== -->
+  <header class="app-header">
+    <div class="header-top-bar">
+      <div class="brand-suite">
+        <a href="#overview" onclick="switchTab('overview')" class="corporate-logo-pill" title="Liptis Nutrition Corporate">
+          <img src="assets/images/liptis-logo.png" alt="Liptis Nutrition" class="corporate-brand-logo">
+        </a>
+        <div class="brand-divider"></div>
+        <a href="#pediamil" onclick="switchTab('pediamil')" title="Pediamil Infant Nutrition">
+          <img src="assets/images/pediamil-logo.png" alt="Pediamil" class="sub-product-logo">
+        </a>
+        <div class="brand-text-block">
+          <span class="brand-tagline">ADVANCING INFANT NUTRITION</span>
+          <span class="event-sub-label">Brussels & Ghent Standalone 2026</span>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <!-- Universal Search -->
+        <div class="search-box-wrap">
+          <input type="text" id="universal-search-input" class="search-input" placeholder="Search guide...">
+          <i class="fas fa-search search-icon"></i>
+          <i class="fas fa-times search-clear-icon" id="search-clear-btn" title="Clear"></i>
+          <!-- Search Results Dropdown Overlay -->
+          <div id="search-results-overlay" class="search-results-overlay"></div>
+        </div>
+
+        <!-- Print / PDF Button -->
+        <button class="pdf-print-btn" onclick="window.print()" title="Print / Save Guide as PDF">
+          <i class="fas fa-print"></i> <span>Save PDF</span>
+        </button>
+
+        <!-- Mobile Drawer Hamburger -->
+        <button class="mobile-drawer-btn" id="drawer-toggle-btn" aria-label="Open Navigation Menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Live Dual Clocks Ribbon -->
+    <div class="dual-clock-bar">
+      <div class="clock-bar-content">
+        <div class="clocks-group">
+          <div class="single-clock" title="Current Local Time in Brussels">
+            <span class="clock-flag">🇧🇪</span>
+            <span class="clock-city">Brussels:</span>
+            <span class="clock-time" id="clock-brussels">--:--:--</span>
+          </div>
+          <div class="single-clock" title="Current Local Time in Cairo">
+            <span class="clock-flag">🇪🇬</span>
+            <span class="clock-city">Cairo:</span>
+            <span class="clock-time" id="clock-cairo">--:--:--</span>
+          </div>
+          <span class="time-diff-badge">Brussels is 1h behind Cairo</span>
+        </div>
+
+        <div class="flight-rhythm-ticker">
+          <i class="fas fa-plane-departure"></i>
+          <span>EgyptAir MS 725 (8 Oct) &bull; MS 726 (11 Oct)</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Desktop Navigation Tabs Bar -->
+    <nav class="desktop-nav-bar" aria-label="Main Navigation">
+      <div class="desktop-nav-inner">
+        <button class="desktop-tab-btn active" data-nav-tab="overview">
+          <i class="fas fa-home"></i> <span>Overview</span>
+        </button>
+        <button class="desktop-tab-btn" data-nav-tab="itinerary">
+          <i class="fas fa-calendar-alt"></i> <span>4-Day Itinerary</span>
+        </button>
+        <button class="desktop-tab-btn" data-nav-tab="tax-refund">
+          <i class="fas fa-receipt"></i> <span>Tax Refund</span>
+        </button>
+        <button class="desktop-tab-btn" data-nav-tab="prayer-times">
+          <i class="fas fa-mosque"></i> <span>Prayer & Qibla</span>
+        </button>
+        <button class="desktop-tab-btn" data-nav-tab="hotel">
+          <i class="fas fa-hotel"></i> <span>Hotel Base</span>
+        </button>
+        <button class="desktop-tab-btn" data-nav-tab="dining">
+          <i class="fas fa-utensils"></i> <span>Hosted Dining</span>
+        </button>
+        <button class="desktop-tab-btn" data-nav-tab="sightseeing">
+          <i class="fas fa-camera"></i> <span>Sightseeing & Retail</span>
+        </button>
+        <button class="desktop-tab-btn" data-nav-tab="pediamil">
+          <i class="fas fa-baby"></i> <span>Pediamil Portfolio</span>
+        </button>
+        <button class="desktop-tab-btn" data-nav-tab="contacts">
+          <i class="fas fa-id-badge"></i> <span>Contact Persons</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ==========================================
+       MOBILE SLIDE-OUT DRAWER
+       ========================================== -->
+  <div class="drawer-overlay" id="drawer-overlay"></div>
+  <aside class="mobile-drawer" id="mobile-drawer">
+    <div class="drawer-header">
+      <div class="corporate-logo-pill" style="padding:4px 10px; background:#ffffff;">
+        <img src="assets/images/liptis-logo.png" alt="Liptis Nutrition" style="height:30px; width:auto;">
+      </div>
+      <button class="drawer-close-btn" id="drawer-close-btn" aria-label="Close Drawer">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <nav class="drawer-nav-list">
+      <button class="drawer-nav-item active" data-nav-tab="overview">
+        <i class="fas fa-home"></i> <span>Overview & Welcome</span>
+      </button>
+      <button class="drawer-nav-item" data-nav-tab="itinerary">
+        <i class="fas fa-calendar-alt"></i> <span>4-Day Program Timeline</span>
+      </button>
+      <button class="drawer-nav-item" data-nav-tab="tax-refund">
+        <i class="fas fa-receipt"></i> <span>Tax Refund (VAT) Process</span>
+      </button>
+      <button class="drawer-nav-item" data-nav-tab="prayer-times">
+        <i class="fas fa-mosque"></i> <span>Islamic Prayer & Qibla</span>
+      </button>
+      <button class="drawer-nav-item" data-nav-tab="hotel">
+        <i class="fas fa-hotel"></i> <span>Renaissance Brussels Hotel</span>
+      </button>
+      <button class="drawer-nav-item" data-nav-tab="dining">
+        <i class="fas fa-utensils"></i> <span>Hosted Dining & Halal</span>
+      </button>
+      <button class="drawer-nav-item" data-nav-tab="sightseeing">
+        <i class="fas fa-landmark"></i> <span>Brussels & Ghent Sights</span>
+      </button>
+      <button class="drawer-nav-item" data-nav-tab="pediamil">
+        <i class="fas fa-stethoscope"></i> <span>Pediamil Pediatric Portfolio</span>
+      </button>
+      <button class="drawer-nav-item" data-nav-tab="contacts">
+        <i class="fas fa-id-badge"></i> <span>Liptis Contact Persons</span>
+      </button>
+    </nav>
+
+    <div class="drawer-footer">
+      <p>Liptis Nutrition Brussels & Ghent Standalone &bull; 8–11 Oct 2026</p>
+      <p style="margin-top:4px;">Hotline: +32 2 505 29 29</p>
+    </div>
+  </aside>
+
+  <!-- ==========================================
+       MAIN TABBED APPLICATION CONTENT
+       ========================================== -->
+  <main class="app-main-content">
+
+    <!-- ==========================================
+         TAB 1: OVERVIEW & WELCOME
+         ========================================== -->
+    <section id="section-overview" class="tab-content-section active">
+
+      <!-- Hero Executive Banner -->
+      <div class="hero-executive-banner">
+        <div class="hero-pre-title">
+          <i class="fas fa-crown"></i>
+          <span>LIPTIS NUTRITION EXECUTIVE STANDALONE &bull; 2026</span>
+        </div>
+        <h1 class="hero-main-title">
+          Brussels <span class="gold-accent">& Ghent</span>
+        </h1>
+        <p class="hero-desc">
+          An elegant four-day interactive guide for Egypt’s Eminent Pediatricians, featuring the official scientific symposium, curated cultural landmarks, hosted dining, shopping, Belgian tax refund procedures, and prayer times.
+        </p>
+
+        <!-- Event Countdown -->
+        <div class="countdown-strip">
+          <div class="cd-label-block">
+            <span class="cd-title">Event Launch In</span>
+            <span class="cd-date-tag">8 October 2026</span>
+          </div>
+          <div class="cd-digits-row">
+            <div class="cd-box">
+              <span class="cd-num" id="cd-days">--</span>
+              <span class="cd-unit">Days</span>
+            </div>
+            <span class="cd-colon">:</span>
+            <div class="cd-box">
+              <span class="cd-num" id="cd-hours">--</span>
+              <span class="cd-unit">Hours</span>
+            </div>
+            <span class="cd-colon">:</span>
+            <div class="cd-box">
+              <span class="cd-num" id="cd-mins">--</span>
+              <span class="cd-unit">Mins</span>
+            </div>
+            <span class="cd-colon">:</span>
+            <div class="cd-box">
+              <span class="cd-num" id="cd-secs">--</span>
+              <span class="cd-unit">Secs</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- At A Glance 4 Metrics Grid -->
+      <div class="at-a-glance-grid">
+        <div class="glance-card">
+          <div class="glance-icon"><i class="fas fa-calendar-check"></i></div>
+          <div class="glance-content">
+            <h5>Event Dates</h5>
+            <div class="glance-val">8 – 11 October 2026</div>
+            <div class="glance-sub">4-Day Executive Program</div>
+          </div>
+        </div>
+
+        <div class="glance-card gold-card">
+          <div class="glance-icon"><i class="fas fa-hotel"></i></div>
+          <div class="glance-content">
+            <h5>Base Hotel</h5>
+            <div class="glance-val">Renaissance Brussels</div>
+            <div class="glance-sub">Rue du Parnasse 19 (European Qtr)</div>
+          </div>
+        </div>
+
+        <div class="glance-card">
+          <div class="glance-icon"><i class="fas fa-plane"></i></div>
+          <div class="glance-content">
+            <h5>Flight Operations</h5>
+            <div class="glance-val">EgyptAir MS 725 / 726</div>
+            <div class="glance-sub">CAI → BRU → CAI Direct</div>
+          </div>
+        </div>
+
+        <div class="glance-card gold-card">
+          <div class="glance-icon"><i class="fas fa-ship"></i></div>
+          <div class="glance-content">
+            <h5>Regional Excursion</h5>
+            <div class="glance-val">Historic Ghent</div>
+            <div class="glance-sub">Day 3 &bull; Castle, Cathedral & Boat Cruise</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Welcome Letter from Liptis Nutrition Event Team -->
+      <div class="welcome-letter-card">
+        <div class="welcome-badge-header">
+          <i class="fas fa-envelope-open-text"></i>
+          <span>Official Welcome from Liptis Nutrition</span>
+        </div>
+        <h2 class="welcome-title">A Warm Welcome to Our Esteemed Doctors</h2>
+
+        <p class="welcome-body-p">
+          Dear Esteemed Doctors,<br>
+          It is our greatest privilege and honor to welcome you to Brussels for the <strong>LIPTIS Nutrition Abroad Standalone Event 2026</strong>. This carefully curated scientific and cultural experience was designed to provide space for Egypt’s eminent pediatric leaders to connect, exchange clinical insights, and enjoy the timeless heritage of Belgium — from the grand architecture of Brussels to the medieval charm of Ghent.
+        </p>
+
+        <div class="welcome-quote-box">
+          “Wishing you an inspiring scientific program, warm hospitality, and memorable moments in Brussels and Ghent.”
+        </div>
+
+        <p class="welcome-body-p">
+          Your schedule has been optimized for seamless movement between Cairo International Airport, Brussels Airport, the Renaissance Brussels Hotel, our scientific symposium sessions, guided cultural expeditions, premium retail experiences, and hosted dinners. Private luxury motorcoaches and dedicated bilingual tour coordinators will accompany the delegation at every step.
+        </p>
+
+        <div class="welcome-signature-block">
+          <div>
+            <div class="signature-team">LIPTIS Nutrition Event Team</div>
+            <div class="signature-org">Advancing Infant & Maternal Nutrition</div>
+          </div>
+          <div class="welcome-quick-links">
+            <button class="gold-solid-btn" onclick="switchTab('itinerary')">
+              <i class="fas fa-calendar-alt"></i> View Itinerary
+            </button>
+            <button class="navy-outline-btn" onclick="switchTab('pediamil')">
+              <i class="fas fa-stethoscope"></i> View Liptis Nutrition Portfolio
+            </button>
+            <button class="navy-outline-btn" onclick="switchTab('contacts')">
+              <i class="fas fa-headset"></i> Staff Contacts
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Interactive Navigation Matrix -->
+      <div class="section-header-banner">
+        <div class="section-header-left">
+          <h2>Interactive Guide Directory</h2>
+          <p class="section-subtitle">Jump directly to any module of your standalone travel manual</p>
+        </div>
+        <span class="section-badge-tag"><i class="fas fa-th-large"></i> 9 Core Modules</span>
+      </div>
+
+      <div class="at-a-glance-grid">
+        <div class="glance-card" style="cursor:pointer;" onclick="switchTab('itinerary')">
+          <div class="glance-icon"><i class="fas fa-clock"></i></div>
+          <div class="glance-content">
+            <h5>4-Day Schedule</h5>
+            <div class="glance-val">Detailed Timeline</div>
+            <div class="glance-sub">Hourly program, maps & calendar sync</div>
+          </div>
+        </div>
+
+        <div class="glance-card gold-card" style="cursor:pointer;" onclick="switchTab('tax-refund')">
+          <div class="glance-icon"><i class="fas fa-calculator"></i></div>
+          <div class="glance-content">
+            <h5>Tax Free VAT</h5>
+            <div class="glance-val">VAT Refund Engine</div>
+            <div class="glance-sub">Calculator, customs steps & checklist</div>
+          </div>
+        </div>
+
+        <div class="glance-card" style="cursor:pointer;" onclick="switchTab('prayer-times')">
+          <div class="glance-icon"><i class="fas fa-compass"></i></div>
+          <div class="glance-content">
+            <h5>Prayer & Qibla</h5>
+            <div class="glance-val">Brussels & Ghent</div>
+            <div class="glance-sub">Prayer times, Friday Jumu'ah & compass</div>
+          </div>
+        </div>
+
+        <div class="glance-card gold-card" style="cursor:pointer;" onclick="switchTab('hotel')">
+          <div class="glance-icon"><i class="fas fa-bed"></i></div>
+          <div class="glance-content">
+            <h5>Hotel Guide</h5>
+            <div class="glance-val">Renaissance Hotel</div>
+            <div class="glance-sub">Amenities, phone dial & groceries</div>
+          </div>
+        </div>
+
+        <div class="glance-card" style="cursor:pointer;" onclick="switchTab('dining')">
+          <div class="glance-icon"><i class="fas fa-drumstick-bite"></i></div>
+          <div class="glance-content">
+            <h5>Hosted Dining</h5>
+            <div class="glance-val">Official Dinners</div>
+            <div class="glance-sub">Le Mignon, Steak 'n' Chill, De Witte</div>
+          </div>
+        </div>
+
+        <div class="glance-card gold-card" style="cursor:pointer;" onclick="switchTab('sightseeing')">
+          <div class="glance-icon"><i class="fas fa-monument"></i></div>
+          <div class="glance-content">
+            <h5>Sights & Shopping</h5>
+            <div class="glance-val">Iconic Landmarks</div>
+            <div class="glance-sub">Atomium, Grand-Place, Ghent canals</div>
+          </div>
+        </div>
+
+        <div class="glance-card" style="cursor:pointer;" onclick="switchTab('pediamil')">
+          <div class="glance-icon"><i class="fas fa-prescription-bottle"></i></div>
+          <div class="glance-content">
+            <h5>Scientific Portfolio</h5>
+            <div class="glance-val">Pediamil Family</div>
+            <div class="glance-sub">Clinical formulas & pediatric science</div>
+          </div>
+        </div>
+
+        <div class="glance-card gold-card" style="cursor:pointer;" onclick="switchTab('contacts')">
+          <div class="glance-icon"><i class="fas fa-id-badge"></i></div>
+          <div class="glance-content">
+            <h5>On-Site Assistance</h5>
+            <div class="glance-val">Liptis Staff Directory</div>
+            <div class="glance-sub">7 Dedicated managers & instant WhatsApp</div>
+          </div>
+        </div>
+
+        <div class="glance-card" style="cursor:pointer;" onclick="downloadFullItineraryICS()">
+          <div class="glance-icon"><i class="fas fa-calendar-plus"></i></div>
+          <div class="glance-content">
+            <h5>Calendar Sync</h5>
+            <div class="glance-val">Add to Phone</div>
+            <div class="glance-sub">Download .ics for Apple / Google Calendar</div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ==========================================
+         TAB 2: 4-DAY INTERACTIVE ITINERARY
+         ========================================== -->
+    <section id="section-itinerary" class="tab-content-section">
+
+      <div class="section-header-banner">
+        <div class="section-header-left">
+          <h2>Official 4-Day Timeline</h2>
+          <p class="section-subtitle">8 – 11 October 2026 &bull; Brussels & Ghent Executive Schedule</p>
+        </div>
+        <div style="display:flex; gap:8px;">
+          <button class="gold-solid-btn" onclick="downloadFullItineraryICS()" title="Export all days to calendar">
+            <i class="fas fa-download"></i> Sync All to Calendar
+          </button>
+        </div>
+      </div>
+
+      <!-- Itinerary Control Panel (Day Tabs & Filter Chips) -->
+      <div class="itinerary-control-panel">
+        <!-- Day Selector Strip -->
+        <div class="day-selector-strip">
+          <button class="day-tab-btn active" data-day-num="1" onclick="setDayFilter(1)">
+            <span class="day-btn-num">Day 1</span>
+            <span class="day-btn-name">Arrival & Grand-Place</span>
+            <span class="day-btn-date">Thu, 8 Oct</span>
+          </button>
+          <button class="day-tab-btn" data-day-num="2" onclick="setDayFilter(2)">
+            <span class="day-btn-num">Day 2</span>
+            <span class="day-btn-name">Symposium & Sights</span>
+            <span class="day-btn-date">Fri, 9 Oct</span>
+          </button>
+          <button class="day-tab-btn" data-day-num="3" onclick="setDayFilter(3)">
+            <span class="day-btn-num">Day 3</span>
+            <span class="day-btn-name">Ghent Excursion</span>
+            <span class="day-btn-date">Sat, 10 Oct</span>
+          </button>
+          <button class="day-tab-btn" data-day-num="4" onclick="setDayFilter(4)">
+            <span class="day-btn-num">Day 4</span>
+            <span class="day-btn-name">Departure & VAT</span>
+            <span class="day-btn-date">Sun, 11 Oct</span>
+          </button>
+        </div>
+
+        <!-- Sub-controls: Category Filter & Coordinator Advisory Toggle -->
+        <div class="itinerary-sub-controls">
+          <div class="category-filter-chips">
+            <button class="cat-filter-btn active" data-cat="all" onclick="setCategoryFilter('all')">All</button>
+            <button class="cat-filter-btn" data-cat="scientific" onclick="setCategoryFilter('scientific')">Symposium</button>
+            <button class="cat-filter-btn" data-cat="culture" onclick="setCategoryFilter('culture')">Sightseeing</button>
+            <button class="cat-filter-btn" data-cat="dining" onclick="setCategoryFilter('dining')">Dining</button>
+            <button class="cat-filter-btn" data-cat="shopping" onclick="setCategoryFilter('shopping')">Shopping</button>
+            <button class="cat-filter-btn" data-cat="transfer" onclick="setCategoryFilter('transfer')">Transfers</button>
+          </div>
+
+          <!-- Coordinator notes toggle for EE1, EE2, EE3 insights -->
+          <button class="coordinator-toggle-btn active" id="coord-notes-toggle" onclick="toggleCoordinatorNotes()">
+            <i class="fas fa-eye"></i> Pacing Insights: ON
+          </button>
+        </div>
+      </div>
+
+      <!-- Active Day Summary Card -->
+      <div class="active-day-banner">
+        <div class="day-header-top">
+          <h3 id="itinerary-day-title">Day 1: Arrival, Meet & Greet & Welcome Dinner</h3>
+          <span class="day-header-date" id="itinerary-day-date">Thursday, 8 October 2026</span>
+        </div>
+        <p class="day-summary-text" id="itinerary-day-summary">Loading day highlights...</p>
+        <div class="day-highlights-strip" id="itinerary-day-highlights"></div>
+      </div>
+
+      <!-- Vertical Timeline Events List -->
+      <div class="timeline-events-container" id="timeline-events-container">
+        <!-- Injected dynamically via JS -->
+      </div>
+
+    </section>
+
+    <!-- ==========================================
+         TAB 3: TAX REFUND (VAT) PROCESS
+         ========================================== -->
+    <section id="section-tax-refund" class="tab-content-section">
+
+      <div class="section-header-banner">
+        <div class="section-header-left">
+          <h2>Tax Refund (VAT) Process</h2>
+          <p class="section-subtitle">Comprehensive guide for Egyptian physicians claiming VAT refunds at Brussels Airport (BRU)</p>
+        </div>
+        <span class="section-badge-tag"><i class="fas fa-euro-sign"></i> Save up to 21% VAT</span>
+      </div>
+
+      <!-- VAT Overview Banner -->
+      <div class="vat-overview-banner">
+        <h3>Belgium Tax-Free Shopping Guidelines</h3>
+        <p>
+          As non-EU residents traveling from Egypt, delegates are legally entitled to claim back the Value Added Tax (VAT / BTW / TVA) paid on personal retail purchases made in Belgium when exporting those goods within 3 months.
+        </p>
+        <div class="vat-badge-grid">
+          <div class="vat-badge"><i class="fas fa-tag"></i> Min Spend: €50.01 per store / day</div>
+          <div class="vat-badge"><i class="fas fa-percentage"></i> Standard Belgian VAT: 21%</div>
+          <div class="vat-badge"><i class="fas fa-stamp"></i> Mandatory Customs Stamp at BRU</div>
+          <div class="vat-badge"><i class="fas fa-wallet"></i> Net Refund: Approx. 12% – 16%</div>
+        </div>
+      </div>
+
+      <!-- 4 Visual Steps Grid -->
+      <h3 style="font-size:1.3rem; font-weight:800; color:var(--navy-deep); margin-bottom:16px;">
+        4 Essential Steps to Claim Your Refund
+      </h3>
+      <div class="vat-steps-grid">
+        <div class="vat-step-card">
+          <div class="step-card-top">
+            <div class="step-number-circle">1</div>
+            <span class="step-badge">In Stores</span>
+          </div>
+          <h4>Request Tax Free Form</h4>
+          <span class="step-sub">At checkout in Brussels / Ghent boutiques</span>
+          <ul class="step-instructions-list">
+            <li>Tell the cashier: <em>"Tax Free form, please"</em> before paying.</li>
+            <li>Present your Egyptian passport (or clear phone photo).</li>
+            <li>Ensure the official till receipt is firmly stapled to the form.</li>
+            <li>Check your full name and Egyptian address are accurately listed.</li>
+          </ul>
+          <div class="step-pro-tip">
+            <i class="fas fa-lightbulb"></i> Supported at City2, Rue Neuve, and Veldstraat boutiques.
+          </div>
+        </div>
+
+        <div class="vat-step-card">
+          <div class="step-card-top">
+            <div class="step-number-circle">2</div>
+            <span class="step-badge">Packing</span>
+          </div>
+          <h4>Organize Goods & Forms</h4>
+          <span class="step-sub">Saturday night / Sunday morning</span>
+          <ul class="step-instructions-list">
+            <li><strong>Keep goods unused</strong> in their original store packaging with labels.</li>
+            <li>Decide whether goods will be in <strong>Hold Luggage</strong> or <strong>Cabin Baggage</strong>.</li>
+            <li>Hold luggage items must be stamped <em>before</em> check-in bag drop.</li>
+            <li>Keep all receipt envelopes together in your travel wallet.</li>
+          </ul>
+          <div class="step-pro-tip">
+            <i class="fas fa-lightbulb"></i> Put liquids (perfumes, cosmetics) in hold suitcases.
+          </div>
+        </div>
+
+        <div class="vat-step-card">
+          <div class="step-card-top">
+            <div class="step-number-circle">3</div>
+            <span class="step-badge">BRU Airport</span>
+          </div>
+          <h4>Belgian Customs Validation</h4>
+          <span class="step-sub">Level 3 Departures Hall</span>
+          <ul class="step-instructions-list">
+            <li>Check in with EgyptAir MS 726 first; <strong>retain tagged bags</strong>.</li>
+            <li>Walk with tagged suitcase to <strong>Customs Desk (Douane)</strong> on Level 3.</li>
+            <li>Present: Passport, Boarding Pass, Tax Free Forms, and Suitcase.</li>
+            <li>Customs officer scans or stamps forms, then takes your suitcase.</li>
+          </ul>
+          <div class="step-pro-tip">
+            <i class="fas fa-exclamation-triangle"></i> <strong>No Customs Stamp = Zero Refund!</strong>
+          </div>
+        </div>
+
+        <div class="vat-step-card">
+          <div class="step-card-top">
+            <div class="step-number-circle">4</div>
+            <span class="step-badge">Cash / Card</span>
+          </div>
+          <h4>Collect Your Payout</h4>
+          <span class="step-sub">Refund desk or postbox</span>
+          <ul class="step-instructions-list">
+            <li><strong>Immediate Cash:</strong> Travelex / Global Blue counter (EUR payout).</li>
+            <li><strong>Credit Card:</strong> Write credit card number, seal in operator envelope, drop in airport mailbox.</li>
+            <li>Card refunds arrive within 7 to 14 business days.</li>
+            <li>Snap a smartphone photo of each stamped form before posting!</li>
+          </ul>
+          <div class="step-pro-tip">
+            <i class="fas fa-check-circle"></i> Card refunds avoid the local cash payout fee.
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive VAT Refund Calculator -->
+      <div class="vat-calculator-section">
+        <h3 style="font-size:1.3rem; font-weight:800; color:var(--navy-deep); margin-bottom:6px;">
+          <i class="fas fa-calculator" style="color:var(--gold-primary);"></i> Interactive VAT Refund Calculator
+        </h3>
+        <p style="font-size:0.9rem; color:var(--text-muted);">
+          Estimate your exact cash or credit card refund in both Euros (€) and Egyptian Pounds (EGP).
+        </p>
+
+        <div class="vat-calc-layout">
+          <!-- Inputs Column -->
+          <div class="calc-inputs-col">
+            <div class="calc-field-group">
+              <label for="vat-amount-input">Total Purchase Amount (€)</label>
+              <div class="calc-input-wrapper">
+                <span class="calc-currency-symbol">€</span>
+                <input type="number" id="vat-amount-input" class="calc-text-input" value="250" min="50" step="5">
+              </div>
+              <div class="calc-presets-row">
+                <button class="vat-preset-btn" data-preset="100">€100</button>
+                <button class="vat-preset-btn" data-preset="250">€250</button>
+                <button class="vat-preset-btn" data-preset="500">€500</button>
+                <button class="vat-preset-btn" data-preset="1000">€1,000</button>
+                <button class="vat-preset-btn" data-preset="2000">€2,000</button>
+              </div>
+            </div>
+
+            <div class="calc-field-group">
+              <label for="vat-rate-select">Product Category / VAT Rate</label>
+              <select id="vat-rate-select" class="calc-select">
+                <option value="0.21" selected>Standard Goods: Fashion, Chocolates, Watches, Perfumes (21% VAT)</option>
+                <option value="0.06">Reduced Rate: Books & Specialized Food Items (6% VAT)</option>
+              </select>
+            </div>
+
+            <div class="calc-field-group">
+              <label>Preferred Refund Method</label>
+              <div class="radio-pills-group">
+                <label class="radio-pill-label">
+                  <input type="radio" name="vat-refund-method" value="card" checked>
+                  <span>Credit Card (Higher net payout)</span>
+                </label>
+                <label class="radio-pill-label">
+                  <input type="radio" name="vat-refund-method" value="cash">
+                  <span>Immediate Cash (Airport desk)</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dynamic Output Results Column -->
+          <div class="calc-results-col" id="vat-calc-results">
+            <!-- Dynamically populated by JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Departure VAT Checklist -->
+      <div class="vat-checklist-card">
+        <div class="checklist-header-row">
+          <div>
+            <h4 style="font-size:1.2rem; font-weight:800; color:var(--navy-deep);">
+              <i class="fas fa-clipboard-check" style="color:var(--success);"></i> Departure VAT Checklist
+            </h4>
+            <p style="font-size:0.85rem; color:var(--text-muted);">
+              Tap to check off each step on your smartphone — saved automatically.
+            </p>
+          </div>
+          <span id="checklist-progress-text" style="font-weight:700; color:var(--gold-dark); font-size:0.9rem;">
+            0 of 9 steps completed
+          </span>
+        </div>
+
+        <div class="checklist-progress-bar-wrap">
+          <div class="checklist-progress-bar" id="checklist-progress-bar"></div>
+        </div>
+
+        <div class="vat-checklist-items-grid" id="vat-checklist-container">
+          <!-- Injected via JS -->
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ==========================================
+         TAB 4: ISLAMIC PRAYER TIMES & QIBLA
+         ========================================== -->
+    <section id="section-prayer-times" class="tab-content-section">
+
+      <div class="section-header-banner">
+        <div class="section-header-left">
+          <h2>Islamic Prayer Times & Qibla Direction</h2>
+          <p class="section-subtitle">Accurate astronomical timings for Brussels & Ghent &bull; 8–11 October 2026</p>
+        </div>
+        <span class="section-badge-tag"><i class="fas fa-kaaba"></i> Qibla: 124° South-East</span>
+      </div>
+
+      <!-- City Selector Strip -->
+      <div class="prayer-city-toggle-bar">
+        <button class="prayer-city-btn active" data-city="brussels" onclick="switchPrayerCity('brussels')">
+          <i class="fas fa-city"></i> Brussels (Days 1, 2, 4)
+        </button>
+        <button class="prayer-city-btn" data-city="ghent" onclick="switchPrayerCity('ghent')">
+          <i class="fas fa-water"></i> Ghent Excursion (Day 3)
+        </button>
+      </div>
+
+      <!-- Prayer Times Cards Grid -->
+      <div class="prayer-cards-grid" id="prayer-schedule-container">
+        <!-- Injected via JS -->
+      </div>
+
+      <!-- Qibla Direction & Interactive Compass -->
+      <div class="qibla-compass-card">
+        <div class="compass-visual-wrap">
+          <div class="compass-dial">
+            <span class="compass-marker marker-n">N</span>
+            <span class="compass-marker marker-s">S</span>
+            <span class="compass-marker marker-e">E</span>
+            <span class="compass-marker marker-w">W</span>
+            <div class="compass-needle" id="qibla-compass-needle"></div>
+            <div class="compass-center-pivot"></div>
+          </div>
+        </div>
+
+        <div class="qibla-info-details">
+          <h4><i class="fas fa-compass" style="color:var(--gold-primary);"></i> Qibla Direction from Belgium</h4>
+          <p style="font-size:0.92rem; color:var(--text-main); line-height:1.5;">
+            From Brussels and Ghent, the direct astronomical heading toward the Holy Kaaba in Makkah is approximately <strong>124° South-East (ESE)</strong>.
+          </p>
+
+          <div class="qibla-metric-row">
+            <div class="qibla-stat">
+              <span class="label">Compass Bearing</span>
+              <span class="val" id="qibla-bearing-display">124.3°</span>
+            </div>
+            <div class="qibla-stat">
+              <span class="label">General Heading</span>
+              <span class="val" id="qibla-dir-display">South-East</span>
+            </div>
+            <div class="qibla-stat">
+              <span class="label">Distance to Makkah</span>
+              <span class="val">~4,420 km</span>
+            </div>
+          </div>
+
+          <p style="font-size:0.8rem; color:var(--text-muted); background:var(--bg-app); padding:8px 12px; border-radius:var(--radius-sm);">
+            <i class="fas fa-mobile-alt"></i> <strong>Smartphone Tip:</strong> Calibrate your device compass by tilting it in a figure-8 motion away from iron bed frames or laptops before aligning.
+          </p>
+        </div>
+      </div>
+
+      <!-- Nearby Mosques Directory -->
+      <div class="section-header-banner" style="margin-top:20px;">
+        <div class="section-header-left">
+          <h2>Nearby Mosques & Islamic Centers</h2>
+          <p class="section-subtitle">Recommended prayer spaces in Brussels, Ghent, and Brussels Airport</p>
+        </div>
+        <span class="section-badge-tag"><i class="fas fa-map-marked-alt"></i> With GPS Directions</span>
+      </div>
+
+      <div class="mosques-directory-grid" id="mosques-list-container">
+        <!-- Injected via JS -->
+      </div>
+
+      <!-- Traveler Concessions (Rukhsah) Jurisprudence -->
+      <div id="traveler-rulings-container">
+        <!-- Injected via JS -->
+      </div>
+
+    </section>
+
+    <!-- ==========================================
+         TAB 5: BASE HOTEL & VENUE GUIDE
+         ========================================== -->
+    <section id="section-hotel" class="tab-content-section">
+
+      <div class="section-header-banner">
+        <div class="section-header-left">
+          <h2>Renaissance Brussels Hotel</h2>
+          <p class="section-subtitle">Executive Hotel Base &bull; European Quarter, Brussels</p>
+        </div>
+        <span class="section-badge-tag"><i class="fas fa-star"></i> 4-Star Premium Marriott</span>
+      </div>
+
+      <!-- Hotel Hero Card -->
+      <div class="hotel-hero-card">
+        <div class="hotel-info-col">
+          <div class="venue-card-image-wrap" style="border-radius:var(--radius-md); margin-bottom:18px; height:220px;">
+            <img src="assets/images/venues/hotel-renaissance.jpg" alt="Renaissance Brussels Hotel Lobby & Lounge" class="venue-card-image">
+            <span class="venue-badge-overlay"><i class="fas fa-hotel"></i> Renaissance Brussels Hotel</span>
+          </div>
+          <h3>Renaissance Brussels Hotel</h3>
+          <div class="hotel-location-tag">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Rue du Parnasse 19, 1050 Brussels, Belgium</span>
+          </div>
+
+          <p style="font-size:0.92rem; color:var(--text-main); line-height:1.6; margin-bottom:14px;">
+            Ideally situated in Brussels' prestigious European Quarter, directly adjacent to the European Parliament, Place du Luxembourg, and Brussels-Luxembourg railway station. Features modern executive rooms, soundproof windows, luxury bedding, and professional conference facilities hosting our Liptis Scientific Symposium.
+          </p>
+
+          <div style="display:flex; gap:10px; margin-bottom:14px; flex-wrap:wrap;">
+            <span class="highlight-chip"><i class="fas fa-clock"></i> Check-in: 15:00 (Group early access)</span>
+            <span class="highlight-chip"><i class="fas fa-door-open"></i> Check-out: 12:00 PM</span>
+          </div>
+
+          <div class="hotel-contact-actions">
+            <a href="tel:+3225052929" class="gold-solid-btn">
+              <i class="fas fa-phone-alt"></i> Call +32 2 505 29 29
+            </a>
+            <a href="https://maps.google.com/?q=Renaissance+Brussels+Hotel" target="_blank" rel="noopener" class="navy-outline-btn">
+              <i class="fas fa-directions"></i> Google Maps
+            </a>
+          </div>
+        </div>
+
+        <div class="hotel-features-col">
+          <h4 style="font-size:1.05rem; font-weight:800; color:var(--navy-deep); margin-bottom:10px;">
+            Key Amenities & Services
+          </h4>
+          <div class="hotel-amenities-grid">
+            <div class="amenity-item"><i class="fas fa-wifi"></i> High-Speed Wi-Fi</div>
+            <div class="amenity-item"><i class="fas fa-utensils"></i> The Poet Restaurant & Bar</div>
+            <div class="amenity-item"><i class="fas fa-concierge-bell"></i> 24h Front Desk (Arabic/En)</div>
+            <div class="amenity-item"><i class="fas fa-dumbbell"></i> Fitness Center & Sauna</div>
+            <div class="amenity-item"><i class="fas fa-coffee"></i> In-Room Coffee / Tea Maker</div>
+            <div class="amenity-item"><i class="fas fa-laptop"></i> Business Center Facilities</div>
+          </div>
+
+          <div style="background:var(--bg-app); border-radius:var(--radius-sm); padding:14px; border:1px solid var(--border-light); margin-top:14px;">
+            <h5 style="font-size:0.85rem; font-weight:800; color:var(--blue-royal); margin-bottom:4px;">
+              <i class="fas fa-subway"></i> Public Transport Connections
+            </h5>
+            <p style="font-size:0.82rem; color:var(--text-muted); line-height:1.45;">
+              &bull; <strong>Brussels-Luxembourg Station:</strong> 2 min walk (~150m). Direct trains across Brussels.<br>
+              &bull; <strong>Trône Metro Station:</strong> 7 min walk. Lines 2 & 6 direct to city centre.<br>
+              &bull; <strong>Nearby Groceries:</strong> Carrefour Express & Delhaize Shop & Go within 3 minutes walk on Rue du Luxembourg.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ==========================================
+         TAB 6: HOSTED DINING & HALAL GUIDE
+         ========================================== -->
+    <section id="section-dining" class="tab-content-section">
+
+      <div class="section-header-banner">
+        <div class="section-header-left">
+          <h2>Official Hosted Dining & Gastronomy</h2>
+          <p class="section-subtitle">Exquisite dinners curated in the official Liptis program &bull; Strictly 100% Halal dining assured</p>
+        </div>
+        <span class="section-badge-tag" style="background:#dcfce7; color:#15803d; border-color:#86efac;">
+          <i class="fas fa-check-circle"></i> 100% Halal Dining Assured
+        </span>
+      </div>
+
+      <!-- Halal Dietary Reassurance Banner -->
+      <div style="background:linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border:1px solid #86efac; border-radius:var(--radius-md); padding:16px 20px; margin-bottom:24px; display:flex; align-items:center; gap:16px;">
+        <div style="font-size:1.8rem; color:#15803d; flex-shrink:0;">
+          <i class="fas fa-certificate"></i>
+        </div>
+        <div>
+          <h4 style="font-size:1rem; font-weight:800; color:#14532d; margin-bottom:4px;">
+            Strictly 100% Halal Catering for All Hosted Meals
+          </h4>
+          <p style="font-size:0.86rem; color:#166534; line-height:1.45; margin:0;">
+            All dinners and hosted meals throughout the official program (at <strong>Le Mignon</strong>, <strong>Steak 'n' Chill</strong>, and <strong>De Witte Leeuw</strong>) are <strong>strictly 100% Halal certified</strong>. Our Egyptian pediatric delegation can dine with absolute confidence and peace of mind.
+          </p>
+        </div>
+      </div>
+
+      <div class="dining-venues-grid">
+        <!-- Day 1: Le Mignon -->
+        <div class="dining-card">
+          <div class="venue-card-image-wrap">
+            <img src="assets/images/venues/dining-le-mignon.jpg" alt="Le Mignon Restaurant Sainte-Catherine Venue & Ambiance" class="venue-card-image" loading="lazy">
+          </div>
+          <div class="dining-card-body">
+            <span class="dining-day-badge">Day 1 &bull; Welcome Dinner (Thu, 8 Oct &bull; 08:00 PM)</span>
+            <h4>Le Mignon Restaurant</h4>
+            <p style="font-size:0.82rem; color:var(--blue-accent); font-weight:600;">
+              <i class="fas fa-map-marker-alt"></i> Quai aux Briques 20, 1000 Brussels (Sainte-Catherine)
+            </p>
+            <div>
+              <span class="halal-badge"><i class="fas fa-check-circle"></i> 100% Halal & Fresh Seafood</span>
+            </div>
+            <p style="font-size:0.88rem; color:var(--text-main); line-height:1.5;">
+              Located in Brussels' celebrated historic fish market square (Sainte-Catherine / Vismet). Renowned for exceptional Belgian gastronomy, fresh North Sea seafood platters, grilled fish, and Belgian culinary classics. All menu selections provided are strictly 100% Halal.
+            </p>
+            <div style="margin-top:auto; padding-top:10px;">
+              <a href="https://maps.google.com/?q=Le+Mignon+Quai+aux+Briques+20+Brussels" target="_blank" rel="noopener" class="map-link-btn">
+                <i class="fas fa-directions"></i> Map Directions
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Day 2: Steak 'n' Chill -->
+        <div class="dining-card" style="border:2px solid var(--gold-primary);">
+          <div class="venue-card-image-wrap">
+            <img src="assets/images/venues/dining-steak-n-chill.jpg" alt="Steak 'n' Chill Restaurant Interior & Atmosphere" class="venue-card-image" loading="lazy">
+          </div>
+          <div class="dining-card-body">
+            <span class="dining-day-badge">Day 2 &bull; Executive Dinner (Fri, 9 Oct &bull; 07:30 PM)</span>
+            <h4>Steak 'n' Chill Restaurant</h4>
+            <p style="font-size:0.82rem; color:var(--blue-accent); font-weight:600;">
+              <i class="fas fa-map-marker-alt"></i> Boulevard du Jardin Botanique 7, 1000 Brussels
+            </p>
+            <div>
+              <span class="halal-badge"><i class="fas fa-certificate"></i> 100% Certified Halal Steakhouse</span>
+            </div>
+            <p style="font-size:0.88rem; color:var(--text-main); line-height:1.5;">
+              Top-tier steakhouse located conveniently near City2 and Rue Neuve. Strictly 100% Halal certified, offering dry-aged Angus cuts, prime grilled steaks, gourmet ribs, and signature burgers in an elegant ambient dining atmosphere.
+            </p>
+            <div style="margin-top:auto; padding-top:10px;">
+              <a href="https://maps.google.com/?q=Steak+n+Chill+Boulevard+du+Jardin+Botanique+7+Bruxelles" target="_blank" rel="noopener" class="map-link-btn">
+                <i class="fas fa-directions"></i> Map Directions
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Day 3: De Witte Leeuw -->
+        <div class="dining-card">
+          <div class="venue-card-image-wrap">
+            <img src="assets/images/venues/dining-de-witte-leeuw.jpg" alt="De Witte Leeuw Historic Guildhall Restaurant Venue" class="venue-card-image" loading="lazy">
+          </div>
+          <div class="dining-card-body">
+            <span class="dining-day-badge">Day 3 &bull; Farewell Gala Dinner (Sat, 10 Oct &bull; 07:30 PM)</span>
+            <h4>De Witte Leeuw (Ghent)</h4>
+            <p style="font-size:0.82rem; color:var(--blue-accent); font-weight:600;">
+              <i class="fas fa-map-marker-alt"></i> Graslei 6, 9000 Ghent (Historic Quays)
+            </p>
+            <div>
+              <span class="halal-badge"><i class="fas fa-check-circle"></i> 100% Halal & Fresh Seafood</span>
+            </div>
+            <p style="font-size:0.88rem; color:var(--text-main); line-height:1.5;">
+              Set right inside a 13th-century guildhall along the illuminated Graslei waterfront. Offers spectacular views of the medieval Leie river while delegates enjoy classic Flemish culinary dishes and festive farewell toasts. All food served is strictly 100% Halal.
+            </p>
+            <div style="margin-top:auto; padding-top:10px;">
+              <a href="https://maps.google.com/?q=De+Witte+Leeuw+Graslei+6+Ghent" target="_blank" rel="noopener" class="map-link-btn">
+                <i class="fas fa-directions"></i> Map Directions
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Belgian Delicacies & Halal Advice -->
+      <div class="welcome-letter-card">
+        <h3 style="font-size:1.3rem; font-weight:800; color:var(--navy-deep); margin-bottom:12px;">
+          <i class="fas fa-cookie-bite" style="color:var(--gold-primary);"></i> Belgian Culinary Specialties Guide
+        </h3>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:14px;">
+          <div style="background:var(--bg-app); padding:14px; border-radius:var(--radius-sm);">
+            <h5 style="color:var(--blue-royal); font-weight:800;">Belgian Waffles (Gaufres)</h5>
+            <p style="font-size:0.82rem; color:var(--text-muted); margin-top:4px;">
+              Two styles: <strong>Liège Waffle</strong> (dense, chewy, caramelized pearl sugar) vs <strong>Brussels Waffle</strong> (light, rectangular, crispy). Both naturally vegetarian/halal.
+            </p>
+          </div>
+          <div style="background:var(--bg-app); padding:14px; border-radius:var(--radius-sm);">
+            <h5 style="color:var(--blue-royal); font-weight:800;">Belgian Chocolates & Pralines</h5>
+            <p style="font-size:0.82rem; color:var(--text-muted); margin-top:4px;">
+              World-renowned master chocolatiers (Neuhaus, Mary, Pierre Marcolini). Check ingredient labels to avoid liqueur fillings ("sans alcool").
+            </p>
+          </div>
+          <div style="background:var(--bg-app); padding:14px; border-radius:var(--radius-sm);">
+            <h5 style="color:var(--blue-royal); font-weight:800;">Gentse Neuzekes (Cuberdons)</h5>
+            <p style="font-size:0.82rem; color:var(--text-muted); margin-top:4px;">
+              Traditional cone-shaped purple raspberry candies unique to Ghent, with a soft liquid syrup core. Available from street carts at Groentenmarkt.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ==========================================
+         TAB 7: SIGHTSEEING & SHOPPING
+         ========================================== -->
+    <section id="section-sightseeing" class="tab-content-section">
+
+      <div class="section-header-banner">
+        <div class="section-header-left">
+          <h2>Sightseeing & Retail Guide</h2>
+          <p class="section-subtitle">Brussels UNESCO icons, historic Ghent, and premier shopping boulevards</p>
+        </div>
+        <span class="section-badge-tag"><i class="fas fa-gem"></i> Heritage & Boutiques</span>
+      </div>
+
+      <!-- Sightseeing Highlights Grid -->
+      <h3 style="font-size:1.3rem; font-weight:800; color:var(--navy-deep); margin-bottom:16px;">
+        Brussels Architectural Highlights
+      </h3>
+      <div class="sightseeing-grid">
+        <div class="attraction-card">
+          <div class="venue-card-image-wrap">
+            <img src="assets/images/venues/sightseeing-grand-place.jpg" alt="Grand-Place Brussels" class="venue-card-image" loading="lazy">
+          </div>
+          <div class="attraction-card-content">
+            <span class="attraction-tag">UNESCO World Heritage &bull; Day 1</span>
+            <h4>Grand-Place (Grote Markt)</h4>
+            <p class="attraction-desc">
+              Regarded as one of the most beautiful town squares in the world. Surrounded by 17th-century baroque guildhalls with gilded ornamentation, the 15th-century Gothic Town Hall, and King's House.
+            </p>
+            <a href="https://maps.google.com/?q=Grand+Place+Brussels" target="_blank" rel="noopener" class="map-link-btn" style="margin-top:auto;">
+              <i class="fas fa-map-marker-alt"></i> Open in Maps
+            </a>
+          </div>
+        </div>
+
+        <div class="attraction-card">
+          <div class="venue-card-image-wrap">
+            <img src="assets/images/venues/sightseeing-atomium.jpg" alt="Atomium Brussels" class="venue-card-image" loading="lazy">
+          </div>
+          <div class="attraction-card-content">
+            <span class="attraction-tag">1958 World's Fair &bull; Day 2</span>
+            <h4>Atomium</h4>
+            <p class="attraction-desc">
+              Built for Expo 58, this 102-meter futuristic monument depicts an iron crystal magnified 165 billion times. Features 9 interconnected stainless steel spheres offering sweeping vistas of Brussels.
+            </p>
+            <a href="https://maps.google.com/?q=Atomium+Brussels" target="_blank" rel="noopener" class="map-link-btn" style="margin-top:auto;">
+              <i class="fas fa-map-marker-alt"></i> Open in Maps
+            </a>
+          </div>
+        </div>
+
+        <div class="attraction-card">
+          <div class="venue-card-image-wrap">
+            <img src="assets/images/venues/sightseeing-royal-palace.jpg" alt="Royal Palace of Brussels" class="venue-card-image" loading="lazy">
+          </div>
+          <div class="attraction-card-content">
+            <span class="attraction-tag">Monarchy Heritage &bull; Day 2</span>
+            <h4>Royal Palace of Brussels</h4>
+            <p class="attraction-desc">
+              The official palace of the King and Queen of the Belgians, situated opposite Brussels Park. Admire the neoclassical facade and the historic Place des Palais administrative district.
+            </p>
+            <a href="https://maps.google.com/?q=Royal+Palace+of+Brussels" target="_blank" rel="noopener" class="map-link-btn" style="margin-top:auto;">
+              <i class="fas fa-map-marker-alt"></i> Open in Maps
+            </a>
+          </div>
+        </div>
+
+        <div class="attraction-card">
+          <div class="venue-card-image-wrap">
+            <img src="assets/images/venues/sightseeing-manneken-pis.jpg" alt="Manneken Pis Brussels" class="venue-card-image" loading="lazy">
+          </div>
+          <div class="attraction-card-content">
+            <span class="attraction-tag">Folkloric Bronze &bull; Day 2</span>
+            <h4>Manneken Pis</h4>
+            <p class="attraction-desc">
+              Brussels' quirky, world-famous bronze fountain mascot. Stroll through the surrounding historic cobblestone alleys filled with artisan chocolate boutiques and warm waffle parlors.
+            </p>
+            <a href="https://maps.google.com/?q=Manneken+Pis+Brussels" target="_blank" rel="noopener" class="map-link-btn" style="margin-top:auto;">
+              <i class="fas fa-map-marker-alt"></i> Open in Maps
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ghent Excursion Highlights -->
+      <h3 style="font-size:1.3rem; font-weight:800; color:var(--navy-deep); margin-bottom:16px; margin-top:24px;">
+        Ghent Medieval Masterpieces &bull; Day 3 Excursion
+      </h3>
+      <div class="sightseeing-grid">
+        <div class="attraction-card">
+          <div class="venue-card-image-wrap">
+            <img src="assets/images/venues/sightseeing-gravensteen.jpg" alt="Gravensteen Castle Ghent" class="venue-card-image" loading="lazy">
+          </div>
+          <div class="attraction-card-content">
+            <span class="attraction-tag">12th Century Fortress</span>
+            <h4>Gravensteen (Castle of the Counts)</h4>
+            <p class="attraction-desc">
+              Dramatic moated castle built by Count Philip of Alsace in 1180. Features massive ramparts, gatehouse, keep, and panoramic views overlooking Ghent's medieval rooftops.
+            </p>
+            <a href="https://maps.google.com/?q=Gravensteen+Ghent" target="_blank" rel="noopener" class="map-link-btn" style="margin-top:auto;">
+              <i class="fas fa-map-marker-alt"></i> Open in Maps
+            </a>
+          </div>
+        </div>
+
+        <div class="attraction-card">
+          <div class="venue-card-image-wrap">
+            <img src="assets/images/venues/sightseeing-st-bavo.jpg" alt="St. Bavo's Cathedral Ghent" class="venue-card-image" loading="lazy">
+          </div>
+          <div class="attraction-card-content">
+            <span class="attraction-tag">Van Eyck Masterpiece</span>
+            <h4>St. Bavo's Cathedral (Sint-Baafs)</h4>
+            <p class="attraction-desc">
+              Imposing Gothic cathedral housing the renowned 1432 Ghent Altarpiece (*The Adoration of the Mystic Lamb*) by Hubert & Jan van Eyck, celebrated as the dawn of the Northern Renaissance.
+            </p>
+            <a href="https://maps.google.com/?q=St+Bavo's+Cathedral+Ghent" target="_blank" rel="noopener" class="map-link-btn" style="margin-top:auto;">
+              <i class="fas fa-map-marker-alt"></i> Open in Maps
+            </a>
+          </div>
+        </div>
+
+        <div class="attraction-card">
+          <div class="venue-card-image-wrap">
+            <img src="assets/images/venues/sightseeing-graslei.jpg" alt="Graslei & Korenlei Ghent" class="venue-card-image" loading="lazy">
+          </div>
+          <div class="attraction-card-content">
+            <span class="attraction-tag">Historic Harbor Quays</span>
+            <h4>Graslei & Korenlei</h4>
+            <p class="attraction-desc">
+              Picturesque medieval quays lined with guild houses dating from the 12th to 17th centuries. One of Europe's most photographed historical riverfront panoramas.
+            </p>
+            <a href="https://maps.google.com/?q=Graslei+Ghent" target="_blank" rel="noopener" class="map-link-btn" style="margin-top:auto;">
+              <i class="fas fa-map-marker-alt"></i> Open in Maps
+            </a>
+          </div>
+        </div>
+
+        <div class="attraction-card">
+          <div class="venue-card-image-wrap">
+            <img src="assets/images/venues/sightseeing-ghent-cruise.jpg" alt="Ghent Canal Cruise" class="venue-card-image" loading="lazy">
+          </div>
+          <div class="attraction-card-content">
+            <span class="attraction-tag">Private Leie Boat Tour</span>
+            <h4>Ghent Canal Cruise</h4>
+            <p class="attraction-desc">
+              Private 60-minute guided cruise along the Leie River with soft drinks on board. Glide quietly past cloistered monasteries, ancient fish markets, and medieval arches.
+            </p>
+            <a href="https://maps.google.com/?q=Graslei+Gent+boat+tours" target="_blank" rel="noopener" class="map-link-btn" style="margin-top:auto;">
+              <i class="fas fa-map-marker-alt"></i> Open in Maps
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Retail & Shopping Boulevards -->
+      <div class="welcome-letter-card" style="margin-top:24px;">
+        <h3 style="font-size:1.3rem; font-weight:800; color:var(--navy-deep); margin-bottom:12px;">
+          <i class="fas fa-shopping-bag" style="color:var(--gold-primary);"></i> Curated Retail & Shopping Windows
+        </h3>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:16px;">
+          <div style="background:var(--surface-card); border-radius:var(--radius-sm); border:1px solid var(--border-light); overflow:hidden; display:flex; flex-direction:column;">
+            <div class="venue-card-image-wrap" style="height:170px;">
+              <img src="assets/images/venues/shopping-rue-neuve.jpg" alt="Rue Neuve Brussels" class="venue-card-image" loading="lazy">
+            </div>
+            <div style="padding:16px; display:flex; flex-direction:column; flex:1;">
+              <h4 style="color:var(--blue-royal); font-weight:800;">Rue Neuve & City2 (Brussels &bull; Day 2)</h4>
+              <p style="font-size:0.85rem; color:var(--text-main); margin-top:6px; line-height:1.5; flex:1;">
+                Belgium's premier pedestrian shopping boulevard. <strong>City2 Shopping Mall</strong> features over 100 international stores, Swiss watches, cosmetics, and a large Carrefour Market for Belgian biscuits and chocolates.
+              </p>
+              <div style="margin-top:10px;">
+                <a href="https://maps.google.com/?q=City+2+Shopping+Mall+Brussels" target="_blank" rel="noopener" class="map-link-btn">
+                  <i class="fas fa-shopping-cart"></i> View City2 on Maps
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div style="background:var(--surface-card); border-radius:var(--radius-sm); border:1px solid var(--border-light); overflow:hidden; display:flex; flex-direction:column;">
+            <div class="venue-card-image-wrap" style="height:170px;">
+              <img src="assets/images/venues/shopping-veldstraat.jpg" alt="Veldstraat Ghent" class="venue-card-image" loading="lazy">
+            </div>
+            <div style="padding:16px; display:flex; flex-direction:column; flex:1;">
+              <h4 style="color:var(--blue-royal); font-weight:800;">Veldstraat & Old Town (Ghent &bull; Day 3)</h4>
+              <p style="font-size:0.85rem; color:var(--text-main); margin-top:6px; line-height:1.5; flex:1;">
+                Historic 18th-century mansions converted into luxury fashion boutiques, Flemish lace artisans, antique galleries, and artisanal praline chocolatiers in the heart of Flanders.
+              </p>
+              <div style="margin-top:10px;">
+                <a href="https://maps.google.com/?q=Veldstraat+Ghent" target="_blank" rel="noopener" class="map-link-btn">
+                  <i class="fas fa-store"></i> View Veldstraat on Maps
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ==========================================
+         TAB 8: PEDIAMIL SCIENTIFIC PORTFOLIO
+         ========================================== -->
+    <section id="section-pediamil" class="tab-content-section">
+
+      <div class="section-header-banner">
+        <div class="section-header-left">
+          <h2>Pediamil Scientific Portfolio</h2>
+          <p class="section-subtitle">Advancing infant and maternal nutrition &bull; Formulations for pediatric specialists</p>
+        </div>
+        <span class="section-badge-tag"><i class="fas fa-award"></i> Super Premium Standards</span>
+      </div>
+
+      <!-- Brand Portfolio Showcase Banner -->
+      <div class="portfolio-header-banner">
+        <span style="font-size:0.75rem; letter-spacing:1.5px; text-transform:uppercase; color:var(--gold-light); font-weight:800;">
+          LIPTIS NUTRITION NUTRACEUTICAL INNOVATION
+        </span>
+        <h3 style="font-size:1.6rem; font-weight:900; margin-top:4px;">
+          The Science of Healthy Beginnings
+        </h3>
+        <p style="font-size:0.92rem; color:rgba(255,255,255,0.9); max-width:750px; margin-top:6px; line-height:1.5;">
+          Breast milk is the gold standard of infant feeding. For non-breastfed infants, Pediamil delivers advanced European clinical formulations enriched with bioactive prebiotics, structured lipids, and nucleotides to safeguard digestive comfort, immune resilience, and cognitive maturation.
+        </p>
+
+        <!-- 3 Brand Logos Row -->
+        <div class="brand-showcase-row">
+          <img src="assets/images/pediamil-logo.png" alt="Pediamil" class="showcase-logo-item">
+          <img src="assets/images/pediamum-logo.png" alt="Pediamum" class="showcase-logo-item">
+          <img src="assets/images/pediastart-logo.png" alt="Pedia-Start" class="showcase-logo-item" style="height:32px;">
+        </div>
+      </div>
+
+      <!-- Portfolio Category Filter Strip -->
+      <div class="portfolio-filter-strip">
+        <button class="product-filter-btn active" data-filter="all" onclick="renderPediamilProducts('all')">
+          All Products (9)
+        </button>
+        <button class="product-filter-btn" data-filter="standard" onclick="renderPediamilProducts('standard')">
+          Standard Infant (Pediamil 1 & 2)
+        </button>
+        <button class="product-filter-btn" data-filter="specialized" onclick="renderPediamilProducts('specialized')">
+          Special Clinical Formulations (AC, HA, AR, LBW, LF)
+        </button>
+        <button class="product-filter-btn" data-filter="maternal" onclick="renderPediamilProducts('maternal')">
+          Maternal Nutrition (Pediamum)
+        </button>
+        <button class="product-filter-btn" data-filter="starter" onclick="renderPediamilProducts('starter')">
+          Starter Nutrition (Pedia-Start)
+        </button>
+      </div>
+
+      <!-- Dynamic Products Grid -->
+      <div class="pediamil-products-grid" id="pediamil-products-grid">
+        <!-- Injected dynamically via JS -->
+      </div>
+
+    </section>
+
+    <!-- ==========================================
+         TAB 8: LIPTIS NUTRITION STAFF CONTACT PERSONS
+         ========================================== -->
+    <section id="section-contacts" class="tab-content-section">
+
+      <div class="section-header-banner">
+        <div class="section-header-left">
+          <h2>Liptis Nutrition Contact Persons</h2>
+          <p class="section-subtitle">Dedicated on-site coordination team accompanying Egypt’s Eminent Pediatricians throughout the Brussels &amp; Ghent Standalone</p>
+        </div>
+        <span class="section-badge-tag"><i class="fas fa-users"></i> Liptis Nutrition Team</span>
+      </div>
+
+      <!-- Emergency & Rapid Assistance Concierge Banner -->
+      <div class="support-banner-card">
+        <div class="support-banner-left">
+          <h3><i class="fas fa-headset" style="color: var(--gold-primary); margin-right: 8px;"></i> Continuous On-Site Delegation Support</h3>
+          <p>
+            Staff of Liptis Nutrition will be on-site to provide assistance throughout the visit. For immediate ground assistance, itinerary questions, hotel requests, or private transport logistics, reach out directly to your assigned coordinators via direct phone call or WhatsApp.
+          </p>
+        </div>
+        <div class="support-quick-pills">
+          <a href="tel:+3225052929" class="support-pill-btn" title="Renaissance Brussels Hotel Front Desk">
+            <i class="fas fa-hotel"></i> Hotel: +32 2 505 29 29
+          </a>
+          <a href="tel:+3226755830" class="support-pill-btn" title="Egyptian Embassy in Brussels">
+            <i class="fas fa-landmark"></i> Egyptian Embassy: +32 2 675 58 30
+          </a>
+          <a href="tel:112" class="support-pill-btn" style="background: rgba(220, 53, 69, 0.25); border-color: rgba(220, 53, 69, 0.5);" title="European Emergency Number">
+            <i class="fas fa-ambulance"></i> Emergency: 112
+          </a>
+        </div>
+      </div>
+
+      <!-- Unified Liptis Nutrition Staff Grid -->
+      <div class="contacts-grid">
+
+        <!-- 1. AHMED OSAMA -->
+        <div class="contact-card executive-card">
+          <div class="contact-header-row">
+            <div class="contact-avatar">AO</div>
+            <div class="contact-info">
+              <h4 class="contact-name">Dr. Ahmed Osama</h4>
+              <span class="contact-title-badge">Senior Regional Manager</span>
+              <div class="contact-dept"><i class="fas fa-building" style="color:var(--gold-primary);"></i> Liptis Nutrition</div>
+            </div>
+          </div>
+          <div class="contact-phone-box">
+            <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;"><i class="fas fa-mobile-alt"></i> Mobile</span>
+            <span class="contact-phone-number">+20 11 1223 3606</span>
+          </div>
+          <div class="contact-actions-row">
+            <a href="tel:+201112233606" class="contact-btn-call">
+              <i class="fas fa-phone-alt"></i> Call Direct
+            </a>
+            <a href="https://wa.me/201112233606?text=Hello%20Dr.%20Ahmed%20Osama%2C%20greeting%20from%20Liptis%20Brussels%20%26%20Ghent%20Standalone%20delegation" target="_blank" rel="noopener" class="contact-btn-whatsapp">
+              <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- 2. HASSAN EL REFAEY -->
+        <div class="contact-card executive-card">
+          <div class="contact-header-row">
+            <div class="contact-avatar">HR</div>
+            <div class="contact-info">
+              <h4 class="contact-name">Dr. Hassan El Refaey</h4>
+              <span class="contact-title-badge">Senior Regional Manager</span>
+              <div class="contact-dept"><i class="fas fa-building" style="color:var(--gold-primary);"></i> Liptis Nutrition</div>
+            </div>
+          </div>
+          <div class="contact-phone-box">
+            <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;"><i class="fas fa-mobile-alt"></i> Mobile</span>
+            <span class="contact-phone-number">+20 10 6661 4388</span>
+          </div>
+          <div class="contact-actions-row">
+            <a href="tel:+201066614388" class="contact-btn-call">
+              <i class="fas fa-phone-alt"></i> Call Direct
+            </a>
+            <a href="https://wa.me/201066614388?text=Hello%20Dr.%20Hassan%2C%20greeting%20from%20Liptis%20Brussels%20%26%20Ghent%20Standalone%20delegation" target="_blank" rel="noopener" class="contact-btn-whatsapp">
+              <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- 3. FADY MAGDY -->
+        <div class="contact-card executive-card">
+          <div class="contact-header-row">
+            <div class="contact-avatar">FM</div>
+            <div class="contact-info">
+              <h4 class="contact-name">Fady Magdy</h4>
+              <span class="contact-title-badge">Senior Regional Manager</span>
+              <div class="contact-dept"><i class="fas fa-building" style="color:var(--gold-primary);"></i> Liptis Nutrition</div>
+            </div>
+          </div>
+          <div class="contact-phone-box">
+            <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;"><i class="fas fa-mobile-alt"></i> Mobile</span>
+            <span class="contact-phone-number">+20 10 0366 1922</span>
+          </div>
+          <div class="contact-actions-row">
+            <a href="tel:+201003661922" class="contact-btn-call">
+              <i class="fas fa-phone-alt"></i> Call Direct
+            </a>
+            <a href="https://wa.me/201003661922?text=Hello%20Fady%2C%20greeting%20from%20Liptis%20Brussels%20%26%20Ghent%20Standalone%20delegation" target="_blank" rel="noopener" class="contact-btn-whatsapp">
+              <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- 4. EHAB ANES -->
+        <div class="contact-card executive-card">
+          <div class="contact-header-row">
+            <div class="contact-avatar">EA</div>
+            <div class="contact-info">
+              <h4 class="contact-name">Ehab Anes</h4>
+              <span class="contact-title-badge">Senior Regional Manager</span>
+              <div class="contact-dept"><i class="fas fa-building" style="color:var(--gold-primary);"></i> Liptis Nutrition</div>
+            </div>
+          </div>
+          <div class="contact-phone-box">
+            <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;"><i class="fas fa-mobile-alt"></i> Mobile</span>
+            <span class="contact-phone-number">+20 12 1051 1151</span>
+          </div>
+          <div class="contact-actions-row">
+            <a href="tel:+201210511151" class="contact-btn-call">
+              <i class="fas fa-phone-alt"></i> Call Direct
+            </a>
+            <a href="https://wa.me/201210511151?text=Hello%20Ehab%2C%20greeting%20from%20Liptis%20Brussels%20%26%20Ghent%20Standalone%20delegation" target="_blank" rel="noopener" class="contact-btn-whatsapp">
+              <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- 5. SEIF EL AWAMRY -->
+        <div class="contact-card executive-card">
+          <div class="contact-header-row">
+            <div class="contact-avatar">SA</div>
+            <div class="contact-info">
+              <h4 class="contact-name">Dr. Seif El Awamry</h4>
+              <span class="contact-title-badge">Senior Product Manager</span>
+              <div class="contact-dept"><i class="fas fa-building" style="color:var(--gold-primary);"></i> Liptis Nutrition</div>
+            </div>
+          </div>
+          <div class="contact-phone-box">
+            <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;"><i class="fas fa-mobile-alt"></i> Mobile</span>
+            <span class="contact-phone-number">+20 10 0694 2226</span>
+          </div>
+          <div class="contact-actions-row">
+            <a href="tel:+201006942226" class="contact-btn-call">
+              <i class="fas fa-phone-alt"></i> Call Direct
+            </a>
+            <a href="https://wa.me/201006942226?text=Hello%20Dr.%20Seif%2C%20greeting%20from%20Liptis%20Brussels%20%26%20Ghent%20Standalone%20delegation" target="_blank" rel="noopener" class="contact-btn-whatsapp">
+              <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- 6. EHAB ATEF -->
+        <div class="contact-card executive-card">
+          <div class="contact-header-row">
+            <div class="contact-avatar">EA</div>
+            <div class="contact-info">
+              <h4 class="contact-name">Dr. Ehab Atef</h4>
+              <span class="contact-title-badge">Marketing &amp; Medical Director</span>
+              <div class="contact-dept"><i class="fas fa-building" style="color:var(--gold-primary);"></i> Liptis Nutrition</div>
+            </div>
+          </div>
+          <div class="contact-phone-box">
+            <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;"><i class="fas fa-mobile-alt"></i> Mobile</span>
+            <span class="contact-phone-number">+20 10 6661 3506</span>
+          </div>
+          <div class="contact-actions-row">
+            <a href="tel:+201066613506" class="contact-btn-call">
+              <i class="fas fa-phone-alt"></i> Call Direct
+            </a>
+            <a href="https://wa.me/201066613506?text=Hello%20Dr.%20Ehab%2C%20greeting%20from%20Liptis%20Brussels%20%26%20Ghent%20Standalone%20delegation" target="_blank" rel="noopener" class="contact-btn-whatsapp">
+              <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- 7. AHMED SHOAIB -->
+        <div class="contact-card executive-card">
+          <div class="contact-header-row">
+            <div class="contact-avatar">AS</div>
+            <div class="contact-info">
+              <h4 class="contact-name">Dr. Ahmed Shoaib</h4>
+              <span class="contact-title-badge">Country Manager</span>
+              <div class="contact-dept"><i class="fas fa-building" style="color:var(--gold-primary);"></i> Liptis Nutrition</div>
+            </div>
+          </div>
+          <div class="contact-phone-box">
+            <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;"><i class="fas fa-mobile-alt"></i> Mobile</span>
+            <span class="contact-phone-number">+20 10 9739 5002</span>
+          </div>
+          <div class="contact-actions-row">
+            <a href="tel:+201097395002" class="contact-btn-call">
+              <i class="fas fa-phone-alt"></i> Call Direct
+            </a>
+            <a href="https://wa.me/201097395002?text=Hello%20Dr.%20Ahmed%2C%20greeting%20from%20Liptis%20Brussels%20%26%20Ghent%20Standalone%20delegation" target="_blank" rel="noopener" class="contact-btn-whatsapp">
+              <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ==========================================
+       MOBILE BOTTOM NAVIGATION BAR
+       ========================================== -->
+  <nav class="mobile-bottom-nav" aria-label="Mobile Navigation">
+    <div class="bottom-nav-container">
+      <button class="bottom-nav-item active" data-nav-tab="overview">
+        <i class="fas fa-home"></i>
+        <span>Overview</span>
+      </button>
+      <button class="bottom-nav-item" data-nav-tab="itinerary">
+        <i class="fas fa-calendar-alt"></i>
+        <span>Itinerary</span>
+      </button>
+      <button class="bottom-nav-item" data-nav-tab="tax-refund">
+        <i class="fas fa-receipt"></i>
+        <span>Tax Free</span>
+      </button>
+      <button class="bottom-nav-item" data-nav-tab="prayer-times">
+        <i class="fas fa-mosque"></i>
+        <span>Prayer</span>
+      </button>
+      <button class="bottom-nav-item" data-nav-tab="pediamil">
+        <i class="fas fa-baby"></i>
+        <span>Pediamil</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ==========================================
+       APP FOOTER
+       ========================================== -->
+  <footer class="app-footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <div class="header-corp-pill" style="padding:4px 10px; background:#ffffff; border-radius:8px; display:inline-flex; align-items:center; box-shadow:0 2px 6px rgba(0,0,0,0.15);">
+          <img src="assets/images/liptis-logo.png" alt="Liptis Nutrition Corporate Logo" style="height:26px; width:auto;">
+        </div>
+        <img src="assets/images/pediamil-logo.png" alt="Pediamil" class="footer-logo">
+        <span>&bull; Liptis Nutrition Brussels & Ghent Standalone 2026</span>
+      </div>
+      <div class="footer-links">
+        <a href="https://www.pediamil.com" target="_blank" rel="noopener">www.pediamil.com</a>
+        <span>&bull;</span>
+        <a href="#overview" onclick="switchTab('overview')">Back to Top</a>
+        <span>&bull;</span>
+        <a href="#contacts" onclick="switchTab('contacts')">Staff Contacts</a>
+        <span>&bull;</span>
+        <a href="tel:+3225052929">Hotel: +32 2 505 29 29</a>
+      </div>
+      <div style="font-size:0.75rem; opacity:0.6;">
+        Designed for Egypt Eminent Pediatricians &bull; All Rights Reserved &copy; 2026
+      </div>
+    </div>
+  </footer>
+
+  <!-- Core App Scripts -->
+  <script src="js/itinerary-data.js"></script>
+  <script src="js/vat-calculator.js"></script>
+  <script src="js/prayer-times.js"></script>
+  <script src="js/pediamil-products.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>
