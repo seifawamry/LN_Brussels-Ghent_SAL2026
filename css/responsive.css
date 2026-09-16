@@ -4,6 +4,23 @@
  */
 
 /* ==========================================
+   GLOBAL OVERFLOW & WORD-BREAK SAFETY
+   ========================================== */
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, strong, em, div, a, label {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* ==========================================
    TABLET & INTERMEDIATE BREAKPOINTS (<= 1024px)
    ========================================== */
 @media screen and (max-width: 1024px) {
@@ -56,9 +73,34 @@
    MOBILE PHONES & SMALL TABLETS (<= 768px)
    ========================================== */
 @media screen and (max-width: 768px) {
-  /* Show Mobile Bottom Nav */
+  /* Show Mobile Bottom Nav & Top Sticky Pill Bar */
   .mobile-bottom-nav {
     display: block;
+  }
+
+  .mobile-tabs-pill-bar {
+    display: block;
+    padding: 8px 10px;
+  }
+
+  .mobile-pill-tab {
+    padding: 8px 15px;
+    font-size: 0.82rem;
+    min-height: 38px;
+  }
+
+  .mobile-pill-tab i {
+    font-size: 0.95rem;
+  }
+
+  /* Bottom Nav Enhanced Clickable Icons */
+  .bottom-nav-item {
+    font-size: 0.72rem;
+    font-weight: 700;
+  }
+
+  .bottom-nav-item i {
+    font-size: 1.25rem;
   }
 
   /* Hide Desktop Top Navigation Tabs */
@@ -89,60 +131,103 @@
   }
 
   .pdf-print-btn {
-    display: none; /* mobile users use browser share/print */
+    display: none;
   }
 
   .mobile-drawer-btn {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-sm);
+    background: var(--navy-deep);
+    color: var(--gold-light);
+    border: 1.5px solid var(--gold-primary);
+    box-shadow: 0 2px 8px rgba(13, 44, 74, 0.3);
   }
 
-  /* Clocks Ribbon */
+  /* Clocks Ribbon - Wrap elements cleanly to prevent protrusion */
   .dual-clock-bar {
-    padding: 6px 12px;
+    padding: 8px 12px;
   }
 
   .clock-bar-content {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+    width: 100%;
   }
 
   .clocks-group {
     width: 100%;
-    justify-content: space-between;
-    gap: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 6px 12px;
+  }
+
+  .single-clock {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .clock-city {
+    font-size: 0.70rem;
+  }
+
+  .clock-time {
+    font-size: 0.72rem;
+    padding: 1px 5px;
   }
 
   .flight-rhythm-ticker {
     font-size: 0.72rem;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    word-break: break-word;
   }
 
   /* Main Container */
   .app-main-content {
-    margin: 16px auto;
-    padding: 0 12px;
+    margin: 14px auto;
+    padding: 0 12px 95px 12px; /* Safe clearance for mobile bottom bar */
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .app-footer {
+    padding-bottom: 95px !important;
   }
 
   /* Hero Banner */
   .hero-executive-banner {
     padding: 24px 18px;
     border-radius: var(--radius-md);
+    max-width: 100%;
   }
 
   .hero-main-title {
-    font-size: 1.5rem;
+    font-size: 1.45rem;
+    line-height: 1.25;
+    word-break: break-word;
   }
 
   .hero-desc {
-    font-size: 0.92rem;
-    line-height: 1.45;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    word-break: break-word;
   }
 
   .countdown-strip {
     width: 100%;
     justify-content: space-between;
     padding: 12px 14px;
-    gap: 10px;
+    gap: 8px;
   }
 
   .cd-num {
@@ -158,72 +243,113 @@
   .at-a-glance-grid {
     grid-template-columns: 1fr;
     gap: 10px;
+    width: 100%;
   }
 
   .glance-card {
     padding: 14px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   /* Welcome Card */
   .welcome-letter-card {
-    padding: 22px 18px;
+    padding: 20px 16px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .welcome-title {
-    font-size: 1.35rem;
+    font-size: 1.25rem;
+    line-height: 1.3;
+    word-break: break-word;
   }
 
   .welcome-quote-box {
     padding: 14px 16px;
-    font-size: 0.95rem;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    word-break: break-word;
   }
 
   /* Section Header */
   .section-header-banner {
-    padding: 18px 16px;
+    padding: 16px 14px;
     border-radius: var(--radius-md);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .section-header-left {
+    width: 100%;
   }
 
   .section-header-left h2 {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
+    line-height: 1.3;
+    word-break: break-word;
+  }
+
+  .section-subtitle {
+    font-size: 0.85rem;
+    line-height: 1.45;
+    word-break: break-word;
+  }
+
+  .section-badge-tag {
+    white-space: normal;
+    word-break: break-word;
+    line-height: 1.3;
   }
 
   /* Itinerary Day Selector */
   .day-selector-strip {
     grid-template-columns: repeat(2, 1fr);
     gap: 8px;
+    width: 100%;
   }
 
   .day-tab-btn {
     padding: 10px 8px;
+    min-height: 44px;
   }
 
   .itinerary-sub-controls {
     flex-direction: column;
     align-items: stretch;
     gap: 10px;
+    width: 100%;
   }
 
   .coordinator-toggle-btn {
     justify-content: center;
     width: 100%;
+    min-height: 40px;
   }
 
   /* Timeline Events on Mobile */
   .timeline-event-card {
     grid-template-columns: 1fr;
     gap: 12px;
-    padding: 16px;
+    padding: 16px 14px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
   }
 
   .event-time-column {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 6px;
     border-right: none;
     border-bottom: 1px solid var(--border-light);
     padding-right: 0;
-    padding-bottom: 10px;
+    padding-bottom: 8px;
     width: 100%;
   }
 
@@ -231,62 +357,250 @@
     margin-top: 0;
   }
 
+  .event-body-column {
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
   .event-header-row {
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
+    width: 100%;
+  }
+
+  .event-title {
+    font-size: 1.1rem;
+    line-height: 1.35;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    width: 100%;
   }
 
   .event-action-buttons {
     width: 100%;
-    justify-content: flex-end;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: flex-start;
   }
 
-  /* Tax Refund */
+  .map-link-btn, .cal-sync-btn {
+    min-height: 38px;
+    padding: 8px 14px;
+    font-size: 0.82rem;
+  }
+
+  .event-desc {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .coordinator-advisory-box {
+    width: 100%;
+    box-sizing: border-box;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .event-practical-tip {
+    width: 100%;
+    box-sizing: border-box;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* Tax Refund on Mobile */
   .vat-overview-banner {
-    padding: 20px 16px;
+    padding: 18px 14px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .vat-overview-banner h3 {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
+    word-break: break-word;
+  }
+
+  .vat-badge-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .vat-steps-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    width: 100%;
   }
 
   .vat-calculator-section {
-    padding: 20px 16px;
+    padding: 18px 14px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .calc-currency-toggle-strip {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .curr-toggle-buttons {
+    display: flex;
+    width: 100%;
+    gap: 6px;
+  }
+
+  .curr-toggle-btn {
+    flex: 1;
+    text-align: center;
+    justify-content: center;
+    padding: 8px 6px;
+    font-size: 0.78rem;
+    min-height: 38px;
+    white-space: normal;
+    line-height: 1.2;
+  }
+
+  .calc-presets-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    width: 100%;
+  }
+
+  .vat-preset-btn {
+    flex: 1 1 calc(33.333% - 6px);
+    min-width: 65px;
+    text-align: center;
+    padding: 8px 6px;
+    font-size: 0.76rem;
+    min-height: 36px;
   }
 
   .calc-metrics-grid {
     grid-template-columns: 1fr;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .metric-box {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    box-sizing: border-box;
+    padding: 14px;
   }
 
   .metric-box.highlight-box {
     grid-column: span 1;
   }
 
-  .vat-checklist-card {
-    padding: 20px 16px;
+  .metric-value-large {
+    font-size: 1.65rem;
+    word-break: break-word;
   }
 
-  /* Prayer Times */
+  .vat-checklist-card {
+    padding: 18px 14px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .checklist-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  /* Prayer Times on Mobile */
+  .prayer-city-toggle-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .prayer-city-btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.82rem;
+    min-height: 42px;
+  }
+
+  .prayer-live-countdown-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 16px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .prayer-live-left {
+    gap: 12px;
+    width: 100%;
+  }
+
+  .prayer-live-left h4 {
+    font-size: 0.95rem;
+    line-height: 1.35;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .prayer-live-right {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .prayer-timer-pill {
+    font-size: 0.88rem;
+    padding: 6px 14px;
+  }
+
   .prayer-cards-grid {
     grid-template-columns: 1fr;
+    gap: 14px;
+    width: 100%;
   }
 
   .prayer-times-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 6px;
+    width: 100%;
+  }
+
+  .prayer-slot {
+    min-width: 0;
+    padding: 10px 4px;
+    word-break: break-word;
+    text-align: center;
   }
 
   .slot-name {
-    font-size: 0.62rem;
+    font-size: 0.65rem;
+    line-height: 1.2;
   }
 
   .slot-time {
-    font-size: 0.88rem;
+    font-size: 0.84rem;
+    white-space: nowrap;
   }
 
   .qibla-compass-card {
-    padding: 20px 16px;
+    padding: 18px 14px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .compass-dial {
@@ -302,26 +616,176 @@
     height: 60px;
   }
 
-  /* Products Grid */
+  .qibla-metric-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .qibla-stat {
+    flex: 1 1 calc(50% - 8px);
+    min-width: 120px;
+    box-sizing: border-box;
+  }
+
+  /* Products Grid on Mobile */
   .pediamil-products-grid {
     grid-template-columns: 1fr;
+    width: 100%;
+    gap: 16px;
   }
 
   .product-clinical-card {
-    padding: 18px 16px;
+    padding: 18px 14px;
+    box-sizing: border-box;
+    max-width: 100%;
+    overflow: hidden;
   }
 
-  /* Dining & Sightseeing */
-  .dining-venues-grid, .sightseeing-grid {
-    grid-template-columns: 1fr;
+  .product-header {
+    flex-wrap: wrap;
+    gap: 8px;
   }
 
-  .hotel-hero-card {
+  .product-full-name {
+    font-size: 1.2rem;
+    word-break: break-word;
+  }
+
+  .product-card-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    margin-top: 14px;
+    padding-top: 12px;
+  }
+
+  .fetch-spec-btn, .product-inquire-btn {
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: center;
+    text-align: center;
+    min-height: 44px;
+    font-size: 0.86rem;
+    white-space: normal;
+    line-height: 1.3;
+  }
+
+  /* Pediamil Spec Modal */
+  .pediamil-spec-modal {
+    padding: 18px 14px 36px 14px;
+    max-width: 100%;
+  }
+
+  .spec-table-row {
+    grid-template-columns: 1.2fr 0.9fr 1.1fr 0.9fr;
+    padding: 6px 4px;
+    font-size: 0.72rem;
+    word-break: break-word;
+  }
+
+  .spec-consult-card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .consult-info {
+    flex-direction: column;
+    text-align: center;
+    gap: 6px;
+    min-width: unset;
+  }
+
+  .spec-wa-direct-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Contacts Directory on Mobile */
+  .contacts-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .contact-card {
     padding: 20px 16px;
+    box-sizing: border-box;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .contact-name {
+    font-size: 1.15rem;
+    word-break: break-word;
+  }
+
+  .contact-title-badge {
+    white-space: normal;
+    word-break: break-word;
+    line-height: 1.35;
+  }
+
+  .contact-phone-box {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .contact-actions-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .contact-btn-call, .contact-btn-whatsapp {
+    min-height: 44px;
+    font-size: 0.85rem;
+    padding: 10px 8px;
+    text-align: center;
+  }
+
+  /* Hotel & Venues on Mobile */
+  .hotel-hero-card {
+    padding: 18px 14px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .hotel-amenities-grid {
     grid-template-columns: 1fr;
+  }
+
+  .hotel-contact-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .hotel-contact-actions a {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    min-height: 44px;
+  }
+
+  /* Dining & Sightseeing on Mobile */
+  .dining-venues-grid, .sightseeing-grid {
+    grid-template-columns: 1fr;
+    width: 100%;
+    gap: 16px;
+  }
+
+  .venue-card, .attraction-card {
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
   }
 
   .footer-content {
@@ -345,15 +809,34 @@
    EXTRA COMPACT SCREENS (<= 380px)
    ========================================== */
 @media screen and (max-width: 380px) {
+  .contact-actions-row {
+    grid-template-columns: 1fr;
+  }
+
   .day-btn-name {
     font-size: 0.82rem;
   }
 
   .event-title {
-    font-size: 1.05rem;
+    font-size: 1.02rem;
   }
 
   .metric-value-large {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
+  }
+
+  .prayer-times-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .clocks-group {
+    flex-direction: row;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .clock-time {
+    font-size: 0.70rem;
+    padding: 1px 4px;
   }
 }
