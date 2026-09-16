@@ -126,6 +126,39 @@
         </button>
       </div>
     </nav>
+
+    <!-- Sticky Mobile Tabs Pill Bar (All 9 Tabs Always Reachable on Mobile) -->
+    <nav class="mobile-tabs-pill-bar" aria-label="Mobile Tabs Quick Navigation">
+      <div class="mobile-pill-scroll-container">
+        <button class="mobile-pill-tab active" data-nav-tab="overview">
+          <i class="fas fa-home"></i> <span>Overview</span>
+        </button>
+        <button class="mobile-pill-tab" data-nav-tab="itinerary">
+          <i class="fas fa-calendar-alt"></i> <span>Itinerary</span>
+        </button>
+        <button class="mobile-pill-tab" data-nav-tab="tax-refund">
+          <i class="fas fa-receipt"></i> <span>Tax Free</span>
+        </button>
+        <button class="mobile-pill-tab" data-nav-tab="prayer-times">
+          <i class="fas fa-mosque"></i> <span>Prayer</span>
+        </button>
+        <button class="mobile-pill-tab" data-nav-tab="hotel">
+          <i class="fas fa-hotel"></i> <span>Hotel</span>
+        </button>
+        <button class="mobile-pill-tab" data-nav-tab="dining">
+          <i class="fas fa-utensils"></i> <span>Dining</span>
+        </button>
+        <button class="mobile-pill-tab" data-nav-tab="sightseeing">
+          <i class="fas fa-camera"></i> <span>Sights</span>
+        </button>
+        <button class="mobile-pill-tab" data-nav-tab="pediamil">
+          <i class="fas fa-baby"></i> <span>Pediamil</span>
+        </button>
+        <button class="mobile-pill-tab" data-nav-tab="contacts">
+          <i class="fas fa-users"></i> <span>Contacts</span>
+        </button>
+      </div>
+    </nav>
   </header>
 
   <!-- ==========================================
@@ -599,18 +632,30 @@
         <div class="vat-calc-layout">
           <!-- Inputs Column -->
           <div class="calc-inputs-col">
+            <div class="calc-currency-toggle-strip">
+              <span class="curr-toggle-label"><i class="fas fa-exchange-alt"></i> Input Currency:</span>
+              <div class="curr-toggle-buttons">
+                <button type="button" class="curr-toggle-btn active" id="btn-curr-eur" onclick="setVATInputCurrency('EUR')">
+                  <i class="fas fa-euro-sign"></i> Euros (€)
+                </button>
+                <button type="button" class="curr-toggle-btn" id="btn-curr-egp" onclick="setVATInputCurrency('EGP')">
+                  <span>EGP</span> Egyptian Pounds (ج.م)
+                </button>
+              </div>
+            </div>
+
             <div class="calc-field-group">
-              <label for="vat-amount-input">Total Purchase Amount (€)</label>
+              <label for="vat-amount-input" id="vat-input-label">Total Purchase Amount (€)</label>
               <div class="calc-input-wrapper">
-                <span class="calc-currency-symbol">€</span>
+                <span class="calc-currency-symbol" id="vat-currency-sym">€</span>
                 <input type="number" id="vat-amount-input" class="calc-text-input" value="250" min="50" step="5">
               </div>
-              <div class="calc-presets-row">
-                <button class="vat-preset-btn" data-preset="100">€100</button>
-                <button class="vat-preset-btn" data-preset="250">€250</button>
-                <button class="vat-preset-btn" data-preset="500">€500</button>
-                <button class="vat-preset-btn" data-preset="1000">€1,000</button>
-                <button class="vat-preset-btn" data-preset="2000">€2,000</button>
+              <div class="calc-presets-row" id="vat-presets-container">
+                <button type="button" class="vat-preset-btn" data-preset="100">€100</button>
+                <button type="button" class="vat-preset-btn" data-preset="250">€250</button>
+                <button type="button" class="vat-preset-btn" data-preset="500">€500</button>
+                <button type="button" class="vat-preset-btn" data-preset="1000">€1,000</button>
+                <button type="button" class="vat-preset-btn" data-preset="2000">€2,000</button>
               </div>
             </div>
 
@@ -692,6 +737,20 @@
         <button class="prayer-city-btn" data-city="ghent" onclick="switchPrayerCity('ghent')">
           <i class="fas fa-water"></i> Ghent Excursion (Day 3)
         </button>
+      </div>
+
+      <!-- Live Prayer Countdown Widget -->
+      <div class="prayer-live-countdown-banner" id="prayer-live-banner">
+        <div class="prayer-live-left">
+          <i class="fas fa-clock" style="color:var(--gold-primary);"></i>
+          <div>
+            <span class="prayer-live-sub">Current Prayer Status:</span>
+            <h4 id="prayer-countdown-headline">Calculating Next Prayer...</h4>
+          </div>
+        </div>
+        <div class="prayer-live-right">
+          <span class="prayer-timer-pill" id="prayer-timer-text">--:--</span>
+        </div>
       </div>
 
       <!-- Prayer Times Cards Grid -->
@@ -1448,20 +1507,164 @@
         <i class="fas fa-calendar-alt"></i>
         <span>Itinerary</span>
       </button>
-      <button class="bottom-nav-item" data-nav-tab="tax-refund">
-        <i class="fas fa-receipt"></i>
-        <span>Tax Free</span>
-      </button>
-      <button class="bottom-nav-item" data-nav-tab="prayer-times">
-        <i class="fas fa-mosque"></i>
-        <span>Prayer</span>
+      <button class="bottom-nav-item bottom-hub-trigger" id="mobile-hub-btn" aria-label="Open All 9 Tabs Hub" onclick="openMobileHubSheet()">
+        <div class="hub-icon-circle">
+          <i class="fas fa-th-large"></i>
+        </div>
+        <span>All Tabs</span>
       </button>
       <button class="bottom-nav-item" data-nav-tab="pediamil">
         <i class="fas fa-baby"></i>
         <span>Pediamil</span>
       </button>
+      <button class="bottom-nav-item" data-nav-tab="contacts">
+        <i class="fas fa-users"></i>
+        <span>Contacts</span>
+      </button>
     </div>
   </nav>
+
+  <!-- ==========================================
+       EXECUTIVE MOBILE HUB MODAL SHEET (ALL 9 TABS)
+       ========================================== -->
+  <div class="mobile-hub-backdrop" id="mobile-hub-backdrop" onclick="closeMobileHubSheet()"></div>
+  <div class="mobile-hub-sheet" id="mobile-hub-sheet" role="dialog" aria-modal="true" aria-label="All Navigation Modules">
+    <div class="hub-sheet-header">
+      <div class="hub-drag-handle"></div>
+      <div class="hub-title-row">
+        <div class="hub-title-group">
+          <span class="hub-subtitle"><i class="fas fa-crown" style="color:var(--gold-primary);"></i> Liptis Nutrition Standalone &bull; 2026</span>
+          <h3>All 9 Guide Modules</h3>
+        </div>
+        <button class="hub-close-btn" onclick="closeMobileHubSheet()" aria-label="Close Hub">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Quick Live Status Strip in Hub -->
+    <div class="hub-status-strip">
+      <div class="hub-status-pill" onclick="switchTab('prayer-times'); closeMobileHubSheet();">
+        <i class="fas fa-mosque"></i> <span id="hub-prayer-status">Prayer &amp; Qibla</span>
+      </div>
+      <div class="hub-status-pill" onclick="switchTab('itinerary'); closeMobileHubSheet();">
+        <i class="fas fa-calendar-check"></i> <span>4-Day Timeline</span>
+      </div>
+      <div class="hub-status-pill" onclick="switchTab('contacts'); closeMobileHubSheet();">
+        <i class="fas fa-shield-alt"></i> <span>7 Staff Contacts</span>
+      </div>
+    </div>
+
+    <!-- 9 Modules Interactive Grid -->
+    <div class="hub-modules-grid">
+      <div class="hub-grid-item" onclick="switchTab('overview'); closeMobileHubSheet();">
+        <div class="hub-item-icon"><i class="fas fa-home"></i></div>
+        <div class="hub-item-info">
+          <h4>Overview</h4>
+          <p>Welcome, flight rhythms &amp; countdown</p>
+        </div>
+        <span class="hub-item-badge">Launch</span>
+      </div>
+
+      <div class="hub-grid-item" onclick="switchTab('itinerary'); closeMobileHubSheet();">
+        <div class="hub-item-icon"><i class="fas fa-calendar-alt"></i></div>
+        <div class="hub-item-info">
+          <h4>4-Day Schedule</h4>
+          <p>Hourly itinerary, notes &amp; maps</p>
+        </div>
+        <span class="hub-item-badge">8–11 Oct</span>
+      </div>
+
+      <div class="hub-grid-item" onclick="switchTab('tax-refund'); closeMobileHubSheet();">
+        <div class="hub-item-icon"><i class="fas fa-receipt"></i></div>
+        <div class="hub-item-info">
+          <h4>Tax Free (VAT)</h4>
+          <p>Calculator, Customs &amp; checklist</p>
+        </div>
+        <span class="hub-item-badge gold">21% Back</span>
+      </div>
+
+      <div class="hub-grid-item" onclick="switchTab('prayer-times'); closeMobileHubSheet();">
+        <div class="hub-item-icon"><i class="fas fa-mosque"></i></div>
+        <div class="hub-item-info">
+          <h4>Prayer &amp; Qibla</h4>
+          <p>Brussels &amp; Ghent prayer &amp; compass</p>
+        </div>
+        <span class="hub-item-badge">GPS Qibla</span>
+      </div>
+
+      <div class="hub-grid-item" onclick="switchTab('hotel'); closeMobileHubSheet();">
+        <div class="hub-item-icon"><i class="fas fa-hotel"></i></div>
+        <div class="hub-item-info">
+          <h4>Base Hotel</h4>
+          <p>Renaissance Brussels, phone &amp; Wi-Fi</p>
+        </div>
+        <span class="hub-item-badge">5-Star</span>
+      </div>
+
+      <div class="hub-grid-item" onclick="switchTab('dining'); closeMobileHubSheet();">
+        <div class="hub-item-icon"><i class="fas fa-utensils"></i></div>
+        <div class="hub-item-info">
+          <h4>Hosted Dining</h4>
+          <p>3 Official dinners, venues &amp; menus</p>
+        </div>
+        <span class="hub-item-badge green">100% Halal</span>
+      </div>
+
+      <div class="hub-grid-item" onclick="switchTab('sightseeing'); closeMobileHubSheet();">
+        <div class="hub-item-icon"><i class="fas fa-camera"></i></div>
+        <div class="hub-item-info">
+          <h4>Sights &amp; Retail</h4>
+          <p>Atomium, Grand-Place &amp; Ghent canals</p>
+        </div>
+        <span class="hub-item-badge">Excursions</span>
+      </div>
+
+      <div class="hub-grid-item" onclick="switchTab('pediamil'); closeMobileHubSheet();">
+        <div class="hub-item-icon"><i class="fas fa-baby"></i></div>
+        <div class="hub-item-info">
+          <h4>Pediamil Portfolio</h4>
+          <p>Clinical formulas, DHA/ARA &amp; science</p>
+        </div>
+        <span class="hub-item-badge gold">9 Formulas</span>
+      </div>
+
+      <div class="hub-grid-item" onclick="switchTab('contacts'); closeMobileHubSheet();">
+        <div class="hub-item-icon"><i class="fas fa-id-badge"></i></div>
+        <div class="hub-item-info">
+          <h4>Staff Contacts</h4>
+          <p>Liptis Nutrition coordinators &amp; WhatsApp</p>
+        </div>
+        <span class="hub-item-badge">7 Staff</span>
+      </div>
+    </div>
+
+    <!-- Quick Emergency Dial Row inside Hub Sheet -->
+    <div class="hub-emergency-row">
+      <a href="tel:+3225052929" class="hub-call-pill"><i class="fas fa-hotel"></i> Hotel Front Desk</a>
+      <a href="tel:+3226755830" class="hub-call-pill"><i class="fas fa-landmark"></i> Egyptian Embassy</a>
+      <a href="tel:112" class="hub-call-pill red"><i class="fas fa-ambulance"></i> 112 Emergency</a>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       INTERACTIVE PEDIAMIL CLINICAL SPEC MODAL
+       ========================================== -->
+  <div class="pediamil-modal-backdrop" id="pediamil-modal-backdrop" onclick="closeProductSpecs()"></div>
+  <div class="pediamil-spec-modal" id="pediamil-spec-modal" role="dialog" aria-modal="true" aria-label="Clinical Formula Specifications">
+    <div class="spec-modal-header">
+      <div class="spec-modal-brand-row">
+        <img id="spec-modal-logo" src="assets/images/pediamil-logo.png" alt="Brand Logo" class="spec-modal-logo">
+        <span class="spec-modal-badge" id="spec-modal-badge">Clinical Specification</span>
+      </div>
+      <button class="spec-modal-close" onclick="closeProductSpecs()" aria-label="Close Specs">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="spec-modal-body" id="spec-modal-body">
+      <!-- Injected dynamically via JS -->
+    </div>
+  </div>
 
   <!-- ==========================================
        APP FOOTER

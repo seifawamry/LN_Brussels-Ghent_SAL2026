@@ -56,8 +56,12 @@
    MOBILE PHONES & SMALL TABLETS (<= 768px)
    ========================================== */
 @media screen and (max-width: 768px) {
-  /* Show Mobile Bottom Nav */
+  /* Show Mobile Bottom Nav & Top Sticky Pill Bar */
   .mobile-bottom-nav {
+    display: block;
+  }
+
+  .mobile-tabs-pill-bar {
     display: block;
   }
 
@@ -119,8 +123,12 @@
 
   /* Main Container */
   .app-main-content {
-    margin: 16px auto;
-    padding: 0 12px;
+    margin: 14px auto;
+    padding: 0 12px 95px 12px; /* Safe clearance for mobile bottom bar */
+  }
+
+  .app-footer {
+    padding-bottom: 95px !important;
   }
 
   /* Hero Banner */
