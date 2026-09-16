@@ -1031,7 +1031,13 @@ function renderPediamilProducts(filter = "all") {
     if (p.logoKey === "pediamum") logoSrc = "assets/images/pediamum-logo.png";
     if (p.logoKey === "pediastart") logoSrc = "assets/images/pediastart-logo.png";
 
-    const waMsg = encodeURIComponent(`Hello Dr. Seif El Awamry, inquiry regarding Pediamil ${p.name}: `);
+    const waMsg = encodeURIComponent(`Hello Dr. Seif El Awamry, inquiry regarding ${p.name}: `);
+
+    const packImgHtml = p.packImage ? `
+      <div class="product-can-thumbnail">
+        <img src="${p.packImage}" alt="${p.name} Pack" loading="lazy">
+      </div>
+    ` : "";
 
     return `
       <div class="product-clinical-card ${p.category}">
@@ -1040,6 +1046,7 @@ function renderPediamilProducts(filter = "all") {
           <img src="${logoSrc}" alt="${p.brand}" class="product-brand-logo ${p.logoKey}-logo">
           <span class="product-stage-pill">${p.stage}</span>
         </div>
+        ${packImgHtml}
         <h4 class="product-full-name">${p.name}</h4>
         <p class="product-tagline">${p.tagline}</p>
         <p class="product-desc">${p.description}</p>
@@ -1090,7 +1097,7 @@ function openProductSpecs(productId) {
   if (modalLogo) modalLogo.src = logoSrc;
   if (modalBadge) modalBadge.textContent = product.badge;
 
-  // Dilution protocol
+  // Dilution protocol & clinical extensions
   let dilutionContent = "";
   if (product.id === "pediamum") {
     dilutionContent = `
@@ -1116,6 +1123,53 @@ function openProductSpecs(productId) {
         </p>
       </div>
     `;
+  } else if (product.id.startsWith("pedia-start")) {
+    const isStage2 = product.id === "pedia-start-2";
+    dilutionContent = `
+      <div class="spec-dilution-box pedia-start-spec-box">
+        <h5><i class="fas fa-prescription-bottle-alt"></i> Pedia-Start® ${isStage2 ? "Stage 2 (6–12m)" : "Stage 1 (0–6m)"} Preparation Table:</h5>
+        <div class="spec-table-wrap">
+          <div class="spec-table-row"><strong>Infant Age</strong><strong>Boiled Water</strong><strong>Level Scoops (~4.3g)</strong><strong>Feeds / 24h</strong></div>
+          ${isStage2 ? `
+            <div class="spec-table-row"><span>6th – 8th month</span><span>180 ml</span><span>6 scoops</span><span>4 – 5</span></div>
+            <div class="spec-table-row"><span>8th – 10th month</span><span>210 ml</span><span>7 scoops</span><span>3 – 4</span></div>
+            <div class="spec-table-row"><span>10th – 12th month</span><span>210 ml</span><span>7 scoops</span><span>3</span></div>
+          ` : `
+            <div class="spec-table-row"><span>1st – 2nd week</span><span>90 ml</span><span>3 scoops</span><span>6</span></div>
+            <div class="spec-table-row"><span>3rd – 4th week</span><span>120 ml</span><span>4 scoops</span><span>5 – 6</span></div>
+            <div class="spec-table-row"><span>2nd month</span><span>150 ml</span><span>5 scoops</span><span>5</span></div>
+            <div class="spec-table-row"><span>3rd – 4th month</span><span>180 ml</span><span>6 scoops</span><span>5</span></div>
+            <div class="spec-table-row"><span>5th – 6th month</span><span>210 ml</span><span>7 scoops</span><span>4 – 5</span></div>
+          `}
+        </div>
+        <p style="font-size:0.75rem; color:var(--text-muted); margin-top:8px; line-height:1.4;">
+          *Standard dilution: 1 level scoop (approx. 4.3g) per 30 ml (1 fl oz) of lukewarm boiled water. Always use enclosed scoop. Package: 350 gm powder.
+        </p>
+      </div>
+
+      <div class="spec-section-card pedia-start-science-highlight">
+        <h4><i class="fas fa-shield-alt" style="color:var(--gold-primary);"></i> Micro-Encapsulated Iron Technology (www.pedia-start.com)</h4>
+        <div style="display:flex; gap:14px; align-items:center; margin-bottom:12px; flex-wrap:wrap;">
+          <img src="assets/images/pedia-start-stamp.png" alt="Micro-encapsulated Iron Stamp" style="height:55px; width:auto; filter:drop-shadow(0 2px 5px rgba(0,0,0,0.15));">
+          <p style="font-size:0.84rem; line-height:1.5; color:var(--text-main); margin:0; flex:1; min-width:200px;">
+            <strong>Protection against 43% Anemia in Egyptian Infants:</strong> Sourced from the clinical dossier at <em>www.pedia-start.com</em>, micro-encapsulated iron delivers superior enterocyte bioavailability while eliminating gastrointestinal irritation, dark stools, and constipation.
+          </p>
+        </div>
+        <div class="ps-badges-strip">
+          <span class="ps-badge-pill"><i class="fas fa-check-circle"></i> >10:1 Vit C:Iron Ratio</span>
+          <span class="ps-badge-pill"><i class="fas fa-check-circle"></i> Choline + Taurine</span>
+          <span class="ps-badge-pill"><i class="fas fa-check-circle"></i> LA:ALA 10:1 Ratio</span>
+          <span class="ps-badge-pill"><i class="fas fa-check-circle"></i> 100% Non-GMO</span>
+          <span class="ps-badge-pill"><i class="fas fa-check-circle"></i> Zero Hormones &amp; Antibiotics</span>
+          <span class="ps-badge-pill"><i class="fas fa-check-circle"></i> Gluten &amp; Sucrose Free</span>
+        </div>
+        <div style="margin-top:14px; text-align:center;">
+          <a href="https://www.pedia-start.com" target="_blank" rel="noopener" class="ps-web-link-btn">
+            <i class="fas fa-globe"></i> Visit Official Scientific Portal: www.pedia-start.com
+          </a>
+        </div>
+      </div>
+    `;
   } else {
     dilutionContent = `
       <div class="spec-dilution-box">
@@ -1137,11 +1191,18 @@ function openProductSpecs(productId) {
 
   const waMsg = encodeURIComponent(`Hello Dr. Seif El Awamry, regarding Pediamil ${product.name} at the Brussels & Ghent 2026 Standalone Event, I have a clinical question: `);
 
+  const modalPackImg = product.packImage ? `
+    <div style="text-align:center; margin:12px 0 16px 0;">
+      <img src="${product.packImage}" alt="${product.name} Tin" style="max-height:180px; width:auto; filter:drop-shadow(0 8px 16px rgba(0,0,0,0.18));">
+    </div>
+  ` : "";
+
   modalBody.innerHTML = `
     <div class="spec-modal-headline">
       <h3>${product.name}</h3>
       <span class="spec-stage-badge">${product.stage}</span>
     </div>
+    ${modalPackImg}
     <p class="spec-tagline-text">${product.tagline}</p>
 
     <div class="spec-section-card">
