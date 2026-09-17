@@ -1330,8 +1330,8 @@ function performSearch(query) {
   const STAFF_SEARCH_DATA = [
     { name: "Dr. Ahmed Osama", role: "Senior Regional Manager", phone: "+20 11 1223 3606" },
     { name: "Dr. Hassan El Refaey", role: "Senior Regional Manager", phone: "+20 10 6661 4388" },
-    { name: "Fady Magdy", role: "Senior Regional Manager", phone: "+20 10 0366 1922" },
-    { name: "Ehab Anes", role: "Senior Regional Manager", phone: "+20 12 1051 1151" },
+    { name: "Dr. Fady Magdy", role: "Senior Regional Manager", phone: "+20 10 0366 1922" },
+    { name: "Dr. Ehab Anes", role: "Senior Regional Manager", phone: "+20 12 1051 1151" },
     { name: "Dr. Seif El Awamry", role: "Senior Product Manager", phone: "+20 10 0694 2226" },
     { name: "Dr. Ehab Atef", role: "Marketing & Medical Director", phone: "+20 10 6661 3506" },
     { name: "Dr. Ahmed Shoaib", role: "Country Manager", phone: "+20 10 9739 5002" }
@@ -1350,6 +1350,16 @@ function performSearch(query) {
       });
     }
   });
+
+  // Search WhatsApp Group
+  if ("whatsapp group chat community moments share delegation".includes(query) || query.includes("whatsapp")) {
+    matches.push({
+      type: "Event Community",
+      title: "Event WhatsApp Group",
+      sub: "Connect, chat & share special moments together",
+      tab: "overview"
+    });
+  }
 
   overlay.style.display = "block";
 
