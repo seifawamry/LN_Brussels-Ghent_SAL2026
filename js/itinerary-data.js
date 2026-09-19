@@ -77,7 +77,7 @@ const ITINERARY_DATA = [
         mapsUrl: "https://maps.google.com/?q=Renaissance+Brussels+Hotel",
         image: "assets/images/venues/hotel-renaissance.jpg",
         description: "Relaxing settling-in period for delegates to refresh in their rooms, unpack, and prepare for the evening corporate welcome program.",
-        notes: "Evening dress code: Smart Casual / Business Elegant."
+        notes: "Delegates may refresh in their rooms, unpack, and settle in comfortably prior to the evening program."
       },
       {
         time: "06:15 PM",
@@ -131,18 +131,18 @@ const ITINERARY_DATA = [
     date: "9 October 2026",
     title: "Executive Symposium, Brussels City Tour & Evening Dining",
     summary: "LIPTIS pediatric symposium, Atomium architectural tour, Royal Palace exterior visit, Manneken Pis, shopping along Rue Neuve, and 100% Halal dinner at Steak 'n' Chill.",
-    highlights: ["LIPTIS Pediatric Symposium", "Atomium Exploration [EE1]", "Royal Palace Exterior [EE2]", "Manneken Pis & Chocolates [EE3]", "Rue Neuve Retail", "100% Halal Dinner at Steak 'n' Chill"],
+    highlights: ["Liptis Scientific Symposium", "Atomium Exploration [EE1]", "Royal Palace Exterior", "Manneken Pis & Chocolates", "Rue Neuve Retail", "100% Halal Dinner at Steak 'n' Chill"],
     events: [
       {
         time: "09:00 AM",
         endTime: "12:00 PM",
-        title: "LIPTIS Symposium",
+        title: "Liptis Scientific Symposium",
         category: "scientific",
         location: "Renaissance Brussels Hotel, Executive Ballroom",
         mapsUrl: "https://maps.google.com/?q=Renaissance+Brussels+Hotel",
         image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop&q=80",
         description: "LIPTIS Symposium",
-        notes: "The premier scientific session: Advancing Infant & Pediatric Nutrition. High-impact clinical presentations, symposium dossiers on Pediamil & Pedia-Start portfolios, and keynote dialogues by Egypt's eminent pediatric leaders."
+        notes: "Latest scientific data with our eminent speakers with interactive Q&A Session"
       },
       {
         time: "12:15 PM",
@@ -164,7 +164,7 @@ const ITINERARY_DATA = [
         mapsUrl: "https://maps.google.com/?q=Renaissance+Brussels+Hotel",
         image: "assets/images/venues/hotel-renaissance.jpg",
         description: "Group gathering in the hotel lobby and swift boarding of private coaches for the afternoon Brussels cultural expedition.",
-        notes: "Please have your cameras and light walking jackets ready."
+        notes: "Get ready for the amazing tour and group photo"
       },
       {
         time: "01:00 PM",
@@ -192,25 +192,23 @@ const ITINERARY_DATA = [
       {
         time: "02:15 PM",
         endTime: "03:00 PM",
-        title: "Royal Palace of Brussels Exterior Tour [EE2]",
+        title: "Royal Palace of Brussels Exterior Tour",
         category: "culture",
         location: "Palais Royal de Bruxelles, Place des Palais",
         mapsUrl: "https://maps.google.com/?q=Royal+Palace+of+Brussels",
         image: "assets/images/venues/sightseeing-royal-palace.jpg",
         description: "Exterior historical tour of the Royal Palace of Brussels in the Park of Brussels, highlighting the administration and royal heritage of the Belgian monarchy.",
-        coordinatorNote: "[EE2] Organizer Pacing Insight: 'Too short time' — 45 minutes can feel brisk when exploring Brussels Park and the Place Royale views. Keep the group clustered around the palace gates and terrace for concise historical commentary.",
         notes: "Official palace of the King and Queen of the Belgians."
       },
       {
         time: "03:00 PM",
         endTime: "03:30 PM",
-        title: "Manneken Pis & Belgian Chocolate Stroll [EE3]",
+        title: "Manneken Pis & Belgian Chocolates",
         category: "culture",
         location: "Corner of Rue de l'Étuve & Rue du Chêne",
         mapsUrl: "https://maps.google.com/?q=Manneken+Pis",
         image: "assets/images/venues/sightseeing-manneken-pis.jpg",
-        description: "Stroll through the historic central cobblestone alleys to view the famous Manneken Pis monument and explore traditional Belgian chocolate boutiques.",
-        coordinatorNote: "[EE3] Group Logistics Insight: 'Not logic for big group' — The narrow cobblestone corner around Manneken Pis gets heavily congested. For a large VIP delegation, coordinators recommend breaking into two smaller sub-groups or establishing a distinct meeting corner (e.g. corner of Rue du Chêne) to prevent bottlenecks.",
+        description: "Visit the famous Manneken Pis monument and explore traditional Belgian chocolate boutiques.",
         notes: "Sample warm artisan Brussels waffles or speculoos cookies nearby."
       },
       {
@@ -427,7 +425,7 @@ const ITINERARY_DATA = [
         category: "flight",
         location: "EgyptAir Flight MS 726 (Brussels → Cairo)",
         mapsUrl: "https://www.google.com/travel/flights",
-        image: "https://images.unsplash.com/photo-1506015391300-4802dc74de2e?w=800&auto=format&fit=crop&q=80",
+        image: "assets/images/flight-departure.jpg",
         description: "Departure of EgyptAir flight MS 726 from Brussels Airport (BRU) to Cairo International Airport (CAI), concluding the four-day executive program.",
         notes: "Thank you for joining Liptis Nutrition in Belgium. Wishing all our Eminent Pediatricians a safe journey home!"
       }
