@@ -1,4 +1,4 @@
-const CACHE_NAME = "liptis-belgium-v3";
+const CACHE_NAME = "liptis-belgium-v5";
 const ASSETS_TO_CACHE = [
   "./",
   "./index.html",
@@ -13,6 +13,21 @@ const ASSETS_TO_CACHE = [
   "./assets/images/pediamum-logo.png",
   "./assets/images/pediastart-logo.png",
   "./assets/images/pedia-start-stamp.png",
+  "./assets/images/venues/hotel-renaissance.jpg",
+  "./assets/images/venues/dining-le-mignon.jpg",
+  "./assets/images/venues/dining-steak-n-chill.jpg",
+  "./assets/images/venues/dining-de-witte-leeuw.jpg",
+  "./assets/images/venues/sightseeing-grand-place.jpg",
+  "./assets/images/venues/sightseeing-atomium.jpg",
+  "./assets/images/venues/sightseeing-royal-palace.jpg",
+  "./assets/images/venues/sightseeing-manneken-pis.jpg",
+  "./assets/images/venues/shopping-rue-neuve.jpg",
+  "./assets/images/venues/sightseeing-gravensteen.jpg",
+  "./assets/images/venues/sightseeing-st-bavo.jpg",
+  "./assets/images/venues/sightseeing-oud-gerechtsgebouw.jpg",
+  "./assets/images/venues/sightseeing-graslei.jpg",
+  "./assets/images/venues/sightseeing-ghent-cruise.jpg",
+  "./assets/images/venues/shopping-veldstraat.jpg",
   "./manifest.json"
 ];
 
