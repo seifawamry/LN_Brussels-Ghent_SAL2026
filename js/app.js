@@ -358,8 +358,10 @@ function renderTimelineEvents(events) {
     return `
       <div class="timeline-event-card ${ev.category}">
         <div class="event-time-column">
-          <span class="event-time-start">${ev.time}</span>
-          ${ev.endTime ? `<span class="event-time-end">${ev.endTime}</span>` : ""}
+          <div class="event-time-group">
+            <span class="event-time-start">${ev.time}</span>
+            ${ev.endTime ? `<span class="event-time-end">– ${ev.endTime}</span>` : ""}
+          </div>
           <span class="category-pill ${ev.category}">${badgeCategory.label}</span>
         </div>
 
@@ -510,7 +512,7 @@ function downloadFullItineraryICS() {
       eventsICS.push(
         "BEGIN:VEVENT",
         `SUMMARY:LIPTIS: ${ev.title}`,
-        `DESCRIPTION:${ev.description.replace(/\n/g, "\\n")} (${ev.time} - ${ev.endTime || ""})`,
+        `DESCRIPTION:${ev.description.replace(/\n/g, "\\n")} (${ev.time}${ev.endTime ? " - " + ev.endTime : ""})`,
         `LOCATION:${ev.location}`,
         `DTSTART:${dates[d.dayNumber]}T080000Z`,
         `DTEND:${dates[d.dayNumber]}T090000Z`,

@@ -1302,22 +1302,30 @@ img {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 4px;
+  gap: 6px;
   border-right: 1px solid var(--border-light);
   padding-right: 16px;
 }
 
+.event-time-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
 .event-time-start {
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   font-weight: 800;
   color: var(--navy-deep);
-  line-height: 1.1;
+  line-height: 1.15;
 }
 
 .event-time-end {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   color: var(--text-muted);
-  font-weight: 600;
+  font-weight: 700;
+  line-height: 1.15;
 }
 
 .category-pill {
