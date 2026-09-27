@@ -58,6 +58,11 @@
           <div id="search-results-overlay" class="search-results-overlay"></div>
         </div>
 
+        <!-- Add App to Phone Button -->
+        <button class="add-app-header-btn" id="add-app-header-btn" onclick="openInstallModal()" title="Add App. to your phone" aria-label="Add App. to your phone">
+          <i class="fas fa-mobile-screen-button"></i> <span>Add App. to your phone</span>
+        </button>
+
         <!-- Print / PDF Button -->
         <button class="pdf-print-btn" onclick="window.print()" title="Print / Save Guide as PDF">
           <i class="fas fa-print"></i> <span>Save PDF</span>
@@ -175,6 +180,9 @@
     </div>
 
     <nav class="drawer-nav-list">
+      <button class="drawer-nav-item drawer-install-item" onclick="openInstallModal(); closeMobileDrawer();">
+        <i class="fas fa-mobile-screen-button"></i> <span>Add App. to your phone</span>
+      </button>
       <button class="drawer-nav-item active" data-nav-tab="overview">
         <i class="fas fa-home"></i> <span>Overview & Welcome</span>
       </button>
@@ -219,6 +227,22 @@
          TAB 1: OVERVIEW & WELCOME
          ========================================== -->
     <section id="section-overview" class="tab-content-section active">
+
+      <!-- Home Screen Top Header "Add App. to your phone" Banner -->
+      <div class="home-screen-add-app-banner" onclick="openInstallModal()" title="Add App. to your phone">
+        <div class="hs-add-app-content">
+          <div class="hs-add-app-icon-wrap">
+            <i class="fas fa-mobile-screen-button"></i>
+          </div>
+          <div class="hs-add-app-info">
+            <span class="hs-add-app-title">Add App. to your phone</span>
+            <span class="hs-add-app-sub">Install on your iPhone or Android for instant 1-tap offline access</span>
+          </div>
+        </div>
+        <button class="hs-add-app-action-btn" type="button" aria-label="Add App. to your phone">
+          <i class="fas fa-arrow-down-to-bracket"></i> <span>Install</span>
+        </button>
+      </div>
 
       <!-- Hero Executive Banner -->
       <div class="hero-executive-banner">
@@ -1848,6 +1872,140 @@
     </div>
     <div class="spec-modal-body" id="spec-modal-body">
       <!-- Injected dynamically via JS -->
+    </div>
+  </div>
+
+  <!-- ==========================================
+       ADD APP TO YOUR PHONE INSTRUCTION MODAL
+       ========================================== -->
+  <div class="install-modal-backdrop" id="install-modal-backdrop" onclick="closeInstallModal()"></div>
+  <div class="install-app-modal" id="install-app-modal" role="dialog" aria-modal="true" aria-labelledby="install-modal-title">
+    <div class="install-modal-header">
+      <div class="install-modal-brand">
+        <div class="install-modal-logo-wrap">
+          <img src="assets/images/pediamil-logo.png" alt="Liptis Belgium" class="install-modal-logo">
+        </div>
+        <div>
+          <h3 id="install-modal-title" class="install-modal-title">Add App. to your phone</h3>
+          <p class="install-modal-subtitle">Liptis Nutrition Brussels &amp; Ghent 2026</p>
+        </div>
+      </div>
+      <button class="install-modal-close" onclick="closeInstallModal()" aria-label="Close Instructions">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <!-- Platform Selector Tabs -->
+    <div class="install-os-tabs">
+      <button class="install-os-tab active" id="tab-btn-ios" onclick="switchInstallOS('ios')" type="button">
+        <i class="fab fa-apple"></i>
+        <span>iPhone (iOS)</span>
+      </button>
+      <button class="install-os-tab" id="tab-btn-android" onclick="switchInstallOS('android')" type="button">
+        <i class="fab fa-android"></i>
+        <span>Android Phone</span>
+      </button>
+    </div>
+
+    <!-- Modal Body -->
+    <div class="install-modal-body">
+      <!-- iOS / iPhone Steps -->
+      <div class="install-os-content active" id="install-content-ios">
+        <div class="install-browser-note">
+          <i class="fab fa-safari"></i>
+          <span>Please ensure you open this page in <strong>Apple Safari</strong> on your iPhone.</span>
+        </div>
+
+        <div class="install-steps-container">
+          <div class="install-step-item">
+            <div class="step-badge">1</div>
+            <div class="step-text">
+              <h4>Tap the Share Button</h4>
+              <p>At the bottom of your Safari screen, tap the <strong>Share</strong> icon <span class="step-key-icon"><i class="fas fa-arrow-up-from-bracket"></i></span> (a square with an upward arrow).</p>
+            </div>
+          </div>
+
+          <div class="install-step-item">
+            <div class="step-badge">2</div>
+            <div class="step-text">
+              <h4>Select "Add to Home Screen"</h4>
+              <p>Scroll down the options list and tap <span class="step-action-tag"><i class="far fa-plus-square"></i> Add to Home Screen</span>.</p>
+            </div>
+          </div>
+
+          <div class="install-step-item">
+            <div class="step-badge">3</div>
+            <div class="step-text">
+              <h4>Tap "Add"</h4>
+              <p>Tap <strong>"Add"</strong> in the top-right corner. The <strong>Liptis Belgium</strong> icon will appear on your home screen for instant 1-tap access!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Android Steps -->
+      <div class="install-os-content" id="install-content-android">
+        <div class="install-browser-note">
+          <i class="fab fa-chrome"></i>
+          <span>Works in <strong>Google Chrome</strong>, <strong>Samsung Internet</strong>, or <strong>Edge</strong>.</span>
+        </div>
+
+        <div class="pwa-prompt-box" id="pwa-prompt-box" style="display:none;">
+          <button class="pwa-direct-install-btn" id="pwa-direct-install-btn" onclick="triggerPWAInstall()" type="button">
+            <i class="fas fa-download"></i> <span>Install App Directly</span>
+          </button>
+          <span class="pwa-direct-hint">Tap to install with 1 tap</span>
+        </div>
+
+        <div class="install-steps-container">
+          <div class="install-step-item">
+            <div class="step-badge">1</div>
+            <div class="step-text">
+              <h4>Open Browser Menu</h4>
+              <p>In the top-right corner of Chrome, tap the <strong>Menu</strong> icon <span class="step-key-icon"><i class="fas fa-ellipsis-vertical"></i></span> (three vertical dots).</p>
+            </div>
+          </div>
+
+          <div class="install-step-item">
+            <div class="step-badge">2</div>
+            <div class="step-text">
+              <h4>Tap "Add to Home screen" or "Install"</h4>
+              <p>Select <span class="step-action-tag"><i class="fas fa-mobile-screen-button"></i> Add to Home screen</span> or <strong>Install app</strong> from the menu.</p>
+            </div>
+          </div>
+
+          <div class="install-step-item">
+            <div class="step-badge">3</div>
+            <div class="step-text">
+              <h4>Confirm Install</h4>
+              <p>Tap <strong>"Install"</strong> or <strong>"Add"</strong>. The app icon will be placed directly onto your home screen!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Doctor Benefits Highlights -->
+      <div class="install-perks-row">
+        <div class="perk-pill">
+          <i class="fas fa-bolt"></i>
+          <span>1-Tap Launch</span>
+        </div>
+        <div class="perk-pill">
+          <i class="fas fa-wifi"></i>
+          <span>Offline Ready</span>
+        </div>
+        <div class="perk-pill">
+          <i class="fas fa-shield-halved"></i>
+          <span>No Store Download</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Footer with the OK Button -->
+    <div class="install-modal-footer">
+      <button class="install-ok-btn" onclick="closeInstallModal()" type="button" aria-label="Acknowledge instructions">
+        <i class="fas fa-check-circle"></i> OK
+      </button>
     </div>
   </div>
 

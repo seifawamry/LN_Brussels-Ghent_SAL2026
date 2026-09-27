@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
       closeMobileHubSheet();
       closeProductSpecs();
       closeSearchOverlay();
+      closeInstallModal();
     }
   });
 });
@@ -1407,3 +1408,111 @@ function jumpToSearchResult(tab, day = 1) {
     setDayFilter(day);
   }
 }
+
+// ==========================================
+// 12. ADD APP TO YOUR PHONE (INSTALL MODAL)
+// ==========================================
+let deferredInstallPrompt = null;
+
+// Listen for browser PWA install event (Android Chrome, Edge, etc.)
+window.addEventListener("beforeinstallprompt", (e) => {
+  e.preventDefault();
+  deferredInstallPrompt = e;
+
+  // Reveal direct 1-tap install box in modal if available
+  const pwaBox = document.getElementById("pwa-prompt-box");
+  if (pwaBox) {
+    pwaBox.style.display = "block";
+  }
+});
+
+window.addEventListener("appinstalled", () => {
+  deferredInstallPrompt = null;
+  const pwaBox = document.getElementById("pwa-prompt-box");
+  if (pwaBox) pwaBox.style.display = "none";
+  closeInstallModal();
+});
+
+function openInstallModal() {
+  const backdrop = document.getElementById("install-modal-backdrop");
+  const modal = document.getElementById("install-app-modal");
+  if (!modal || !backdrop) return;
+
+  // Auto-detect Operating System: iPhone (iOS) vs Android
+  const userAgent = navigator.userAgent || navigator.vendor || window.opera || "";
+  const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
+
+  if (isIOS) {
+    switchInstallOS("ios");
+  } else {
+    // Default to Android for Android devices, desktop Chrome/Edge, etc.
+    switchInstallOS("android");
+  }
+
+  // Display PWA 1-tap prompt if browser supports it
+  const pwaBox = document.getElementById("pwa-prompt-box");
+  if (pwaBox && deferredInstallPrompt) {
+    pwaBox.style.display = "block";
+  }
+
+  backdrop.classList.add("active");
+  modal.classList.add("active");
+  document.body.classList.add("modal-open");
+}
+
+function closeInstallModal() {
+  const backdrop = document.getElementById("install-modal-backdrop");
+  const modal = document.getElementById("install-app-modal");
+  if (backdrop) backdrop.classList.remove("active");
+  if (modal) modal.classList.remove("active");
+  document.body.classList.remove("modal-open");
+}
+
+function switchInstallOS(os) {
+  const tabIos = document.getElementById("tab-btn-ios");
+  const tabAndroid = document.getElementById("tab-btn-android");
+  const contentIos = document.getElementById("install-content-ios");
+  const contentAndroid = document.getElementById("install-content-android");
+
+  if (!tabIos || !tabAndroid || !contentIos || !contentAndroid) return;
+
+  if (os === "ios") {
+    tabIos.classList.add("active");
+    tabAndroid.classList.remove("active");
+    contentIos.classList.add("active");
+    contentAndroid.classList.remove("active");
+  } else {
+    tabAndroid.classList.add("active");
+    tabIos.classList.remove("active");
+    contentAndroid.classList.add("active");
+    contentIos.classList.remove("active");
+  }
+}
+
+async function triggerPWAInstall() {
+  if (!deferredInstallPrompt) {
+    alert("Please tap the browser menu (three dots in the top right) and choose 'Add to Home screen' or 'Install App'.");
+    return;
+  }
+
+  try {
+    deferredInstallPrompt.prompt();
+    const choiceResult = await deferredInstallPrompt.userChoice;
+    if (choiceResult && choiceResult.outcome === "accepted") {
+      closeInstallModal();
+    }
+  } catch (err) {
+    console.warn("PWA install error:", err);
+  } finally {
+    deferredInstallPrompt = null;
+    const pwaBox = document.getElementById("pwa-prompt-box");
+    if (pwaBox) pwaBox.style.display = "none";
+  }
+}
+
+// Expose globally for HTML onclick attributes
+window.openInstallModal = openInstallModal;
+window.closeInstallModal = closeInstallModal;
+window.switchInstallOS = switchInstallOS;
+window.triggerPWAInstall = triggerPWAInstall;
+

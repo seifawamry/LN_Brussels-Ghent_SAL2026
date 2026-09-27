@@ -3921,9 +3921,554 @@ img {
   box-shadow: 0 2px 6px rgba(37, 211, 102, 0.3);
 }
 
+/* ==========================================
+   ADD APP TO PHONE HEADER & BANNER BUTTONS
+   ========================================== */
+.add-app-header-btn {
+  background: linear-gradient(135deg, #1b365d 0%, #0d2c4a 100%);
+  color: var(--gold-light);
+  border: 1.5px solid var(--gold-primary);
+  border-radius: var(--radius-pill);
+  padding: 7px 15px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+  letter-spacing: 0.2px;
+}
+
+.add-app-header-btn i {
+  color: var(--gold-primary);
+  font-size: 0.9rem;
+  transition: transform 0.2s ease;
+}
+
+.add-app-header-btn:hover {
+  background: linear-gradient(135deg, #244777 0%, #13395e 100%);
+  border-color: var(--gold-champagne);
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(212, 166, 45, 0.35);
+}
+
+.add-app-header-btn:hover i {
+  transform: scale(1.15);
+}
+
+.add-app-header-btn:active {
+  transform: translateY(0) scale(0.97);
+}
+
+/* Home Screen Overview Top Banner */
+.home-screen-add-app-banner {
+  background: linear-gradient(135deg, #ffffff 0%, #f7f9fc 100%);
+  border: 1.5px solid rgba(212, 166, 45, 0.45);
+  border-left: 5px solid var(--gold-primary);
+  border-radius: var(--radius-md);
+  padding: 14px 18px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(13, 44, 74, 0.06);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.home-screen-add-app-banner:hover {
+  border-color: var(--gold-primary);
+  box-shadow: 0 6px 20px rgba(212, 166, 45, 0.2);
+  transform: translateY(-2px);
+}
+
+.hs-add-app-content {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.hs-add-app-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0d2c4a 0%, #1b365d 100%);
+  color: var(--gold-light);
+  border: 1.5px solid var(--gold-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  flex-shrink: 0;
+  box-shadow: 0 3px 10px rgba(13, 44, 74, 0.2);
+}
+
+.hs-add-app-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.hs-add-app-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--navy-deep);
+  letter-spacing: -0.2px;
+}
+
+.hs-add-app-sub {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.35;
+}
+
+.hs-add-app-action-btn {
+  background: var(--gold-gradient);
+  color: var(--navy-deep);
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 8px 18px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(212, 166, 45, 0.35);
+  transition: all 0.2s ease;
+}
+
+.home-screen-add-app-banner:hover .hs-add-app-action-btn {
+  transform: scale(1.04);
+  box-shadow: 0 4px 12px rgba(212, 166, 45, 0.5);
+}
+
+/* Mobile Drawer Install Item */
+.drawer-install-item {
+  background: linear-gradient(135deg, rgba(212, 166, 45, 0.12) 0%, rgba(212, 166, 45, 0.04) 100%) !important;
+  border: 1px solid rgba(212, 166, 45, 0.4) !important;
+  color: var(--gold-dark) !important;
+  font-weight: 800 !important;
+  margin-bottom: 8px;
+  border-radius: var(--radius-sm);
+}
+
+.drawer-install-item i {
+  color: var(--gold-primary) !important;
+}
+
+/* ==========================================
+   ADD APP TO PHONE MODAL STYLES
+   ========================================== */
+.install-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(13, 44, 74, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 2200;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.28s ease;
+}
+
+.install-modal-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.install-app-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -46%) scale(0.96);
+  width: 92%;
+  max-width: 520px;
+  max-height: 90vh;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  z-index: 2201;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid rgba(212, 166, 45, 0.3);
+}
+
+.install-app-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.install-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background: linear-gradient(135deg, #0d2c4a 0%, #1b365d 100%);
+  color: #ffffff;
+  border-bottom: 2px solid var(--gold-primary);
+}
+
+.install-modal-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.install-modal-logo-wrap {
+  background: #ffffff;
+  padding: 4px 8px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.install-modal-logo {
+  height: 22px;
+  width: auto;
+  object-fit: contain;
+}
+
+.install-modal-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.25;
+}
+
+.install-modal-subtitle {
+  font-size: 0.72rem;
+  color: var(--gold-light);
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.install-modal-close {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.install-modal-close:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: rotate(90deg);
+}
+
+/* OS Switcher Tabs */
+.install-os-tabs {
+  display: flex;
+  gap: 8px;
+  padding: 12px 20px 8px 20px;
+  background: #f4f7fb;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.install-os-tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1.5px solid transparent;
+  background: #ffffff;
+  color: var(--navy-medium);
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.22s ease;
+}
+
+.install-os-tab i {
+  font-size: 1.05rem;
+}
+
+.install-os-tab.active {
+  background: linear-gradient(135deg, #0d2c4a 0%, #1b365d 100%);
+  color: #ffffff;
+  border-color: var(--gold-primary);
+  box-shadow: 0 4px 12px rgba(13, 44, 74, 0.2);
+}
+
+.install-os-tab.active i {
+  color: var(--gold-light);
+}
+
+/* Modal Body & Step Cards */
+.install-modal-body {
+  padding: 16px 20px;
+  overflow-y: auto;
+  max-height: calc(90vh - 180px);
+  -webkit-overflow-scrolling: touch;
+}
+
+.install-os-content {
+  display: none;
+}
+
+.install-os-content.active {
+  display: block;
+  animation: fadeInStep 0.25s ease forwards;
+}
+
+@keyframes fadeInStep {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.install-browser-note {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #eef5fc;
+  border: 1px solid #d0e2f5;
+  border-left: 4px solid var(--blue-royal);
+  border-radius: var(--radius-sm);
+  padding: 9px 12px;
+  font-size: 0.82rem;
+  color: var(--navy-deep);
+  margin-bottom: 14px;
+}
+
+.install-browser-note i {
+  font-size: 1.15rem;
+  color: var(--blue-royal);
+  flex-shrink: 0;
+}
+
+.pwa-prompt-box {
+  background: linear-gradient(135deg, rgba(212, 166, 45, 0.12) 0%, rgba(26, 82, 118, 0.08) 100%);
+  border: 1.5px dashed var(--gold-primary);
+  border-radius: var(--radius-sm);
+  padding: 12px;
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+.pwa-direct-install-btn {
+  background: var(--gold-gradient);
+  color: var(--navy-deep);
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 10px 22px;
+  font-size: 0.88rem;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(212, 166, 45, 0.35);
+  transition: all 0.2s ease;
+}
+
+.pwa-direct-install-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(212, 166, 45, 0.5);
+}
+
+.pwa-direct-hint {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: 6px;
+}
+
+.install-steps-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.install-step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 11px 13px;
+  background: #fbfcfe;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
+}
+
+.install-step-item:hover {
+  background: #ffffff;
+  border-color: rgba(212, 166, 45, 0.5);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.step-badge {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0d2c4a 0%, #1b365d 100%);
+  color: var(--gold-light);
+  border: 1px solid var(--gold-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 800;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.step-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.step-text h4 {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--navy-deep);
+  margin-bottom: 3px;
+}
+
+.step-text p {
+  font-size: 0.82rem;
+  color: var(--text-main);
+  line-height: 1.45;
+  margin: 0;
+}
+
+.step-key-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border: 1px solid #ccd7e2;
+  border-radius: 6px;
+  padding: 1px 7px;
+  color: var(--blue-royal);
+  font-size: 0.82rem;
+  margin: 0 2px;
+  vertical-align: middle;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.step-action-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--gold-champagne);
+  color: var(--navy-deep);
+  font-weight: 700;
+  border-radius: 6px;
+  padding: 1px 7px;
+  font-size: 0.8rem;
+  margin: 0 2px;
+  vertical-align: middle;
+}
+
+.install-perks-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-light);
+}
+
+.perk-pill {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background: #f2f6fa;
+  border: 1px solid #e1e9f1;
+  border-radius: var(--radius-pill);
+  padding: 6px 4px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--navy-medium);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.perk-pill i {
+  color: var(--gold-dark);
+  font-size: 0.78rem;
+}
+
+/* Modal Footer & OK Button */
+.install-modal-footer {
+  padding: 14px 20px 18px 20px;
+  background: #fbfcfe;
+  border-top: 1px solid var(--border-light);
+  display: flex;
+  justify-content: center;
+}
+
+.install-ok-btn {
+  background: linear-gradient(135deg, #0d2c4a 0%, #1b365d 100%);
+  color: var(--gold-light);
+  border: 1.5px solid var(--gold-primary);
+  border-radius: var(--radius-pill);
+  padding: 11px 48px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(13, 44, 74, 0.3);
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  min-width: 180px;
+}
+
+.install-ok-btn i {
+  color: var(--gold-primary);
+  font-size: 1.05rem;
+}
+
+.install-ok-btn:hover {
+  background: linear-gradient(135deg, #1b365d 0%, #244777 100%);
+  color: #ffffff;
+  border-color: var(--gold-champagne);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(13, 44, 74, 0.4);
+}
+
+.install-ok-btn:active {
+  transform: scale(0.97);
+}
+
 /* Print Styles */
 @media print {
-  .app-header, .desktop-nav-bar, .mobile-bottom-nav, .search-box-wrap, .pdf-print-btn, .coordinator-toggle-btn {
+  .app-header, .desktop-nav-bar, .mobile-bottom-nav, .search-box-wrap, .pdf-print-btn, .coordinator-toggle-btn, .add-app-header-btn, .home-screen-add-app-banner, .install-modal-backdrop, .install-app-modal {
     display: none !important;
   }
   body {
@@ -3936,3 +4481,4 @@ img {
     page-break-after: always;
   }
 }
+
