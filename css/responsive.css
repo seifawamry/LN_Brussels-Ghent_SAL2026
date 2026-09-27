@@ -36,6 +36,14 @@ h1, h2, h3, h4, h5, h6, p, span, strong, em, div, a, label {
     width: 220px;
   }
 
+  .add-app-header-btn {
+    padding: 7px 12px;
+  }
+
+  .add-app-header-btn .add-app-btn-text {
+    font-size: 0.74rem;
+  }
+
   .hero-executive-banner {
     padding: 30px 24px;
   }
@@ -108,22 +116,97 @@ h1, h2, h3, h4, h5, h6, p, span, strong, em, div, a, label {
     display: none;
   }
 
-  /* Header adjustments */
+  /* ==========================================
+     EXECUTIVE HEADER ON MOBILE (FIXED & BALANCED)
+     ========================================== */
   .header-top-bar {
     padding: 8px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
   }
 
-  .main-brand-logo {
-    height: 32px;
+  .brand-suite {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+    flex: 1 1 auto;
+    overflow: hidden;
+  }
+
+  .corporate-logo-pill {
+    background: #ffffff;
+    padding: 3px 8px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .corporate-brand-logo {
+    height: 25px;
+    width: auto;
+    max-width: 70px;
+    object-fit: contain;
+  }
+
+  .brand-divider {
+    width: 1px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.25);
+    flex-shrink: 0;
+    margin: 0 1px;
+  }
+
+  .sub-product-logo {
+    height: 22px;
+    width: auto;
+    max-width: 52px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  .brand-text-block {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    overflow: hidden;
+    justify-content: center;
   }
 
   .brand-tagline {
-    font-size: 0.55rem;
-    letter-spacing: 1px;
+    font-size: 0.50rem;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--gold-light);
+    font-weight: 800;
+    line-height: 1.1;
   }
 
   .event-sub-label {
-    font-size: 0.75rem;
+    font-size: 0.70rem;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #ffffff;
+    line-height: 1.2;
+  }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
   }
 
   .search-box-wrap {
@@ -134,30 +217,61 @@ h1, h2, h3, h4, h5, h6, p, span, strong, em, div, a, label {
     display: none;
   }
 
+  /* Add App Icon Button on Mobile: Symmetrical 40px icon button */
   .add-app-header-btn {
-    display: inline-flex;
-    padding: 6px 12px;
-    font-size: 0.74rem;
-    gap: 6px;
-    border-radius: var(--radius-pill);
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    padding: 0;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1b365d 0%, #0d2c4a 100%);
+    border: 1.5px solid var(--gold-primary);
+    color: var(--gold-light);
+    box-shadow: 0 2px 8px rgba(13, 44, 74, 0.35);
+    position: relative;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .add-app-header-btn:hover,
+  .add-app-header-btn:active {
+    transform: scale(0.96);
+    box-shadow: 0 0 10px rgba(212, 166, 45, 0.4);
   }
 
   .add-app-header-btn i {
-    font-size: 0.85rem;
+    font-size: 1.15rem;
+    color: var(--gold-primary);
+  }
+
+  .add-app-header-btn .add-app-btn-text {
+    display: none; /* Long text hidden on mobile navbar */
+  }
+
+  .add-app-header-btn .install-pulse-dot {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    margin: 0;
   }
 
   .mobile-drawer-btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 44px;
-    height: 44px;
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
     border-radius: var(--radius-sm);
     background: var(--navy-deep);
     color: var(--gold-light);
     border: 1.5px solid var(--gold-primary);
     box-shadow: 0 2px 8px rgba(13, 44, 74, 0.3);
+    flex-shrink: 0;
   }
 
   /* Clocks Ribbon - Wrap elements cleanly to prevent protrusion */
@@ -883,16 +997,56 @@ h1, h2, h3, h4, h5, h6, p, span, strong, em, div, a, label {
     transform: translateY(0);
   }
 
+  /* Compact & Sleek Home Screen Add App Banner */
   .home-screen-add-app-banner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-    padding: 12px 14px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 14px;
+    gap: 10px;
+    margin-bottom: 16px;
+    border-radius: var(--radius-md);
+  }
+
+  .hs-add-app-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+    flex: 1;
+  }
+
+  .hs-add-app-icon-wrap {
+    width: 36px;
+    height: 36px;
+    font-size: 0.95rem;
+    flex-shrink: 0;
+  }
+
+  .hs-add-app-info {
+    min-width: 0;
+  }
+
+  .hs-add-app-title {
+    font-size: 0.85rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .hs-add-app-sub {
+    font-size: 0.70rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   .hs-add-app-action-btn {
-    width: 100%;
-    justify-content: center;
+    padding: 6px 14px;
+    font-size: 0.75rem;
+    flex-shrink: 0;
+    width: auto;
   }
 
   .perk-pill {
@@ -904,14 +1058,47 @@ h1, h2, h3, h4, h5, h6, p, span, strong, em, div, a, label {
    EXTRA COMPACT SCREENS (<= 380px)
    ========================================== */
 @media screen and (max-width: 380px) {
-  .add-app-header-btn {
-    padding: 5px 8px;
-    font-size: 0.68rem;
-    gap: 4px;
+  .header-top-bar {
+    padding: 6px 8px;
+    gap: 6px;
   }
 
-  .add-app-header-btn span {
-    font-size: 0.68rem;
+  .brand-suite {
+    gap: 5px;
+  }
+
+  .corporate-logo-pill {
+    padding: 2px 5px;
+  }
+
+  .corporate-brand-logo {
+    height: 20px;
+    max-width: 55px;
+  }
+
+  .sub-product-logo {
+    height: 18px;
+    max-width: 42px;
+  }
+
+  .brand-tagline {
+    display: none; /* Hide tagline to give full width to event label */
+  }
+
+  .event-sub-label {
+    font-size: 0.65rem;
+  }
+
+  .add-app-header-btn,
+  .mobile-drawer-btn {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+  }
+
+  .add-app-header-btn i,
+  .mobile-drawer-btn i {
+    font-size: 1rem;
   }
 
   .contact-actions-row {

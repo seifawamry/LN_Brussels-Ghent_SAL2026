@@ -3964,6 +3964,23 @@ img {
   transform: translateY(0) scale(0.97);
 }
 
+.install-pulse-dot {
+  width: 7px;
+  height: 7px;
+  background: var(--gold-primary);
+  border: 1px solid var(--navy-deep);
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 2px;
+  animation: pulseInstall 2s infinite ease-in-out;
+}
+
+@keyframes pulseInstall {
+  0% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(212, 166, 45, 0.7); }
+  70% { transform: scale(1.2); box-shadow: 0 0 0 5px rgba(212, 166, 45, 0); }
+  100% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(212, 166, 45, 0); }
+}
+
 /* Home Screen Overview Top Banner */
 .home-screen-add-app-banner {
   background: linear-gradient(135deg, #ffffff 0%, #f7f9fc 100%);
