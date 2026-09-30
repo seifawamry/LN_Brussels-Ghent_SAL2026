@@ -1036,6 +1036,8 @@ h1, h2, h3, h4, h5, h6, p, span, strong, em, div, a, label {
   .hs-add-app-icon-wrap {
     width: 36px;
     height: 36px;
+    border-radius: 8px;
+    overflow: hidden;
     font-size: 0.95rem;
     flex-shrink: 0;
   }

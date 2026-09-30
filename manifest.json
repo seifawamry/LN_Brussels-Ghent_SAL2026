@@ -1,7 +1,7 @@
 {
-  "name": "Liptis Nutrition Brussels & Ghent Standalone",
-  "short_name": "Liptis Belgium",
-  "description": "Interactive Program & Travel Manual for Egypt Eminent Pediatricians",
+  "name": "LIPTIS BRUSSEL SAL APP",
+  "short_name": "LIPTIS BRUSSEL SAL APP",
+  "description": "Liptis Nutrition Brussels & Ghent Standalone Event Guide",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#0d2c4a",
@@ -9,16 +9,28 @@
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "assets/images/pediamil-logo.png",
+      "src": "assets/icons/app-icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
-      "src": "assets/images/pediamil-logo.png",
+      "src": "assets/icons/app-icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/app-icon-1024.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/app-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ]
 }

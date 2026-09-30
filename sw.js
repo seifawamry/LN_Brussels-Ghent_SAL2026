@@ -1,4 +1,4 @@
-const CACHE_NAME = "liptis-belgium-v12";
+const CACHE_NAME = "liptis-belgium-v13";
 const ASSETS_TO_CACHE = [
   "./",
   "./index.html",
@@ -10,6 +10,16 @@ const ASSETS_TO_CACHE = [
   "./js/pediamil-products.js",
   "./js/travel-guide.js",
   "./js/app.js",
+  "./assets/icons/app-icon-1024.png",
+  "./assets/icons/app-icon-512.png",
+  "./assets/icons/app-icon-192.png",
+  "./assets/icons/app-icon-180.png",
+  "./assets/icons/app-icon-96.png",
+  "./assets/icons/app-icon-64.png",
+  "./assets/icons/favicon-32x32.png",
+  "./assets/icons/apple-touch-icon.png",
+  "./assets/icons/app-icon.png",
+  "./assets/icons/favicon.png",
   "./assets/images/pediamil-logo.png",
   "./assets/images/pediamum-logo.png",
   "./assets/images/pediastart-logo.png",
