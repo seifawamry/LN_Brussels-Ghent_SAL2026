@@ -1368,7 +1368,7 @@ function performSearch(query) {
   }
 
   // Search Travel Essentials (Weather, Clothes, Electricity, Currency)
-  if ("weather autumn climate temperature rain cold forecast clothes clothing packing coat jacket suit dress shoes umbrella scarf".includes(query)) {
+  if ("weather autumn climate temperature rain cold forecast clothes clothing packing coat jacket sweater layer umbrella scarf".includes(query)) {
     matches.push({
       type: "Travel Essentials",
       title: "Weather & Recommended Clothing",
