@@ -75,6 +75,23 @@ h1, h2, h3, h4, h5, h6, p, span, strong, em, div, a, label {
   .qibla-info-details {
     text-align: center;
   }
+
+  /* Travel Essentials & Currency on Tablet */
+  .weather-forecast-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .packing-pillars-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .payment-advice-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .plug-comparison-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 /* ==========================================
@@ -1052,6 +1069,176 @@ h1, h2, h3, h4, h5, h6, p, span, strong, em, div, a, label {
   .perk-pill {
     font-size: 0.68rem;
   }
+
+  /* Travel Essentials & Currency on Mobile */
+  .travel-guide-module {
+    padding: 20px 14px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .travel-quick-jumps {
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .travel-jump-pill {
+    padding: 6px 12px;
+    font-size: 0.74rem;
+    flex: 1 1 auto;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .module-title-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .climate-comparison-card {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 16px 14px;
+    text-align: center;
+  }
+
+  .climate-vs-badge {
+    margin: 4px auto;
+  }
+
+  .climate-temp {
+    justify-content: center;
+  }
+
+  .weather-forecast-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .forecast-day-card {
+    padding: 14px;
+  }
+
+  .packing-pillars-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .checklist-items-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .power-compatibility-banner {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 16px 14px;
+  }
+
+  .plug-comparison-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .currency-calculator-card {
+    padding: 18px 14px;
+    box-sizing: border-box;
+  }
+
+  .currency-inputs-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .currency-card {
+    padding: 14px;
+  }
+
+  .currency-presets-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .preset-buttons-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    width: 100%;
+  }
+
+  .currency-preset-btn {
+    flex: 1 1 calc(33.333% - 6px);
+    text-align: center;
+    padding: 6px 4px;
+    font-size: 0.74rem;
+  }
+
+  .exchange-rates-strip {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .rates-display-group {
+    width: 100%;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .rate-badge {
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .rate-adjust-toggle-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 8px;
+  }
+
+  .custom-inputs-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .custom-input-group input {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .custom-actions-group {
+    width: 100%;
+  }
+
+  .custom-rate-btn {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .belgium-price-cheatsheet {
+    padding: 16px 14px;
+  }
+
+  .cheatsheet-table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+  }
+
+  .cheatsheet-table {
+    min-width: 520px;
+  }
+
+  .payment-advice-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
 }
 
 /* ==========================================
@@ -1130,5 +1317,13 @@ h1, h2, h3, h4, h5, h6, p, span, strong, em, div, a, label {
   .clock-time {
     font-size: 0.70rem;
     padding: 1px 4px;
+  }
+
+  .currency-preset-btn {
+    flex: 1 1 calc(50% - 6px);
+  }
+
+  .travel-guide-module {
+    padding: 14px 10px;
   }
 }

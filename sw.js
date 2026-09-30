@@ -1,4 +1,4 @@
-const CACHE_NAME = "liptis-belgium-v11";
+const CACHE_NAME = "liptis-belgium-v12";
 const ASSETS_TO_CACHE = [
   "./",
   "./index.html",
@@ -8,6 +8,7 @@ const ASSETS_TO_CACHE = [
   "./js/vat-calculator.js",
   "./js/prayer-times.js",
   "./js/pediamil-products.js",
+  "./js/travel-guide.js",
   "./js/app.js",
   "./assets/images/pediamil-logo.png",
   "./assets/images/pediamum-logo.png",

@@ -14,6 +14,9 @@ document.addEventListener("DOMContentLoaded", () => {
   initLivePrayerTicker();
   renderPediamilProducts("all");
   initSearch();
+  if (typeof initCurrencyCalculator === "function") {
+    initCurrencyCalculator();
+  }
 
   // Escape key listener to dismiss open drawers, hub sheets, and product modals
   document.addEventListener("keydown", (e) => {
@@ -1361,6 +1364,34 @@ function performSearch(query) {
       title: "Event WhatsApp Group",
       sub: "Connect, chat & share special moments together",
       tab: "overview"
+    });
+  }
+
+  // Search Travel Essentials (Weather, Clothes, Electricity, Currency)
+  if ("weather autumn climate temperature rain cold forecast clothes clothing packing coat jacket suit dress shoes umbrella scarf".includes(query)) {
+    matches.push({
+      type: "Travel Essentials",
+      title: "Weather & Recommended Clothing",
+      sub: "Brussels & Ghent Autumn forecast (8°C–15°C) & packing guide",
+      tab: "travel-guide"
+    });
+  }
+
+  if ("electricity electric plug socket appliance voltage adapter charger 220v 230v europlug cee type c type e".includes(query)) {
+    matches.push({
+      type: "Travel Essentials",
+      title: "Electric Appliances & Plug Standards",
+      sub: "Belgium (230V) vs Egypt (220V) compatibility & Type E sockets",
+      tab: "travel-guide"
+    });
+  }
+
+  if ("currency calculator money euro eur egp pound usd dollar exchange rate converter cash bank card atm price".includes(query)) {
+    matches.push({
+      type: "Travel Essentials",
+      title: "Currency Calculator (EGP • EUR • USD)",
+      sub: "Real-time converter, benchmark rates & Belgium price cheatsheet",
+      tab: "travel-guide"
     });
   }
 

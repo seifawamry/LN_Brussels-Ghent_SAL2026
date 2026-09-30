@@ -4483,6 +4483,1252 @@ img {
   transform: scale(0.97);
 }
 
+/* ==========================================
+   TAB 10: TRAVEL ESSENTIALS & PRACTICAL GUIDE
+   ========================================== */
+.travel-quick-jumps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.travel-jump-pill {
+  background: #ffffff;
+  color: var(--navy-deep);
+  border: 1.5px solid rgba(212, 166, 45, 0.4);
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s ease;
+}
+
+.travel-jump-pill i {
+  color: var(--gold-dark);
+}
+
+.travel-jump-pill:hover {
+  background: var(--navy-deep);
+  color: #ffffff;
+  border-color: var(--gold-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(13, 44, 74, 0.2);
+}
+
+.travel-jump-pill:hover i {
+  color: var(--gold-light);
+}
+
+.travel-guide-module {
+  background: var(--surface-card);
+  border-radius: var(--radius-lg);
+  padding: 28px 30px;
+  margin-bottom: 30px;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.module-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 16px;
+  margin-bottom: 20px;
+}
+
+.module-title-group h3 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--navy-deep);
+  margin-top: 4px;
+}
+
+.module-tag {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  letter-spacing: 1px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.module-date-pill {
+  background: var(--gold-champagne);
+  color: var(--gold-dark);
+  padding: 5px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 0.78rem;
+  font-weight: 700;
+  border: 1px solid rgba(212, 166, 45, 0.3);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.module-date-pill.green {
+  background: rgba(39, 174, 96, 0.12);
+  color: var(--success);
+  border-color: rgba(39, 174, 96, 0.3);
+}
+
+.module-date-pill.gold {
+  background: var(--gold-gradient);
+  color: var(--navy-deep);
+  border: none;
+}
+
+/* Climate Comparison Card */
+.climate-comparison-card {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 20px;
+  background: linear-gradient(135deg, #fdfbf7 0%, #f4f7fb 100%);
+  border: 1.5px solid rgba(212, 166, 45, 0.35);
+  border-radius: var(--radius-md);
+  padding: 22px;
+  margin-bottom: 20px;
+}
+
+.climate-col {
+  padding: 16px 18px;
+  border-radius: var(--radius-sm);
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.climate-col.egypt-climate {
+  border-left: 4px solid #f39c12;
+}
+
+.climate-col.belgium-climate {
+  border-left: 4px solid var(--blue-royal);
+}
+
+.climate-col-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.climate-flag {
+  font-size: 1.8rem;
+}
+
+.climate-col-header h4 {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--navy-deep);
+  margin: 0;
+}
+
+.climate-col-header p {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.climate-temp-stat {
+  margin-bottom: 12px;
+}
+
+.temp-val {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--navy-deep);
+  display: block;
+}
+
+.temp-desc {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.climate-summary-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.climate-summary-tag.warm {
+  background: rgba(243, 156, 18, 0.12);
+  color: #d35400;
+}
+
+.climate-summary-tag.cool {
+  background: rgba(41, 128, 185, 0.12);
+  color: var(--blue-royal);
+}
+
+.climate-versus-divider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.versus-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--navy-deep);
+  color: var(--gold-light);
+  border: 2px solid var(--gold-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  box-shadow: 0 4px 12px rgba(13, 44, 74, 0.25);
+}
+
+.versus-delta {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--navy-deep);
+  background: var(--gold-champagne);
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+}
+
+/* Travel Advisory Box */
+.travel-advisory-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: #fbf8f0;
+  border: 1px solid rgba(212, 166, 45, 0.4);
+  border-left: 4px solid var(--gold-primary);
+  border-radius: var(--radius-sm);
+  padding: 14px 18px;
+  margin-bottom: 24px;
+}
+
+.advisory-icon {
+  font-size: 1.25rem;
+  color: var(--gold-dark);
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.advisory-text {
+  font-size: 0.85rem;
+  color: var(--text-main);
+  line-height: 1.5;
+}
+
+.advisory-text strong {
+  color: var(--navy-deep);
+}
+
+/* Weather Forecast Grid */
+.weather-forecast-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.weather-day-card {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.weather-day-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--gold-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.weather-day-header {
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.w-day-name {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: var(--navy-deep);
+  display: block;
+}
+
+.w-day-event {
+  font-size: 0.72rem;
+  color: var(--gold-dark);
+  font-weight: 700;
+}
+
+.w-day-icon-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.w-day-icon-row i {
+  font-size: 1.8rem;
+  color: var(--blue-royal);
+}
+
+.w-day-temps {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.w-high {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--navy-deep);
+}
+
+.w-low {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.w-day-desc {
+  font-size: 0.78rem;
+  color: var(--text-main);
+  line-height: 1.4;
+  margin-bottom: 12px;
+  flex: 1;
+}
+
+.w-day-attire {
+  font-size: 0.75rem;
+  color: var(--navy-deep);
+  background: #f7f9fb;
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+  line-height: 1.35;
+  border: 1px solid #eef2f6;
+}
+
+/* Packing Pillars Grid */
+.packing-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.packing-pillar-card {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 18px 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.pillar-icon-wrap {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  margin-bottom: 12px;
+}
+
+.pillar-icon-wrap.gold {
+  background: var(--gold-champagne);
+  color: var(--gold-dark);
+}
+
+.pillar-icon-wrap.blue {
+  background: rgba(26, 82, 118, 0.12);
+  color: var(--blue-royal);
+}
+
+.pillar-icon-wrap.green {
+  background: rgba(39, 174, 96, 0.12);
+  color: var(--success);
+}
+
+.packing-pillar-card h4 {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--navy-deep);
+  margin-bottom: 8px;
+}
+
+.packing-pillar-card p {
+  font-size: 0.78rem;
+  color: var(--text-main);
+  line-height: 1.45;
+  margin-bottom: 6px;
+}
+
+/* Interactive Packing Checklist */
+.interactive-packing-checklist {
+  background: linear-gradient(135deg, #f8fbfd 0%, #f4f8fc 100%);
+  border: 1px solid #d8e5f2;
+  border-radius: var(--radius-md);
+  padding: 20px;
+}
+
+.checklist-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.checklist-header h4 {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--navy-deep);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.checklist-header h4 i {
+  color: var(--gold-primary);
+}
+
+.checklist-badge {
+  background: var(--gold-champagne);
+  color: var(--gold-dark);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.checklist-items-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.packing-check-item {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.packing-check-item:hover {
+  border-color: var(--gold-primary);
+  background: #fdfcf9;
+}
+
+.packing-check-item input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: var(--gold-primary);
+}
+
+.packing-check-item label {
+  font-size: 0.82rem;
+  color: var(--navy-deep);
+  cursor: pointer;
+}
+
+.packing-check-item.checked {
+  background: rgba(39, 174, 96, 0.08);
+  border-color: rgba(39, 174, 96, 0.4);
+}
+
+.packing-check-item.checked label {
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+/* ==========================================
+   PART 2: ELECTRIC APPLIANCES & PLUGS
+   ========================================== */
+.power-compatibility-banner {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 20px;
+  background: linear-gradient(135deg, #0d2c4a 0%, #1b365d 100%);
+  color: #ffffff;
+  border-radius: var(--radius-md);
+  padding: 22px;
+  margin-bottom: 20px;
+  border: 1.5px solid var(--gold-primary);
+}
+
+.power-stat-item {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-sm);
+  padding: 14px 18px;
+}
+
+.power-country {
+  font-size: 0.72rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  font-weight: 800;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.power-val {
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: #ffffff;
+  display: block;
+}
+
+.power-types {
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.power-match-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  text-align: center;
+}
+
+.power-match-badge i {
+  font-size: 1.8rem;
+  color: var(--gold-primary);
+  animation: pulseInstall 2s infinite ease-in-out;
+}
+
+.power-match-badge span {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--gold-light);
+}
+
+.power-match-badge small {
+  font-size: 0.70rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.power-detail-card {
+  background: #f8fbfd;
+  border: 1px solid #dbe6f0;
+  border-left: 4px solid var(--blue-royal);
+  border-radius: var(--radius-sm);
+  padding: 16px 20px;
+  margin-bottom: 24px;
+}
+
+.power-detail-card h4 {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--navy-deep);
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.power-detail-card p {
+  font-size: 0.84rem;
+  color: var(--text-main);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Plug Comparison Grid */
+.plug-comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.plug-card {
+  background: #ffffff;
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 20px 18px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s ease;
+}
+
+.plug-card.compatible {
+  border-color: rgba(39, 174, 96, 0.4);
+}
+
+.plug-card.needs-adapter {
+  border-color: rgba(243, 156, 18, 0.4);
+}
+
+.plug-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.plug-type-tag {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--navy-deep);
+}
+
+.plug-status-badge {
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.plug-status-badge.success {
+  background: rgba(39, 174, 96, 0.12);
+  color: #1e8449;
+}
+
+.plug-status-badge.warning {
+  background: rgba(243, 156, 18, 0.15);
+  color: #b7791f;
+}
+
+.plug-visual-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 14px;
+  background: #f7f9fc;
+  padding: 12px;
+  border-radius: var(--radius-sm);
+}
+
+.plug-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  color: var(--navy-deep);
+}
+
+.plug-diagram {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+}
+
+.pin-circle {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #718096;
+  border: 2px solid #2d3748;
+}
+
+.pin-hole {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #cbd5e0;
+  border: 2px dashed #4a5568;
+  position: absolute;
+  top: -14px;
+  left: 11px;
+}
+
+.pin-rect {
+  width: 8px;
+  height: 14px;
+  background: #718096;
+  border: 1.5px solid #2d3748;
+  border-radius: 2px;
+}
+
+.pin-rect.vertical {
+  width: 14px;
+  height: 8px;
+  position: absolute;
+  top: -12px;
+  left: 8px;
+}
+
+.plug-card h4 {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--navy-deep);
+  margin-bottom: 6px;
+}
+
+.plug-card p {
+  font-size: 0.78rem;
+  color: var(--text-main);
+  line-height: 1.4;
+  margin-bottom: 14px;
+  flex: 1;
+}
+
+.plug-takeaway {
+  font-size: 0.74rem;
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+  line-height: 1.35;
+}
+
+.plug-takeaway.success {
+  background: rgba(39, 174, 96, 0.08);
+  color: #196f3d;
+  border: 1px solid rgba(39, 174, 96, 0.25);
+}
+
+.plug-takeaway.warning {
+  background: rgba(243, 156, 18, 0.1);
+  color: #9c6500;
+  border: 1px solid rgba(243, 156, 18, 0.3);
+}
+
+/* Hotel Power Amenities Box */
+.hotel-power-amenities {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: #fdfcf9;
+  border: 1.5px solid rgba(212, 166, 45, 0.4);
+  border-radius: var(--radius-md);
+  padding: 18px 22px;
+}
+
+.hotel-power-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background: var(--navy-deep);
+  color: var(--gold-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(13, 44, 74, 0.2);
+}
+
+.hotel-power-content h4 {
+  font-size: 0.98rem;
+  font-weight: 800;
+  color: var(--navy-deep);
+  margin-bottom: 8px;
+}
+
+.hotel-power-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.hotel-power-content li {
+  font-size: 0.82rem;
+  color: var(--text-main);
+  line-height: 1.45;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.hotel-power-content li i {
+  margin-top: 3px;
+  font-size: 0.75rem;
+}
+
+/* ==========================================
+   PART 3: CURRENCY CALCULATOR
+   ========================================== */
+.currency-calc-container {
+  background: linear-gradient(135deg, #ffffff 0%, #fbfcfe 100%);
+  border: 1.5px solid rgba(212, 166, 45, 0.4);
+  border-radius: var(--radius-lg);
+  padding: 24px 26px;
+  margin-bottom: 28px;
+  box-shadow: 0 4px 20px rgba(13, 44, 74, 0.06);
+}
+
+.calc-header-intro {
+  margin-bottom: 20px;
+}
+
+.calc-header-intro h4 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--navy-deep);
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.calc-header-intro p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* 3 Inputs Grid */
+.currency-inputs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.currency-card {
+  background: #f8fafc;
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  transition: all 0.2s ease;
+}
+
+.currency-card:focus-within {
+  background: #ffffff;
+  border-color: var(--gold-primary);
+  box-shadow: 0 0 12px rgba(212, 166, 45, 0.25);
+}
+
+.c-card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.c-flag {
+  font-size: 1.5rem;
+}
+
+.c-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.c-code {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: var(--navy-deep);
+}
+
+.c-name {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+}
+
+.c-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.c-symbol {
+  position: absolute;
+  left: 12px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--gold-dark);
+  pointer-events: none;
+}
+
+.currency-input-field {
+  width: 100%;
+  padding: 10px 12px 10px 42px;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--navy-deep);
+  background: #ffffff;
+  border: 1.5px solid #d2dbe5;
+  border-radius: var(--radius-sm);
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.2s ease;
+}
+
+.currency-input-field:focus {
+  border-color: var(--navy-deep);
+}
+
+.c-note {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  display: block;
+}
+
+/* Quick Presets Row */
+.currency-presets-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-light);
+  margin-bottom: 16px;
+}
+
+.presets-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--navy-deep);
+}
+
+.preset-buttons-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.currency-preset-btn {
+  background: #ffffff;
+  color: var(--navy-deep);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-pill);
+  padding: 5px 12px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.currency-preset-btn:hover,
+.currency-preset-btn.active {
+  background: var(--navy-deep);
+  color: var(--gold-light);
+  border-color: var(--gold-primary);
+}
+
+/* Exchange Rate Display Strip */
+.exchange-rates-strip {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.rates-display-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.rate-badge {
+  background: #eef4fb;
+  color: var(--navy-deep);
+  border: 1px solid #d2e1f2;
+  border-radius: var(--radius-pill);
+  padding: 4px 10px;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.rate-adjust-toggle-btn {
+  background: transparent;
+  border: 1px dashed var(--gold-primary);
+  color: var(--gold-dark);
+  border-radius: var(--radius-pill);
+  padding: 5px 12px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.2s ease;
+}
+
+.rate-adjust-toggle-btn:hover {
+  background: var(--gold-champagne);
+  color: var(--navy-deep);
+}
+
+/* Custom Rates Panel */
+.custom-rates-panel {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--border-light);
+}
+
+.custom-rates-inner {
+  background: #f9fbfd;
+  border: 1px solid #e2ecf5;
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+}
+
+.custom-rates-inner h5 {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--navy-deep);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.custom-inputs-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: flex-end;
+}
+
+.custom-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.custom-input-group label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.custom-input-group input {
+  padding: 6px 10px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--navy-deep);
+  border: 1px solid #ccd7e2;
+  border-radius: var(--radius-sm);
+  width: 120px;
+}
+
+.custom-actions-group {
+  display: flex;
+  gap: 8px;
+}
+
+.custom-rate-btn {
+  padding: 7px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.76rem;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.custom-rate-btn.apply {
+  background: var(--gold-gradient);
+  color: var(--navy-deep);
+}
+
+.custom-rate-btn.reset {
+  background: #e2e8f0;
+  color: var(--text-main);
+}
+
+.custom-rate-alert {
+  margin-top: 10px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--success);
+}
+
+/* Belgium Price Cheatsheet Table */
+.belgium-price-cheatsheet {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.cheatsheet-header {
+  margin-bottom: 14px;
+}
+
+.cheatsheet-header h4 {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--navy-deep);
+  margin-bottom: 3px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cheatsheet-header p {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.cheatsheet-table-wrap {
+  overflow-x: auto;
+}
+
+.cheatsheet-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+
+.cheatsheet-table th {
+  background: var(--navy-deep);
+  color: #ffffff;
+  padding: 10px 14px;
+  font-weight: 700;
+  text-align: left;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cheatsheet-table th:first-child {
+  border-top-left-radius: 6px;
+}
+
+.cheatsheet-table th:last-child {
+  border-top-right-radius: 6px;
+}
+
+.cheatsheet-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid #edf2f7;
+  color: var(--text-main);
+}
+
+.cheatsheet-table tr:hover td {
+  background: #fbfcfe;
+}
+
+.price-pill-eur {
+  background: rgba(212, 166, 45, 0.15);
+  color: var(--navy-deep);
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+}
+
+.price-pill-egp {
+  background: rgba(41, 128, 185, 0.1);
+  color: var(--blue-royal);
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+}
+
+.tag-tax-eligible {
+  background: rgba(39, 174, 96, 0.12);
+  color: #196f3d;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Payment Advice Cards */
+.payment-advice-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.advice-card {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 18px 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+.advice-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  margin-bottom: 12px;
+}
+
+.advice-icon.gold {
+  background: var(--gold-champagne);
+  color: var(--gold-dark);
+}
+
+.advice-icon.blue {
+  background: rgba(26, 82, 118, 0.12);
+  color: var(--blue-royal);
+}
+
+.advice-icon.green {
+  background: rgba(39, 174, 96, 0.12);
+  color: var(--success);
+}
+
+.advice-card h4 {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--navy-deep);
+  margin-bottom: 8px;
+}
+
+.advice-card p {
+  font-size: 0.76rem;
+  color: var(--text-main);
+  line-height: 1.45;
+  margin: 0;
+}
+
 /* Print Styles */
 @media print {
   .app-header, .desktop-nav-bar, .mobile-bottom-nav, .search-box-wrap, .pdf-print-btn, .coordinator-toggle-btn, .add-app-header-btn, .home-screen-add-app-banner, .install-modal-backdrop, .install-app-modal {
