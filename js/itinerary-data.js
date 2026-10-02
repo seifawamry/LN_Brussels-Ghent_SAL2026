@@ -24,13 +24,13 @@ const ITINERARY_DATA = [
         notes: "Delegates should have passports valid for at least 6 months and Belgian Schengen visas readily accessible. Liptis event coordinators on site for assistance."
       },
       {
-        time: "11:05",
+        time: "10:55",
         title: "Departure time of EgyptAir flight MS 725 directly from Cairo International Airport (CAI) to Brussels Airport (BRU)",
         category: "flight",
         location: "EgyptAir Flight MS 725 (Cairo → Brussels)",
         mapsUrl: "https://www.google.com/travel/flights",
         image: "assets/images/flight-departure.jpg",
-        description: "Departure time of EgyptAir flight MS 725 directly from Cairo International Airport (CAI) to Brussels Airport (BRU). Direct flight duration approx. 4 hours 40 minutes.",
+        description: "Departure time of EgyptAir flight MS 725 directly from Cairo International Airport (CAI) to Brussels Airport (BRU).",
         notes: "Direct flight operation on EgyptAir MS 725 with inflight hospitality service."
       },
       {
