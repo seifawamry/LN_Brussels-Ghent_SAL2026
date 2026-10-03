@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
       closeProductSpecs();
       closeSearchOverlay();
       closeInstallModal();
+      closeScientificAgendaModal();
     }
   });
 });
@@ -327,7 +328,10 @@ function renderItinerary(dayNum = 1) {
   if (summaryEl) summaryEl.textContent = dayData.summary;
 
   if (highlightsEl) {
-    highlightsEl.innerHTML = dayData.highlights.map(hl => `
+    const agendaBtn = dayData.dayNumber === 2 
+      ? `<button type="button" class="highlight-chip agenda-chip-btn" onclick="openScientificAgendaModal()"><i class="fas fa-microscope" style="color:var(--gold-primary);"></i> <strong>Scientific Agenda</strong> (Fri 9 Oct • 9:00 AM)</button>`
+      : "";
+    highlightsEl.innerHTML = agendaBtn + dayData.highlights.map(hl => `
       <span class="highlight-chip"><i class="fas fa-check-circle"></i> ${hl}</span>
     `).join("");
   }
@@ -402,6 +406,8 @@ function renderTimelineEvents(events) {
             </div>
           ` : ""}
 
+          ${ev.scientificAgenda ? renderScientificAgendaEmbed(ev.scientificAgenda) : ""}
+
           ${hasCoordNote ? `
             <div class="coordinator-advisory-box">
               <div class="coord-box-header">
@@ -415,6 +421,131 @@ function renderTimelineEvents(events) {
       </div>
     `;
   }).join("");
+}
+
+function renderScientificAgendaEmbed(agenda) {
+  if (!agenda || !agenda.speakers) return "";
+
+  const speakersHtml = agenda.speakers.map(speaker => {
+    const isLiptis = Array.isArray(speaker.topics);
+    return `
+      <div class="agenda-speaker-card ${isLiptis ? 'liptis-lead-card' : ''}">
+        <div class="agenda-speaker-avatar-wrap">
+          <img src="${speaker.image}" alt="${speaker.name}" class="agenda-speaker-avatar" loading="lazy">
+          <span class="agenda-speaker-badge">${speaker.badge || 'Speaker'}</span>
+        </div>
+        <div class="agenda-speaker-details">
+          <h5 class="agenda-speaker-name">${speaker.name}</h5>
+          <p class="agenda-speaker-title">${speaker.title}</p>
+          ${isLiptis ? `
+            <div class="agenda-multi-topics">
+              <span class="agenda-topic-header"><i class="fas fa-layer-group"></i> Featured Presentations:</span>
+              <ul class="agenda-topics-list">
+                ${speaker.topics.map(t => `<li><i class="fas fa-check-circle"></i> <span>${t}</span></li>`).join("")}
+              </ul>
+            </div>
+          ` : `
+            <div class="agenda-topic-box">
+              <span class="agenda-topic-tag"><i class="fas fa-chalkboard-teacher"></i> Topic:</span>
+              <span class="agenda-topic-text">${speaker.topic}</span>
+            </div>
+          `}
+        </div>
+      </div>
+    `;
+  }).join("");
+
+  return `
+    <div class="scientific-agenda-container">
+      <div class="scientific-agenda-header">
+        <div class="agenda-header-title-group">
+          <div class="agenda-pill-tag"><i class="fas fa-microscope"></i> Official Program</div>
+          <h4 class="agenda-main-title">${agenda.title}</h4>
+          <div class="agenda-meta-row">
+            <span><i class="fas fa-calendar-alt"></i> ${agenda.date}</span>
+            <span><i class="fas fa-clock"></i> ${agenda.time}</span>
+            <span><i class="fas fa-door-open"></i> ${agenda.room}</span>
+          </div>
+        </div>
+        <button type="button" class="agenda-fullscreen-btn" onclick="openScientificAgendaModal()" title="View Fullscreen Scientific Agenda">
+          <i class="fas fa-expand-arrows-alt"></i> <span>Fullscreen View</span>
+        </button>
+      </div>
+
+      <div class="agenda-speakers-grid">
+        ${speakersHtml}
+      </div>
+    </div>
+  `;
+}
+
+function openScientificAgendaModal() {
+  const modal = document.getElementById("agenda-modal");
+  const backdrop = document.getElementById("agenda-modal-backdrop");
+  if (!modal || !backdrop) return;
+
+  const agenda = typeof SCIENTIFIC_AGENDA !== "undefined" ? SCIENTIFIC_AGENDA : null;
+  if (agenda) {
+    const modalBody = document.getElementById("agenda-modal-body");
+    if (modalBody) {
+      modalBody.innerHTML = `
+        <div class="agenda-modal-hero">
+          <div class="agenda-hero-badge"><i class="fas fa-graduation-cap"></i> Academic &amp; Clinical Symposium</div>
+          <h2 class="agenda-hero-title">${agenda.title}</h2>
+          <div class="agenda-hero-meta">
+            <div class="agenda-meta-chip"><i class="fas fa-calendar-day"></i> <strong>Date:</strong> ${agenda.date}</div>
+            <div class="agenda-meta-chip"><i class="fas fa-clock"></i> <strong>Time:</strong> ${agenda.time}</div>
+            <div class="agenda-meta-chip"><i class="fas fa-map-marker-alt"></i> <strong>Venue:</strong> ${agenda.room}, Renaissance Brussels Hotel</div>
+          </div>
+        </div>
+
+        <div class="agenda-modal-speakers-list">
+          ${agenda.speakers.map(speaker => {
+            const isLiptis = Array.isArray(speaker.topics);
+            return `
+              <div class="agenda-modal-speaker-card ${isLiptis ? 'liptis-highlight' : ''}">
+                <div class="modal-speaker-photo-wrap">
+                  <img src="${speaker.image}" alt="${speaker.name}" class="modal-speaker-photo">
+                  <span class="modal-speaker-role-tag">${speaker.badge || 'Keynote'}</span>
+                </div>
+                <div class="modal-speaker-info">
+                  <h4 class="modal-speaker-name">${speaker.name}</h4>
+                  <p class="modal-speaker-affil">${speaker.title}</p>
+                  ${isLiptis ? `
+                    <div class="modal-speaker-topics-wrap">
+                      <span class="topics-heading"><i class="fas fa-flask"></i> Clinical &amp; Scientific Presentations:</span>
+                      <ul class="modal-topics-checklist">
+                        ${speaker.topics.map(t => `
+                          <li><i class="fas fa-check-circle" style="color:var(--gold-primary);"></i> <span>${t}</span></li>
+                        `).join("")}
+                      </ul>
+                    </div>
+                  ` : `
+                    <div class="modal-speaker-topic-card">
+                      <span class="topic-card-label"><i class="fas fa-book-medical"></i> Lecture Topic:</span>
+                      <div class="topic-card-body">${speaker.topic}</div>
+                    </div>
+                  `}
+                </div>
+              </div>
+            `;
+          }).join("")}
+        </div>
+      `;
+    }
+  }
+
+  modal.classList.add("active");
+  backdrop.classList.add("active");
+  document.body.style.overflow = "hidden";
+}
+
+function closeScientificAgendaModal() {
+  const modal = document.getElementById("agenda-modal");
+  const backdrop = document.getElementById("agenda-modal-backdrop");
+  if (modal) modal.classList.remove("active");
+  if (backdrop) backdrop.classList.remove("active");
+  document.body.style.overflow = "";
 }
 
 function getCategoryBadge(cat) {

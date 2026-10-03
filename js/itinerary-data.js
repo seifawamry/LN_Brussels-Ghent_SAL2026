@@ -4,6 +4,58 @@
  * All food and dining provided during the event is strictly 100% Halal.
  */
 
+const SCIENTIFIC_AGENDA = {
+  title: "Scientific Agenda",
+  dayName: "Friday",
+  date: "Friday, 9 October 2026",
+  time: "9:00 am – 12:00 pm",
+  room: "Ballroom 1+2",
+  hotel: "Renaissance Brussels Hotel",
+  location: "Renaissance Brussels Hotel, Ballroom 1+2 (Ground Floor)",
+  speakers: [
+    {
+      id: "prof-mostafa-el-hodhod",
+      name: "Prof. Mostafa El-Hodhod",
+      title: "Professor of Pediatrics, Ain Shams University",
+      institution: "Ain Shams University",
+      topic: "Decoding the Angry Tummy: From DGBI to Nutritional Practice",
+      image: "assets/images/speakers/prof-mostafa-el-hodhod.jpeg",
+      badge: "Clinical Keynote"
+    },
+    {
+      id: "prof-ehab-khairy",
+      name: "Prof. Ehab Khairy",
+      title: "Professor of Pediatrics and Head of Pediatrics Department, Ain Shams University",
+      institution: "Ain Shams University",
+      topic: "Beyond Basic Nutrition: Clinical Evidence for Premium and Super-Premium Bioactives in Infant Formula",
+      image: "assets/images/speakers/prof-ehab-khairy.jpeg",
+      badge: "Pediatric Keynote"
+    },
+    {
+      id: "prof-mohamed-hussein",
+      name: "Prof. Mohamed Hussein",
+      title: "Associate Professor of Pediatrics and Neonatology, Ain Shams University",
+      institution: "Ain Shams University",
+      topic: "Nutrition of Low Birth Weight Infants: A Gap in the Ladder of Success",
+      image: "assets/images/speakers/prof-mohamed-hussein.jpeg",
+      badge: "Neonatology Keynote"
+    },
+    {
+      id: "dr-sharif-omar",
+      name: "Dr. Sharif Omar",
+      title: "President of Liptis Nutrition Africa and Middle East",
+      institution: "Liptis Nutrition",
+      topics: [
+        "Pediamil: Advancing Infant Nutrition",
+        "Pedia-Start: Stronger Start with Proven Protection",
+        "Pediamum: For Enhanced Maternal and Fetal Nutrition"
+      ],
+      image: "assets/images/speakers/dr-sharif-omar.jpeg",
+      badge: "Liptis Leadership"
+    }
+  ]
+};
+
 const ITINERARY_DATA = [
   {
     dayNumber: 1,
@@ -180,9 +232,10 @@ const ITINERARY_DATA = [
         category: "scientific",
         location: "Renaissance Brussels Hotel, Ballroom 1+2 (Ground Floor)",
         mapsUrl: "https://maps.google.com/?q=Renaissance+Brussels+Hotel",
-        image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop&q=80",
+        image: "assets/images/venues/hotel-renaissance.jpg",
         description: "Liptis Nutrition Symposium in Ballroom 1+2 on the ground floor.",
-        notes: "Latest scientific data with our eminent speakers with interactive Q&A Session"
+        notes: "Latest scientific data with our eminent speakers with interactive Q&A Session",
+        scientificAgenda: SCIENTIFIC_AGENDA
       },
       {
         time: "12:00",

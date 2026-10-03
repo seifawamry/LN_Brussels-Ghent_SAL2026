@@ -400,6 +400,9 @@
             <a href="https://chat.whatsapp.com/HXkSi2SmD7R0W4EjtiQRMm?s=cl&p=i&mlu=4&ilr=4" target="_blank" rel="noopener" class="gold-solid-btn" style="background:linear-gradient(135deg, #25D366 0%, #128C7E 100%); color:#ffffff; text-decoration:none;">
               <i class="fab fa-whatsapp"></i> WhatsApp Group
             </a>
+            <button class="gold-solid-btn" onclick="openScientificAgendaModal()">
+              <i class="fas fa-microscope"></i> Scientific Agenda
+            </button>
             <button class="navy-outline-btn" onclick="switchTab('itinerary')">
               <i class="fas fa-calendar-alt"></i> View Itinerary
             </button>
@@ -419,10 +422,19 @@
           <h2>Interactive Guide Directory</h2>
           <p class="section-subtitle">Jump directly to any module of your standalone travel manual</p>
         </div>
-        <span class="section-badge-tag"><i class="fas fa-th-large"></i> 9 Core Modules</span>
+        <span class="section-badge-tag"><i class="fas fa-th-large"></i> Guide Modules</span>
       </div>
 
       <div class="at-a-glance-grid">
+        <div class="glance-card gold-card" style="cursor:pointer;" onclick="openScientificAgendaModal()">
+          <div class="glance-icon"><i class="fas fa-microscope"></i></div>
+          <div class="glance-content">
+            <h5>Scientific Agenda</h5>
+            <div class="glance-val">Friday, 9 Oct • 9:00 AM</div>
+            <div class="glance-sub">Ballroom 1+2 • 4 Keynote Speakers</div>
+          </div>
+        </div>
+
         <div class="glance-card" style="cursor:pointer;" onclick="switchTab('itinerary')">
           <div class="glance-icon"><i class="fas fa-clock"></i></div>
           <div class="glance-content">
@@ -2427,6 +2439,30 @@
       <a href="tel:+3225052929" class="hub-call-pill"><i class="fas fa-hotel"></i> Hotel Front Desk</a>
       <a href="tel:+3226755830" class="hub-call-pill"><i class="fas fa-landmark"></i> Egyptian Embassy</a>
       <a href="tel:112" class="hub-call-pill red"><i class="fas fa-ambulance"></i> 112 Emergency</a>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       SCIENTIFIC AGENDA MODAL (SYMPOSIUM SESSIONS)
+       ========================================== -->
+  <div class="agenda-modal-backdrop" id="agenda-modal-backdrop" onclick="closeScientificAgendaModal()"></div>
+  <div class="agenda-modal" id="agenda-modal" role="dialog" aria-modal="true" aria-labelledby="agenda-modal-title">
+    <div class="agenda-modal-header">
+      <div class="agenda-modal-brand-row">
+        <img src="assets/images/liptis-logo.png" alt="Liptis Nutrition" class="agenda-modal-logo">
+        <span class="agenda-modal-badge"><i class="fas fa-microscope"></i> Official Scientific Agenda</span>
+      </div>
+      <button type="button" class="agenda-modal-close" onclick="closeScientificAgendaModal()" aria-label="Close Agenda">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="agenda-modal-body" id="agenda-modal-body">
+      <!-- Injected dynamically via openScientificAgendaModal() -->
+    </div>
+    <div class="agenda-modal-footer">
+      <button type="button" class="agenda-modal-ok-btn" onclick="closeScientificAgendaModal()">
+        <i class="fas fa-check"></i> Close
+      </button>
     </div>
   </div>
 

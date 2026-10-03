@@ -1,4 +1,4 @@
-const CACHE_NAME = "liptis-belgium-v17";
+const CACHE_NAME = "liptis-belgium-v18";
 const ASSETS_TO_CACHE = [
   "./",
   "./index.html",
@@ -25,6 +25,10 @@ const ASSETS_TO_CACHE = [
   "./assets/images/pediastart-logo.png",
   "./assets/images/pedia-start-stamp.png",
   "./assets/images/flight-departure.jpg",
+  "./assets/images/speakers/prof-mostafa-el-hodhod.jpeg",
+  "./assets/images/speakers/prof-ehab-khairy.jpeg",
+  "./assets/images/speakers/prof-mohamed-hussein.jpeg",
+  "./assets/images/speakers/dr-sharif-omar.jpeg",
   "./assets/images/venues/hotel-renaissance.jpg",
   "./assets/images/venues/dining-le-mignon.jpg",
   "./assets/images/venues/dining-steak-n-chill.jpg",
