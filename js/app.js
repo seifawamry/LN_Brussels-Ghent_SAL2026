@@ -432,7 +432,6 @@ function renderScientificAgendaEmbed(agenda) {
       <div class="agenda-speaker-card ${isLiptis ? 'liptis-lead-card' : ''}">
         <div class="agenda-speaker-avatar-wrap">
           <img src="${speaker.image}" alt="${speaker.name}" class="agenda-speaker-avatar" loading="lazy">
-          <span class="agenda-speaker-badge">${speaker.badge || 'Speaker'}</span>
         </div>
         <div class="agenda-speaker-details">
           <h5 class="agenda-speaker-name">${speaker.name}</h5>
@@ -506,7 +505,6 @@ function openScientificAgendaModal() {
               <div class="agenda-modal-speaker-card ${isLiptis ? 'liptis-highlight' : ''}">
                 <div class="modal-speaker-photo-wrap">
                   <img src="${speaker.image}" alt="${speaker.name}" class="modal-speaker-photo">
-                  <span class="modal-speaker-role-tag">${speaker.badge || 'Keynote'}</span>
                 </div>
                 <div class="modal-speaker-info">
                   <h4 class="modal-speaker-name">${speaker.name}</h4>

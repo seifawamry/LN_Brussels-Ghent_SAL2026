@@ -1,4 +1,4 @@
-const CACHE_NAME = "liptis-belgium-v18";
+const CACHE_NAME = "liptis-belgium-v19";
 const ASSETS_TO_CACHE = [
   "./",
   "./index.html",

@@ -5882,21 +5882,6 @@ img {
   display: block;
 }
 
-.agenda-speaker-badge {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(13, 44, 74, 0.88);
-  color: #ffffff;
-  font-size: 0.55rem;
-  font-weight: 700;
-  text-align: center;
-  padding: 2px 0;
-  text-transform: uppercase;
-  letter-spacing: 0.4px;
-}
-
 .agenda-speaker-details {
   display: flex;
   flex-direction: column;
@@ -6204,20 +6189,6 @@ img {
   height: 100%;
   object-fit: cover;
   display: block;
-}
-
-.modal-speaker-role-tag {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(13, 44, 74, 0.9);
-  color: #ffffff;
-  font-size: 0.55rem;
-  font-weight: 700;
-  text-align: center;
-  padding: 2px 0;
-  text-transform: uppercase;
 }
 
 .modal-speaker-info {

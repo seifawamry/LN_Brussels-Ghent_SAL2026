@@ -19,8 +19,7 @@ const SCIENTIFIC_AGENDA = {
       title: "Professor of Pediatrics, Ain Shams University",
       institution: "Ain Shams University",
       topic: "Decoding the Angry Tummy: From DGBI to Nutritional Practice",
-      image: "assets/images/speakers/prof-mostafa-el-hodhod.jpeg",
-      badge: "Clinical Keynote"
+      image: "assets/images/speakers/prof-mostafa-el-hodhod.jpeg"
     },
     {
       id: "prof-ehab-khairy",
@@ -28,8 +27,7 @@ const SCIENTIFIC_AGENDA = {
       title: "Professor of Pediatrics and Head of Pediatrics Department, Ain Shams University",
       institution: "Ain Shams University",
       topic: "Beyond Basic Nutrition: Clinical Evidence for Premium and Super-Premium Bioactives in Infant Formula",
-      image: "assets/images/speakers/prof-ehab-khairy.jpeg",
-      badge: "Pediatric Keynote"
+      image: "assets/images/speakers/prof-ehab-khairy.jpeg"
     },
     {
       id: "prof-mohamed-hussein",
@@ -37,8 +35,7 @@ const SCIENTIFIC_AGENDA = {
       title: "Associate Professor of Pediatrics and Neonatology, Ain Shams University",
       institution: "Ain Shams University",
       topic: "Nutrition of Low Birth Weight Infants: A Gap in the Ladder of Success",
-      image: "assets/images/speakers/prof-mohamed-hussein.jpeg",
-      badge: "Neonatology Keynote"
+      image: "assets/images/speakers/prof-mohamed-hussein.jpeg"
     },
     {
       id: "dr-sharif-omar",
@@ -50,8 +47,7 @@ const SCIENTIFIC_AGENDA = {
         "Pedia-Start: Stronger Start with Proven Protection",
         "Pediamum: For Enhanced Maternal and Fetal Nutrition"
       ],
-      image: "assets/images/speakers/dr-sharif-omar.jpeg",
-      badge: "Liptis Leadership"
+      image: "assets/images/speakers/dr-sharif-omar.jpeg"
     }
   ]
 };
