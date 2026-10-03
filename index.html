@@ -110,17 +110,20 @@
         <button class="desktop-tab-btn active" data-nav-tab="overview">
           <i class="fas fa-home"></i> <span>Overview</span>
         </button>
+        <button class="desktop-tab-btn" data-nav-tab="travel-guide">
+          <i class="fas fa-suitcase-rolling"></i> <span>Travel Guide</span>
+        </button>
         <button class="desktop-tab-btn" data-nav-tab="itinerary">
           <i class="fas fa-calendar-alt"></i> <span>4-Day Itinerary</span>
+        </button>
+        <button class="desktop-tab-btn" data-nav-tab="hotel">
+          <i class="fas fa-hotel"></i> <span>Hotel Info.</span>
         </button>
         <button class="desktop-tab-btn" data-nav-tab="tax-refund">
           <i class="fas fa-receipt"></i> <span>Tax Refund</span>
         </button>
         <button class="desktop-tab-btn" data-nav-tab="prayer-times">
           <i class="fas fa-mosque"></i> <span>Prayer & Qibla</span>
-        </button>
-        <button class="desktop-tab-btn" data-nav-tab="hotel">
-          <i class="fas fa-hotel"></i> <span>Hotel Base</span>
         </button>
         <button class="desktop-tab-btn" data-nav-tab="dining">
           <i class="fas fa-utensils"></i> <span>Hosted Dining</span>
@@ -134,9 +137,6 @@
         <button class="desktop-tab-btn" data-nav-tab="contacts">
           <i class="fas fa-id-badge"></i> <span>Contact Persons</span>
         </button>
-        <button class="desktop-tab-btn" data-nav-tab="travel-guide">
-          <i class="fas fa-suitcase-rolling"></i> <span>Travel Essentials</span>
-        </button>
       </div>
     </nav>
 
@@ -146,17 +146,20 @@
         <button class="mobile-pill-tab active" data-nav-tab="overview">
           <i class="fas fa-home"></i> <span>Overview</span>
         </button>
+        <button class="mobile-pill-tab" data-nav-tab="travel-guide">
+          <i class="fas fa-suitcase-rolling"></i> <span>Travel Guide</span>
+        </button>
         <button class="mobile-pill-tab" data-nav-tab="itinerary">
-          <i class="fas fa-calendar-alt"></i> <span>Itinerary</span>
+          <i class="fas fa-calendar-alt"></i> <span>4-Day Schedule</span>
+        </button>
+        <button class="mobile-pill-tab" data-nav-tab="hotel">
+          <i class="fas fa-hotel"></i> <span>Hotel Info.</span>
         </button>
         <button class="mobile-pill-tab" data-nav-tab="tax-refund">
           <i class="fas fa-receipt"></i> <span>Tax Free</span>
         </button>
         <button class="mobile-pill-tab" data-nav-tab="prayer-times">
           <i class="fas fa-mosque"></i> <span>Prayer</span>
-        </button>
-        <button class="mobile-pill-tab" data-nav-tab="hotel">
-          <i class="fas fa-hotel"></i> <span>Hotel</span>
         </button>
         <button class="mobile-pill-tab" data-nav-tab="dining">
           <i class="fas fa-utensils"></i> <span>Dining</span>
@@ -169,9 +172,6 @@
         </button>
         <button class="mobile-pill-tab" data-nav-tab="contacts">
           <i class="fas fa-users"></i> <span>Contacts</span>
-        </button>
-        <button class="mobile-pill-tab" data-nav-tab="travel-guide">
-          <i class="fas fa-suitcase-rolling"></i> <span>Travel Guide</span>
         </button>
       </div>
     </nav>
@@ -198,17 +198,20 @@
       <button class="drawer-nav-item active" data-nav-tab="overview">
         <i class="fas fa-home"></i> <span>Overview & Welcome</span>
       </button>
+      <button class="drawer-nav-item" data-nav-tab="travel-guide">
+        <i class="fas fa-suitcase-rolling"></i> <span>Travel Guide &amp; Currency</span>
+      </button>
       <button class="drawer-nav-item" data-nav-tab="itinerary">
-        <i class="fas fa-calendar-alt"></i> <span>4-Day Program Timeline</span>
+        <i class="fas fa-calendar-alt"></i> <span>4-Day Schedule Timeline</span>
+      </button>
+      <button class="drawer-nav-item" data-nav-tab="hotel">
+        <i class="fas fa-hotel"></i> <span>Hotel Info. &amp; Amenities</span>
       </button>
       <button class="drawer-nav-item" data-nav-tab="tax-refund">
         <i class="fas fa-receipt"></i> <span>Tax Refund (VAT) Process</span>
       </button>
       <button class="drawer-nav-item" data-nav-tab="prayer-times">
         <i class="fas fa-mosque"></i> <span>Islamic Prayer & Qibla</span>
-      </button>
-      <button class="drawer-nav-item" data-nav-tab="hotel">
-        <i class="fas fa-hotel"></i> <span>Renaissance Brussels Hotel</span>
       </button>
       <button class="drawer-nav-item" data-nav-tab="dining">
         <i class="fas fa-utensils"></i> <span>Hosted Dining & Halal</span>
@@ -221,9 +224,6 @@
       </button>
       <button class="drawer-nav-item" data-nav-tab="contacts">
         <i class="fas fa-id-badge"></i> <span>Liptis Contact Persons</span>
-      </button>
-      <button class="drawer-nav-item" data-nav-tab="travel-guide">
-        <i class="fas fa-suitcase-rolling"></i> <span>Travel Essentials &amp; Currency</span>
       </button>
     </nav>
 
@@ -316,7 +316,7 @@
         <div class="glance-card gold-card">
           <div class="glance-icon"><i class="fas fa-hotel"></i></div>
           <div class="glance-content">
-            <h5>Base Hotel</h5>
+            <h5>Hotel Info.</h5>
             <div class="glance-val">Renaissance Brussels</div>
             <div class="glance-sub">Rue du Parnasse 19 (European Qtr)</div>
           </div>
@@ -2329,7 +2329,7 @@
       </div>
     </div>
 
-    <!-- 9 Modules Interactive Grid -->
+    <!-- 10 Modules Interactive Grid -->
     <div class="hub-modules-grid">
       <div class="hub-grid-item" onclick="switchTab('overview'); closeMobileHubSheet();">
         <div class="hub-item-icon"><i class="fas fa-home"></i></div>
@@ -2340,6 +2340,15 @@
         <span class="hub-item-badge">Launch</span>
       </div>
 
+      <div class="hub-grid-item" onclick="switchTab('travel-guide'); closeMobileHubSheet();">
+        <div class="hub-item-icon"><i class="fas fa-suitcase-rolling"></i></div>
+        <div class="hub-item-info">
+          <h4>Travel Guide</h4>
+          <p>Weather, packing, electricity &amp; currency</p>
+        </div>
+        <span class="hub-item-badge gold">Guide &amp; FX</span>
+      </div>
+
       <div class="hub-grid-item" onclick="switchTab('itinerary'); closeMobileHubSheet();">
         <div class="hub-item-icon"><i class="fas fa-calendar-alt"></i></div>
         <div class="hub-item-info">
@@ -2347,6 +2356,15 @@
           <p>Hourly itinerary, notes &amp; maps</p>
         </div>
         <span class="hub-item-badge">8–11 Oct</span>
+      </div>
+
+      <div class="hub-grid-item" onclick="switchTab('hotel'); closeMobileHubSheet();">
+        <div class="hub-item-icon"><i class="fas fa-hotel"></i></div>
+        <div class="hub-item-info">
+          <h4>Hotel Info.</h4>
+          <p>Renaissance Brussels, phone &amp; Wi-Fi</p>
+        </div>
+        <span class="hub-item-badge">Venue</span>
       </div>
 
       <div class="hub-grid-item" onclick="switchTab('tax-refund'); closeMobileHubSheet();">
@@ -2365,15 +2383,6 @@
           <p>Brussels &amp; Ghent prayer &amp; compass</p>
         </div>
         <span class="hub-item-badge">GPS Qibla</span>
-      </div>
-
-      <div class="hub-grid-item" onclick="switchTab('hotel'); closeMobileHubSheet();">
-        <div class="hub-item-icon"><i class="fas fa-hotel"></i></div>
-        <div class="hub-item-info">
-          <h4>Base Hotel</h4>
-          <p>Renaissance Brussels, phone &amp; Wi-Fi</p>
-        </div>
-        <span class="hub-item-badge">Venue</span>
       </div>
 
       <div class="hub-grid-item" onclick="switchTab('dining'); closeMobileHubSheet();">
@@ -2410,15 +2419,6 @@
           <p>Liptis Nutrition coordinators &amp; WhatsApp</p>
         </div>
         <span class="hub-item-badge">7 Staff</span>
-      </div>
-
-      <div class="hub-grid-item" onclick="switchTab('travel-guide'); closeMobileHubSheet();">
-        <div class="hub-item-icon"><i class="fas fa-suitcase-rolling"></i></div>
-        <div class="hub-item-info">
-          <h4>Travel Essentials</h4>
-          <p>Weather, packing, electricity &amp; currency</p>
-        </div>
-        <span class="hub-item-badge gold">Guide &amp; FX</span>
       </div>
     </div>
 

@@ -421,7 +421,7 @@ function getCategoryBadge(cat) {
   switch (cat) {
     case "flight": return { label: "Flight", icon: "plane" };
     case "transfer": return { label: "Transfer", icon: "bus" };
-    case "hotel": return { label: "Base Hotel", icon: "hotel" };
+    case "hotel": return { label: "Hotel Info.", icon: "hotel" };
     case "scientific": return { label: "Symposium", icon: "microscope" };
     case "culture": return { label: "Sightseeing", icon: "landmark" };
     case "dining": return { label: "Hosted Dining", icon: "utensils" };
@@ -1101,12 +1101,12 @@ function openProductSpecs(productId) {
   if (product.id === "pediamum") {
     dilutionContent = `
       <div class="spec-dilution-box">
-        <h5><i class="fas fa-prescription-bottle-alt"></i> Maternal Preparation Protocol:</h5>
+        <h5><i class="fas fa-prescription-bottle-alt"></i> Pediamum® Preparation Guide (www.pediamum.com):</h5>
         <p style="font-size:0.85rem; line-height:1.5; color:var(--text-main); margin-bottom:6px;">
-          <strong>Standard Serving:</strong> Add 4 level scoops (~36g) into 180 ml of warm or cold previously boiled drinking water. Stir thoroughly until fully dissolved.
+          <strong>Preparation:</strong> 4 scoops of Pediamum powder on 220 ml of water to make 1 glass (240 ml) of Pediamum®. Use only the scoop in Pediamum® tin.
         </p>
         <p style="font-size:0.85rem; line-height:1.5; color:var(--text-main); margin:0;">
-          <strong>Recommended Intake:</strong> 2 servings daily throughout pre-conception, pregnancy, and active lactation.
+          <strong>Recommended Intake:</strong> Drink 2–3 glasses per day. Easily dissolves in cold or warm water. Package size: 400 gm.
         </p>
       </div>
     `;

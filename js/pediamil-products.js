@@ -1,7 +1,7 @@
 /**
  * Liptis Nutrition Brussels & Ghent Standalone Event
- * Pediamil Scientific Product Portfolio (www.pediamil.com)
- * Presented for Egypt's Eminent Pediatricians
+ * Pediamil Scientific Product Portfolio (www.pediamil.com) & Pediamum (www.pediamum.com)
+ * Sourced directly from official websites www.pediamil.com and www.pediamum.com
  */
 
 const PEDIAMIL_PORTFOLIO = [
@@ -11,18 +11,19 @@ const PEDIAMIL_PORTFOLIO = [
     brand: "Pediamil",
     logoKey: "pediamil",
     category: "standard",
-    stage: "Stage 1 • From Birth to 6 Months",
-    tagline: "Super Premium Infant Formula for Optimal Growth & Immunity",
-    badge: "Gold Standard Starter",
-    description: "Pediamil 1 is crafted to support the newborn during the critical first 1,000 days of life when breast milk is not available. Scientifically formulated with an optimal whey-to-casein ratio (60:40) mirroring human milk, fortified with prebiotics, brain-building lipids, and balanced micronutrients.",
+    stage: "From 0-6 Months",
+    tagline: "A Super-Premium Infant Formula for babies from birth to 6 months of age",
+    badge: "Super-Premium Formula",
+    description: "Pediamil 1 is a Super-Premium Infant Formula made of thoughtfully sourced, wholesome ingredients. Pediamil 1 delivers the vitamins and nutrients your baby needs to stay healthy and develop properly from the very first day, including: Milk Fat containing Beta-Palmitate, Alpha-lactalbumin, More AA & DHA at a ratio of 1:1, Double-Encapsulated DHA (omega 3), Micro-Encapsulated Iron, and Prebiotics.",
     highlights: [
-      "Optimal 60:40 Whey/Casein ratio for easy gastric emptying",
-      "Prebiotic Blend (GOS/FOS) for healthy bifidogenic gut flora",
-      "DHA & ARA in balanced 1:1 ratio for cognitive & retinal development",
-      "5 Essential Nucleotides to reinforce mucosal and systemic immunity",
-      "Tailored mineral profile with bioavailable Iron and Calcium"
+      "Supports eye and brain development",
+      "Provides a complete vitamin and nutrient profile",
+      "Formulated to prevent constipation and colic",
+      "Strengthens the immune system",
+      "Boosts bone development",
+      "Form: Powder | Packing Size: 400gm"
     ],
-    indications: "Healthy term infants from birth up to 6 months who require formula feeding."
+    indications: "Complete nutrition for babies from birth to 6 months of age when breast milk is not available."
   },
   {
     id: "pediamil-2",
@@ -30,18 +31,19 @@ const PEDIAMIL_PORTFOLIO = [
     brand: "Pediamil",
     logoKey: "pediamil",
     category: "standard",
-    stage: "Stage 2 • From 6 to 12 Months",
-    tagline: "Super Premium Follow-On Formula for Active Weaning",
-    badge: "Growth & Weaning Support",
-    description: "Pediamil 2 supports the infant's increasing nutritional demands during the weaning phase. Fortified with elevated iron, calcium, and vitamin D, it perfectly complements the gradual introduction of complementary solid foods.",
+    stage: "From 6-12 Months",
+    tagline: "A Super-Premium follow-on formula for infants from 6 to 12 months of age",
+    badge: "Super-Premium Follow-on",
+    description: "Pediamil 2 is a Super-Premium Follow-on Formula made of thoughtfully sourced, wholesome ingredients. Pediamil 2 delivers the vitamins and nutrients your baby needs to continue development and grow up healthy and strong, including: Milk Fat containing Beta-Palmitate, Alpha-lactalbumin, More AA & DHA at a ratio of 1:1, Double-Encapsulated DHA (omega 3), Micro-Encapsulated Iron, and Prebiotics.",
     highlights: [
-      "Adjusted protein concentration (whey:casein 50:50) suitable for maturing kidneys",
-      "Elevated bioavailable iron to prevent weaning-associated anemia",
-      "Enriched with Omega-3 (ALA, DHA) and Omega-6 (LA, ARA)",
-      "Prebiotics GOS/FOS to promote soft, regular stools",
-      "Comprehensive vitamin and trace element complex (Zinc, Selenium, Iodine)"
+      "Supports eye and brain development",
+      "Provides a complete vitamin and nutrient profile",
+      "Formulated to prevent constipation and colic",
+      "Strengthens the immune system",
+      "Boosts bone development",
+      "Form: Powder | Packing Size: 400gm"
     ],
-    indications: "Older infants from 6 months onwards as the liquid component of a diversified diet."
+    indications: "Follow-on formula for infants from 6 to 12 months as the liquid part of a progressively diversified diet."
   },
   {
     id: "pediamil-ac",
@@ -49,17 +51,19 @@ const PEDIAMIL_PORTFOLIO = [
     brand: "Pediamil",
     logoKey: "pediamil",
     category: "specialized",
-    stage: "Birth to 12 Months",
-    tagline: "Anti-Colic Formula for Digestive Comfort",
-    badge: "Digestive Relief",
-    description: "Pediamil AC is specially designed for infants experiencing infant colic, gas, abdominal distension, and excessive crying. Formulated with reduced lactose, easily digestible 100% whey protein partially hydrolyzed, and structured triglycerides (beta-palmitate) to prevent hard calcium soaps.",
+    stage: "From Birth to 12 Months",
+    tagline: "Anti-colic Super-Premium infant formula for infants from birth to 12 months of age",
+    badge: "Anti-Colic Relief",
+    description: "Pediamil AC is a Super-Premium anti-colic infant formula prescribed by pediatricians which helps to ease digestion and the discomfort associated with colic. Pediamil AC delivers the vitamins and nutrients your baby needs to continue development and grow up happy and healthy, including: Lower Lactose Content, Milk Fat with Beta-Palmitate, and Alpha-Lactalbumin.",
     highlights: [
-      "Low lactose level to minimize intestinal fermentation and gas formation",
-      "100% partially hydrolyzed whey protein for accelerated gastric transit",
-      "Beta-palmitate lipid structure for soft stools and reduced abdominal cramps",
-      "Fortified with prebiotics to support a balanced colonic microenvironment"
+      "Anti-Colic Infant Formula gentle on baby's tummy",
+      "Eases infant digestion",
+      "Supports eye and brain development",
+      "Provides a complete vitamin and nutrient profile",
+      "Formulated to prevent constipation and colic",
+      "Form: Powder | Packing Size: 350gm"
     ],
-    indications: "Dietary management of infant colic, excessive gas, flatulence, and functional crying."
+    indications: "Dietary management of infants from birth to 12 months suffering from colic, gas, and digestive discomfort."
   },
   {
     id: "pediamil-ha",
@@ -67,17 +71,19 @@ const PEDIAMIL_PORTFOLIO = [
     brand: "Pediamil",
     logoKey: "pediamil",
     category: "specialized",
-    stage: "Birth to 12 Months",
-    tagline: "Hypoallergenic Formula for Allergy Risk Prevention",
-    badge: "Allergy Prevention",
-    description: "Pediamil HA is formulated with 100% partially hydrolyzed whey protein to significantly reduce antigenicity and lower the risk of developing cow's milk protein allergy in at-risk infants with a family history of atopy.",
+    stage: "From Birth to 12 Months",
+    tagline: "Hypoallergenic Super-Premium infant formula for infants from birth to 12 months of age",
+    badge: "Hypoallergenic Formula",
+    description: "Pediamil HA is a Partially Hydrolyzed Super Premium Infant Milk Formula providing complete nutrition as the superior option for prevention of Cow's Milk Protein Allergy in high risk infants. Prescribed by pediatricians to help induce tolerance while delivering the vitamins and nutrients your baby needs to continue development and grow up happy and healthy, including: Partially Hydrolysed Whey Protein with enzymatic hydrolysis, Milk Fat with Beta-Palmitate, More AA & DHA at a ratio of 1:1, Double-Encapsulated DHA (omega 3), and Micro-Encapsulated Iron.",
     highlights: [
-      "Controlled enzymatic whey hydrolysis reducing allergenicity by over 90%",
-      "Maintains essential nutritional value, taste, and palatability",
-      "Balanced DHA/ARA and Nucleotides for immune system maturation",
-      "Clinically evaluated for tolerance and growth adequacy"
+      "Helps the infant's body to accept modified cow milk protein to induce tolerance",
+      "Has a great taste",
+      "Supports eye and brain development",
+      "Provides a complete vitamin and nutrient profile",
+      "Formulated to prevent constipation and colic",
+      "Form: Powder | Packing Size: 350gm"
     ],
-    indications: "Infants with a high risk of developing atopic disease (allergic parent or sibling)."
+    indications: "Infants from birth to 12 months with a family history of atopic disease or high risk of cow's milk protein allergy."
   },
   {
     id: "pediamil-ar",
@@ -85,17 +91,18 @@ const PEDIAMIL_PORTFOLIO = [
     brand: "Pediamil",
     logoKey: "pediamil",
     category: "specialized",
-    stage: "Birth to 12 Months",
-    tagline: "Anti-Regurgitation Formula for Reflux Management",
-    badge: "Reflux Control",
-    description: "Pediamil AR is enriched with natural carob bean gum (locust bean gum), a high-grade cold-resistant thickener that increases viscosity in the stomach under acidic gastric pH, significantly reducing gastroesophageal reflux and regurgitation episodes.",
+    stage: "From Birth to 12 Months",
+    tagline: "Anti-Regurgitation Super-Premium infant formula for infants from birth to 12 months of age",
+    badge: "Anti-Regurgitation",
+    description: "Pediamil AR is a Super-Premium anti-regurgitation infant formula prescribed by pediatricians that helps reduce regurgitation or spit up. Like our other infant formulas, Pediamil AR contains the wholesome nourishment your baby needs to stay healthy and thrive from birth onwards, including: Carob Bean Gum as thickening agent, Milk Fat with Beta-Palmitate, Alpha-Lactalbumin, More AA & DHA at a ratio of 1:1, Double-Encapsulated DHA (omega 3), and Micro-Encapsulated Iron.",
     highlights: [
-      "Thickened with natural carob bean gum: flows easily through standard teat, thickens in stomach",
-      "Clinically proven reduction in daily regurgitation frequency and vomit volume",
-      "High whey-to-casein ratio ensuring rapid gastric emptying without delayed clearance",
-      "Promotes normal weight gain and restful sleep patterns"
+      "Reduces regurgitation (spit up)",
+      "Thickened formula with natural Carob Bean Gum",
+      "Supports eye and brain development",
+      "Provides a complete vitamin and nutrient profile",
+      "Form: Powder | Packing Size: 350gm"
     ],
-    indications: "Dietary management of gastroesophageal reflux (GER) and persistent regurgitation."
+    indications: "Dietary management of infants from birth to 12 months suffering from frequent regurgitation, reflux, and spit-up."
   },
   {
     id: "pediamil-lbw",
@@ -103,17 +110,19 @@ const PEDIAMIL_PORTFOLIO = [
     brand: "Pediamil",
     logoKey: "pediamil",
     category: "specialized",
-    stage: "From Birth for Preterm / Low Birth Weight",
-    tagline: "Special Formula for Premature & Low Birth Weight Infants",
-    badge: "Preterm Catch-Up Growth",
-    description: "Pediamil LBW is a high-density clinical formulation engineered to meet the accelerated caloric and nutritional needs of premature and low birth weight infants, ensuring safe and rapid catch-up growth and neurodevelopment.",
+    stage: "From Birth to 12 Months",
+    tagline: "Super-Premium low birth weight infant formula for preterm and low birth weight infants",
+    badge: "Preterm & LBW Growth",
+    description: "Pediamil LBW is a Super Premium LBW Infant Formula with Immunogrow Nutrients to Support Rapid Growth, Optimal Digestion and Enhanced Immunity for Preterm and Low Birth Weight Infants. Pediamil LBW delivers clinically targeted nutrition to promote optimal growth and development, including: 80 kcal/100 ml high energy content to support rapid catch-up growth, and 2.4 g protein/100 ml with alpha-lactalbumin.",
     highlights: [
-      "Higher energy density (approx. 80 kcal/100ml) with optimized protein-to-energy ratio",
-      "Enriched with Medium Chain Triglycerides (MCTs) for effortless fat absorption",
-      "Optimized Calcium and Phosphorus ratio to support neonatal bone mineralization",
-      "High levels of DHA, ARA, Taurine, and Choline for immature brain and eye pathways"
+      "Low Birth Weight infant formula for preterm and low birth weight infants",
+      "Provides a high energy content (80 kcal/100 ml) for rapid catch-up growth",
+      "Supports optimal digestion",
+      "Strengthens the immune system with Immunogrow Nutrients",
+      "Supports brain and visual development",
+      "Form: Powder | Packing Size: 350gm"
     ],
-    indications: "Premature infants (<37 weeks) and low birth weight infants (<2,500g) after discharge or during hospitalization."
+    indications: "Preterm infants (<37 weeks) and low birth weight infants (<2,500g) requiring high caloric density and catch-up growth."
   },
   {
     id: "pediamil-lf",
@@ -121,36 +130,40 @@ const PEDIAMIL_PORTFOLIO = [
     brand: "Pediamil",
     logoKey: "pediamil",
     category: "specialized",
-    stage: "Birth to 12 Months",
-    tagline: "Lactose-Free Formula for Diarrhea & Lactose Intolerance",
+    stage: "From Birth to 12 Months",
+    tagline: "Lactose-Free Super-Premium infant formula for infants from birth to 12 months of age",
     badge: "Lactose-Free Care",
-    description: "Pediamil LF completely replaces lactose with bioavailable maltodextrins to provide immediate gut rest and mucosal recovery in infants suffering from congenital or post-infectious secondary lactose intolerance and acute diarrhea.",
+    description: "Pediamil LF is a Super Premium Infant Milk Formula which provides proper nutrition for infants suffering from Lactose Intolerance and Diarrhea. Prescribed by pediatricians which helps to reduce diarrhea and support intestinal health. Pediamil LF delivers the vitamins and nutrients your baby needs to continue development and grow up happy and healthy, including: Milk Fat, 20% more AA/DHA, Double-Encapsulated DHA (Omega 3), Micro-Encapsulated Iron, 5 Types of Nucleotides, and Selenium.",
     highlights: [
-      "100% Lactose-Free formula: zero lactose content prevents osmotic diarrhea",
-      "Maltodextrin carbohydrate source with low osmolarity to protect intestinal brush border",
-      "Enriched with Zinc to accelerate enterocyte regeneration and shorten diarrhea duration",
-      "Complete micronutrient profile preventing dehydration and nutritional deficits"
+      "Helps to reduce infant diarrhea",
+      "Supports intestinal health and recovery after diarrhea",
+      "Eases digestion",
+      "Improves absorption of nutrients",
+      "Form: Powder | Packing Size: 350gm"
     ],
-    indications: "Management of primary lactose intolerance, post-gastroenteritis secondary lactase deficiency, and acute watery diarrhea."
+    indications: "Dietary management of infants from birth to 12 months suffering from primary or secondary lactose intolerance and diarrhea."
   },
   {
     id: "pediamum",
-    name: "Pediamum",
+    name: "Pediamum®",
     brand: "Pediamum",
     logoKey: "pediamum",
     category: "maternal",
-    stage: "For Expectant & Nursing Mothers",
-    tagline: "Super Premium Maternal Nutritional Supplement",
+    stage: "For Pregnant and Lactating Mothers",
+    tagline: "Super-Premium milk-based nutritional supplement for pregnant and nursing mothers",
     badge: "Maternal Health & Lactation",
-    description: "Pediamum is an advanced maternal nutritional milk beverage formulated to support the elevated metabolic, structural, and physiological requirements of women throughout pregnancy and lactation. It ensures optimal nutrient transfer to the growing fetus and breastfed newborn.",
+    description: "Pediamum® is a super-premium milk-based nutritional supplement specifically designed for pregnant and nursing mothers. Made with thoughtfully sourced, wholesome ingredients, Pediamum helps the healthy growth and development of babies and replenishes the nutrients depleted from mom during pregnancy and lactation.",
     highlights: [
-      "Rich in Folic Acid (Methylfolate) to prevent neural tube defects",
-      "DHA (Omega-3) for fetal neurodevelopment and breast milk lipid enrichment",
-      "Chelated Iron and Vitamin C for high bioavailability without gastrointestinal distress",
-      "Calcium, Magnesium, and Vitamin D3 for maternal bone density and fetal skeletal development",
-      "Low fat, delicious natural vanilla taste with zero artificial colorants"
+      "Super-Premium supplement to support increased nutritional requirements of pregnant & lactating women",
+      "Contains essential nutrients for the healthy development of your baby",
+      "Supports maternal health and breastfeeding",
+      "Easily dissolves in cold or warm water with a creamy, great tasting vanilla flavor",
+      "Milk Fat containing Beta-Palmitate, Double-Encapsulated DHA (Omega 3), Micro-Encapsulated Iron, and Folic Acid",
+      "Omega-3 & 6 fatty acids, Antioxidants, Prebiotics (dietary fibers), Taurine, Choline, Calcium, and Vit. D",
+      "No hormones, No antibiotics, No gluten, No sucrose, No Genetically Modified Ingredients (GMO)",
+      "Preparation: 4 scoops in 220 ml water (1 glass 240 ml), 2-3 glasses per day | Form: Powder | Size: 400 gm"
     ],
-    indications: "Nutritional supplementation during pre-conception, pregnancy, and breastfeeding."
+    indications: "Nutritional supplementation during pre-conception, pregnancy, and lactation to support maternal wellbeing and fetal/infant growth."
   },
   {
     id: "pedia-start-1",
