@@ -2299,9 +2299,9 @@
         </div>
         <span>All Tabs</span>
       </button>
-      <button class="bottom-nav-item" data-nav-tab="pediamil">
-        <i class="fas fa-baby"></i>
-        <span>Pediamil</span>
+      <button type="button" class="bottom-nav-item" id="bottom-nav-agenda" onclick="openScientificAgendaModal()" aria-label="Open Scientific Agenda" title="Scientific Agenda">
+        <i class="fas fa-microscope"></i>
+        <span>Sci. Agenda</span>
       </button>
       <button class="bottom-nav-item" data-nav-tab="contacts">
         <i class="fas fa-users"></i>
@@ -2460,6 +2460,9 @@
       <!-- Injected dynamically via openScientificAgendaModal() -->
     </div>
     <div class="agenda-modal-footer">
+      <button type="button" class="navy-outline-btn" style="padding:8px 16px; font-size:0.85rem;" onclick="closeScientificAgendaModal(); switchTab('itinerary'); setDayFilter(2);">
+        <i class="fas fa-calendar-alt"></i> View in 4-Day Timeline
+      </button>
       <button type="button" class="agenda-modal-ok-btn" onclick="closeScientificAgendaModal()">
         <i class="fas fa-check"></i> Close
       </button>

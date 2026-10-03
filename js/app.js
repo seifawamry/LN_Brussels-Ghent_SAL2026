@@ -536,6 +536,9 @@ function openScientificAgendaModal() {
   modal.classList.add("active");
   backdrop.classList.add("active");
   document.body.style.overflow = "hidden";
+
+  const bottomAgendaBtn = document.getElementById("bottom-nav-agenda");
+  if (bottomAgendaBtn) bottomAgendaBtn.classList.add("active");
 }
 
 function closeScientificAgendaModal() {
@@ -544,6 +547,9 @@ function closeScientificAgendaModal() {
   if (modal) modal.classList.remove("active");
   if (backdrop) backdrop.classList.remove("active");
   document.body.style.overflow = "";
+
+  const bottomAgendaBtn = document.getElementById("bottom-nav-agenda");
+  if (bottomAgendaBtn) bottomAgendaBtn.classList.remove("active");
 }
 
 function getCategoryBadge(cat) {

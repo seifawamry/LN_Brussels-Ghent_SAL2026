@@ -437,6 +437,12 @@ img {
   font-size: 1.15rem;
 }
 
+.bottom-nav-item span {
+  font-size: 0.65rem;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
 .bottom-nav-item.active {
   color: var(--navy-deep);
   font-weight: 800;
