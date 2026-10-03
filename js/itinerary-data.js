@@ -442,7 +442,7 @@ const ITINERARY_DATA = [
         mapsUrl: "https://maps.google.com/?q=Graslei+6+Gent",
         image: "assets/images/venues/dining-de-witte-leeuw.jpg",
         description: "Dinner at the traditional Belgian De Witte Leeuw Restaurant in Ghent with iconic waterfront views of the Leie River. Official farewell dinner celebrating the scientific and cultural success of the 2026 Standalone. Situated right on the medieval waterfront, offering exquisite 100% Halal fresh seafood and European cuisine.",
-        notes: "All menu selections are strictly 100% Halal. Honoring the eminent pediatricians with commemorative gift presentations."
+        notes: "All menu selections are strictly 100% Halal."
       },
       {
         time: "21:00",
