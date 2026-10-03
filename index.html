@@ -444,7 +444,16 @@
           </div>
         </div>
 
-        <div class="glance-card gold-card" style="cursor:pointer;" onclick="switchTab('tax-refund')">
+        <div class="glance-card gold-card" style="cursor:pointer;" onclick="switchTab('travel-guide')">
+          <div class="glance-icon"><i class="fas fa-suitcase-rolling"></i></div>
+          <div class="glance-content">
+            <h5>Travel Guide</h5>
+            <div class="glance-val">Weather, Attire & Currency</div>
+            <div class="glance-sub">Plugs/appliances & EGP / EUR / USD converter</div>
+          </div>
+        </div>
+
+        <div class="glance-card" style="cursor:pointer;" onclick="switchTab('tax-refund')">
           <div class="glance-icon"><i class="fas fa-calculator"></i></div>
           <div class="glance-content">
             <h5>Tax Free VAT</h5>
@@ -453,7 +462,7 @@
           </div>
         </div>
 
-        <div class="glance-card" style="cursor:pointer;" onclick="switchTab('prayer-times')">
+        <div class="glance-card gold-card" style="cursor:pointer;" onclick="switchTab('prayer-times')">
           <div class="glance-icon"><i class="fas fa-compass"></i></div>
           <div class="glance-content">
             <h5>Prayer & Qibla</h5>
@@ -462,7 +471,7 @@
           </div>
         </div>
 
-        <div class="glance-card gold-card" style="cursor:pointer;" onclick="switchTab('hotel')">
+        <div class="glance-card" style="cursor:pointer;" onclick="switchTab('hotel')">
           <div class="glance-icon"><i class="fas fa-bed"></i></div>
           <div class="glance-content">
             <h5>Hotel Guide</h5>
@@ -471,7 +480,7 @@
           </div>
         </div>
 
-        <div class="glance-card" style="cursor:pointer;" onclick="switchTab('dining')">
+        <div class="glance-card gold-card" style="cursor:pointer;" onclick="switchTab('dining')">
           <div class="glance-icon"><i class="fas fa-drumstick-bite"></i></div>
           <div class="glance-content">
             <h5>Hosted Dining</h5>
@@ -480,7 +489,7 @@
           </div>
         </div>
 
-        <div class="glance-card gold-card" style="cursor:pointer;" onclick="switchTab('sightseeing')">
+        <div class="glance-card" style="cursor:pointer;" onclick="switchTab('sightseeing')">
           <div class="glance-icon"><i class="fas fa-monument"></i></div>
           <div class="glance-content">
             <h5>Sights & Shopping</h5>
@@ -489,7 +498,7 @@
           </div>
         </div>
 
-        <div class="glance-card" style="cursor:pointer;" onclick="switchTab('pediamil')">
+        <div class="glance-card gold-card" style="cursor:pointer;" onclick="switchTab('pediamil')">
           <div class="glance-icon"><i class="fas fa-prescription-bottle"></i></div>
           <div class="glance-content">
             <h5>Scientific Portfolio</h5>
@@ -498,7 +507,7 @@
           </div>
         </div>
 
-        <div class="glance-card gold-card" style="cursor:pointer;" onclick="switchTab('contacts')">
+        <div class="glance-card" style="cursor:pointer;" onclick="switchTab('contacts')">
           <div class="glance-icon"><i class="fas fa-id-badge"></i></div>
           <div class="glance-content">
             <h5>On-Site Assistance</h5>
@@ -507,7 +516,7 @@
           </div>
         </div>
 
-        <div class="glance-card" style="cursor:pointer;" onclick="downloadFullItineraryICS()">
+        <div class="glance-card gold-card" style="cursor:pointer;" onclick="downloadFullItineraryICS()">
           <div class="glance-icon"><i class="fas fa-calendar-plus"></i></div>
           <div class="glance-content">
             <h5>Calendar Sync</h5>
@@ -968,21 +977,27 @@
             </div>
             <div style="display:flex; flex-direction:column; gap:6px;">
               <div style="display:flex; justify-content:space-between; align-items:center; font-size:0.8rem; padding:6px 8px; background:#ffffff; border-radius:4px; border:1px solid var(--border-light);">
-                <span><i class="fas fa-train" style="color:var(--blue-royal); margin-right:6px;"></i><strong>Brussels-Luxembourg Station:</strong> 2 min walk</span>
+                <span><i class="fas fa-train" style="color:var(--blue-royal); margin-right:6px;"></i><strong>Brussels-Luxembourg Station:</strong> 2 min</span>
                 <a href="https://www.google.com/maps/dir/?api=1&origin=Renaissance+Brussels+Hotel,+Rue+du+Parnasse+19,+1050+Brussels&destination=Gare+de+Bruxelles-Luxembourg,+Rue+de+Tr%C3%A8ves,+1050+Bruxelles&travelmode=walking" target="_blank" rel="noopener" class="conn-direction-btn" style="padding:3px 8px; font-size:0.72rem;">
-                  <i class="fas fa-directions"></i> Directions
+                  <i class="fas fa-walking"></i> Walk (2 min)
                 </a>
               </div>
               <div style="display:flex; justify-content:space-between; align-items:center; font-size:0.8rem; padding:6px 8px; background:#ffffff; border-radius:4px; border:1px solid var(--border-light);">
-                <span><i class="fas fa-subway" style="color:var(--blue-royal); margin-right:6px;"></i><strong>Trône Metro Station:</strong> 7 min walk (Lines 2 & 6)</span>
+                <span><i class="fas fa-subway" style="color:var(--blue-royal); margin-right:6px;"></i><strong>Trône Metro Station:</strong> 7 min</span>
                 <a href="https://www.google.com/maps/dir/?api=1&origin=Renaissance+Brussels+Hotel,+Rue+du+Parnasse+19,+1050+Brussels&destination=Tr%C3%B4ne+Metro+Station,+1000+Brussels&travelmode=walking" target="_blank" rel="noopener" class="conn-direction-btn" style="padding:3px 8px; font-size:0.72rem;">
-                  <i class="fas fa-directions"></i> Directions
+                  <i class="fas fa-walking"></i> Walk (7 min)
                 </a>
               </div>
               <div style="display:flex; justify-content:space-between; align-items:center; font-size:0.8rem; padding:6px 8px; background:#ffffff; border-radius:4px; border:1px solid var(--border-light);">
-                <span><i class="fas fa-shopping-basket" style="color:var(--gold-dark); margin-right:6px;"></i><strong>Carrefour & Delhaize:</strong> 2–3 min walk</span>
-                <a href="#hotel-neighborhood-guide" class="conn-direction-btn" style="padding:3px 8px; font-size:0.72rem;">
-                  <i class="fas fa-map-marker-alt"></i> View Guide
+                <span><i class="fas fa-shopping-basket" style="color:var(--gold-dark); margin-right:6px;"></i><strong>Carrefour Express:</strong> 2 min (~180m)</span>
+                <a href="https://www.google.com/maps/dir/?api=1&origin=Renaissance+Brussels+Hotel,+Rue+du+Parnasse+19,+1050+Brussels&destination=Carrefour+Express,+Rue+du+Luxembourg+46,+1000+Bruxelles&travelmode=walking" target="_blank" rel="noopener" class="conn-direction-btn" style="padding:3px 8px; font-size:0.72rem;">
+                  <i class="fas fa-walking"></i> Walk (2 min)
+                </a>
+              </div>
+              <div style="display:flex; justify-content:space-between; align-items:center; font-size:0.8rem; padding:6px 8px; background:#ffffff; border-radius:4px; border:1px solid var(--border-light);">
+                <span><i class="fas fa-clock" style="color:var(--gold-dark); margin-right:6px;"></i><strong>Delhaize Shop &amp; Go:</strong> 3 min (Station)</span>
+                <a href="https://www.google.com/maps/dir/?api=1&origin=Renaissance+Brussels+Hotel,+Rue+du+Parnasse+19,+1050+Brussels&destination=Shop+%26+Go+Delhaize+Gare+du+Luxembourg,+Rue+de+Tr%C3%A8ves,+1050+Ixelles&travelmode=walking" target="_blank" rel="noopener" class="conn-direction-btn" style="padding:3px 8px; font-size:0.72rem;">
+                  <i class="fas fa-walking"></i> Walk (3 min)
                 </a>
               </div>
             </div>
@@ -1123,7 +1138,7 @@
                 </div>
                 <div class="conn-actions-row">
                   <a href="https://www.google.com/maps/dir/?api=1&origin=Renaissance+Brussels+Hotel,+Rue+du+Parnasse+19,+1050+Brussels&destination=Carrefour+Express,+Rue+du+Luxembourg+46,+1000+Bruxelles&travelmode=walking" target="_blank" rel="noopener" class="conn-direction-btn">
-                    <i class="fas fa-directions"></i> Walking Directions (2 min)
+                    <i class="fas fa-walking"></i> Walking Directions (2 min)
                   </a>
                 </div>
               </div>
@@ -1148,7 +1163,7 @@
                 </div>
                 <div class="conn-actions-row">
                   <a href="https://www.google.com/maps/dir/?api=1&origin=Renaissance+Brussels+Hotel,+Rue+du+Parnasse+19,+1050+Brussels&destination=Shop+%26+Go+Delhaize+Gare+du+Luxembourg,+Rue+de+Tr%C3%A8ves,+1050+Ixelles&travelmode=walking" target="_blank" rel="noopener" class="conn-direction-btn">
-                    <i class="fas fa-directions"></i> Walking Directions (3 min)
+                    <i class="fas fa-walking"></i> Walking Directions (3 min)
                   </a>
                 </div>
               </div>
@@ -1173,7 +1188,7 @@
                 </div>
                 <div class="conn-actions-row">
                   <a href="https://www.google.com/maps/dir/?api=1&origin=Renaissance+Brussels+Hotel,+Rue+du+Parnasse+19,+1050+Brussels&destination=Carrefour+Market,+Chauss%C3%A9e+d%27Ixelles+85,+1050+Ixelles&travelmode=walking" target="_blank" rel="noopener" class="conn-direction-btn">
-                    <i class="fas fa-directions"></i> Walking Directions (9 min)
+                    <i class="fas fa-walking"></i> Walking Directions (9 min)
                   </a>
                 </div>
               </div>
