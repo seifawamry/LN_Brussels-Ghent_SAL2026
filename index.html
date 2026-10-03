@@ -958,16 +958,330 @@
           </div>
 
           <div style="background:var(--bg-app); border-radius:var(--radius-sm); padding:14px; border:1px solid var(--border-light); margin-top:14px;">
-            <h5 style="font-size:0.85rem; font-weight:800; color:var(--blue-royal); margin-bottom:4px;">
-              <i class="fas fa-subway"></i> Public Transport Connections
-            </h5>
-            <p style="font-size:0.82rem; color:var(--text-muted); line-height:1.45;">
-              &bull; <strong>Brussels-Luxembourg Station:</strong> 2 min walk (~150m). Direct trains across Brussels.<br>
-              &bull; <strong>Trône Metro Station:</strong> 7 min walk. Lines 2 & 6 direct to city centre.<br>
-              &bull; <strong>Nearby Groceries:</strong> Carrefour Express & Delhaize Shop & Go within 3 minutes walk on Rue du Luxembourg.
-            </p>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <h5 style="font-size:0.86rem; font-weight:800; color:var(--blue-royal); margin:0;">
+                <i class="fas fa-subway"></i> Transport & Quick Connections
+              </h5>
+              <a href="#hotel-neighborhood-guide" style="font-size:0.75rem; font-weight:700; color:var(--gold-dark); text-decoration:none; display:inline-flex; align-items:center; gap:4px;">
+                All Directions <i class="fas fa-arrow-down"></i>
+              </a>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:6px;">
+              <div style="display:flex; justify-content:space-between; align-items:center; font-size:0.8rem; padding:6px 8px; background:#ffffff; border-radius:4px; border:1px solid var(--border-light);">
+                <span><i class="fas fa-train" style="color:var(--blue-royal); margin-right:6px;"></i><strong>Brussels-Luxembourg Station:</strong> 2 min walk</span>
+                <a href="https://www.google.com/maps/dir/?api=1&origin=Renaissance+Brussels+Hotel,+Rue+du+Parnasse+19,+1050+Brussels&destination=Gare+de+Bruxelles-Luxembourg,+Rue+de+Tr%C3%A8ves,+1050+Bruxelles&travelmode=walking" target="_blank" rel="noopener" class="conn-direction-btn" style="padding:3px 8px; font-size:0.72rem;">
+                  <i class="fas fa-directions"></i> Directions
+                </a>
+              </div>
+              <div style="display:flex; justify-content:space-between; align-items:center; font-size:0.8rem; padding:6px 8px; background:#ffffff; border-radius:4px; border:1px solid var(--border-light);">
+                <span><i class="fas fa-subway" style="color:var(--blue-royal); margin-right:6px;"></i><strong>Trône Metro Station:</strong> 7 min walk (Lines 2 & 6)</span>
+                <a href="https://www.google.com/maps/dir/?api=1&origin=Renaissance+Brussels+Hotel,+Rue+du+Parnasse+19,+1050+Brussels&destination=Tr%C3%B4ne+Metro+Station,+1000+Brussels&travelmode=walking" target="_blank" rel="noopener" class="conn-direction-btn" style="padding:3px 8px; font-size:0.72rem;">
+                  <i class="fas fa-directions"></i> Directions
+                </a>
+              </div>
+              <div style="display:flex; justify-content:space-between; align-items:center; font-size:0.8rem; padding:6px 8px; background:#ffffff; border-radius:4px; border:1px solid var(--border-light);">
+                <span><i class="fas fa-shopping-basket" style="color:var(--gold-dark); margin-right:6px;"></i><strong>Carrefour & Delhaize:</strong> 2–3 min walk</span>
+                <a href="#hotel-neighborhood-guide" class="conn-direction-btn" style="padding:3px 8px; font-size:0.72rem;">
+                  <i class="fas fa-map-marker-alt"></i> View Guide
+                </a>
+              </div>
+            </div>
           </div>
         </div>
+      </div>
+
+      <!-- Comprehensive Neighborhood Connectivity, Transit & Shopping Guide with Maps Directions -->
+      <div id="hotel-neighborhood-guide" class="hotel-neighborhood-section">
+        
+        <div class="section-header-banner" style="margin-bottom:20px; background:linear-gradient(135deg, #0d2c4a 0%, #1a4870 100%); padding:20px 24px; border-radius:var(--radius-md); color:#ffffff; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px; border-left:4px solid var(--gold-primary);">
+          <div>
+            <h3 style="font-size:1.35rem; font-weight:800; color:#ffffff; margin:0 0 4px 0; display:flex; align-items:center; gap:10px;">
+              <i class="fas fa-map-marked-alt" style="color:var(--gold-primary);"></i> Public Transportation, Markets & Shopping Directions
+            </h3>
+            <p style="font-size:0.86rem; color:rgba(255,255,255,0.88); margin:0;">
+              One-tap turn-by-turn Google Maps walking and transit directions starting directly from Renaissance Brussels Hotel (Rue du Parnasse 19)
+            </p>
+          </div>
+          <span class="section-badge-tag" style="background:rgba(212,166,45,0.22); color:var(--gold-light); border-color:var(--gold-primary); font-size:0.82rem;">
+            <i class="fas fa-location-arrow"></i> Turn-by-Turn Navigation
+          </span>
+        </div>
+
+        <div class="hotel-connectivity-grid">
+          
+          <!-- Category 1: Public Transportation & Connections -->
+          <div class="connectivity-card">
+            <div class="connectivity-card-header">
+              <h4><i class="fas fa-train-subway"></i> Public Transportation & Stations</h4>
+              <span class="header-badge">3 Major Stations</span>
+            </div>
+            <div class="connectivity-card-body">
+              
+              <!-- Item 1.1: Brussels-Luxembourg Train Station -->
+              <div class="conn-item">
+                <div class="conn-item-top">
+                  <div class="conn-item-title-wrap">
+                    <div class="conn-item-icon"><i class="fas fa-train"></i></div>
+                    <div>
+                      <h5 class="conn-item-name">Gare de Bruxelles-Luxembourg</h5>
+                      <div class="conn-item-sub">SNCB Belgian Rail &bull; Station Hall: Rue de Trèves</div>
+                    </div>
+                  </div>
+                  <span class="conn-distance-pill"><i class="fas fa-walking"></i> 150m &bull; 2 min</span>
+                </div>
+                <p class="conn-item-desc">
+                  Closest train station. Provides frequent suburban S-Trains directly to Brussels Central (Gare Centrale / Grand-Place in 6 min), Brussels South (Gare du Midi for Eurostar/Thalys), and direct <strong>Line S19 to Brussels Zaventem Airport (BRU)</strong> in ~19 minutes.
+                </p>
+                <div class="conn-transit-badge">
+                  <i class="fas fa-ticket-alt"></i> Lines: S4, S5, S8, S9, S19 Airport Express
+                </div>
+                <div class="conn-actions-row">
+                  <a href="https://www.google.com/maps/dir/?api=1&origin=Renaissance+Brussels+Hotel,+Rue+du+Parnasse+19,+1050+Brussels&destination=Gare+de+Bruxelles-Luxembourg,+Rue+de+Tr%C3%A8ves,+1050+Bruxelles&travelmode=walking" target="_blank" rel="noopener" class="conn-direction-btn">
+                    <i class="fas fa-directions"></i> Walking Directions (2 min)
+                  </a>
+                </div>
+              </div>
+
+              <!-- Item 1.2: Trône Metro Station -->
+              <div class="conn-item">
+                <div class="conn-item-top">
+                  <div class="conn-item-title-wrap">
+                    <div class="conn-item-icon"><i class="fas fa-subway"></i></div>
+                    <div>
+                      <h5 class="conn-item-name">Trône Metro Station (Troon)</h5>
+                      <div class="conn-item-sub">STIB-MIVB Underground &bull; Lines 2 & 6</div>
+                    </div>
+                  </div>
+                  <span class="conn-distance-pill"><i class="fas fa-walking"></i> 550m &bull; 7 min</span>
+                </div>
+                <p class="conn-item-desc">
+                  Key high-frequency metro station along the Brussels Inner Ring. <strong>Line 2 & Line 6</strong> run every 3–5 minutes: take it 3 stops (4 mins) to <strong>Louise</strong> (Avenue Louise luxury shopping) and 6 stops (8 mins) to <strong>Rogier</strong> (City 2 Shopping Mall & Rue Neuve).
+                </p>
+                <div class="conn-transit-badge">
+                  <i class="fas fa-route"></i> Direct to Louise (4 min) & Rogier / City 2 (8 min)
+                </div>
+                <div class="conn-actions-row">
+                  <a href="https://www.google.com/maps/dir/?api=1&origin=Renaissance+Brussels+Hotel,+Rue+du+Parnasse+19,+1050+Brussels&destination=Tr%C3%B4ne+Metro+Station,+1000+Brussels&travelmode=walking" target="_blank" rel="noopener" class="conn-direction-btn">
+                    <i class="fas fa-directions"></i> Walking Directions (7 min)
+                  </a>
+                </div>
+              </div>
+
+              <!-- Item 1.3: Place du Luxembourg Bus Hub -->
+              <div class="conn-item">
+                <div class="conn-item-top">
+                  <div class="conn-item-title-wrap">
+                    <div class="conn-item-icon"><i class="fas fa-bus"></i></div>
+                    <div>
+                      <h5 class="conn-item-name">Place du Luxembourg Bus Hub</h5>
+                      <div class="conn-item-sub">Airport Express 12 & City Lines 38, 95</div>
+                    </div>
+                  </div>
+                  <span class="conn-distance-pill"><i class="fas fa-walking"></i> 160m &bull; 2 min</span>
+                </div>
+                <p class="conn-item-desc">
+                  Major transit plaza right outside the hotel. Features the dedicated <strong>STIB Bus 12 Airport Line</strong> express shuttle straight to Brussels Airport (BRU) terminals, plus City Buses <strong>38 and 95</strong> providing frequent direct service to Central Station, Royal Palace, and Grand-Place.
+                </p>
+                <div class="conn-transit-badge">
+                  <i class="fas fa-plane-departure"></i> Bus 12 Airport Express &bull; Bus 38 & 95 to Center
+                </div>
+                <div class="conn-actions-row">
+                  <a href="https://www.google.com/maps/dir/?api=1&origin=Renaissance+Brussels+Hotel,+Rue+du+Parnasse+19,+1050+Brussels&destination=Place+du+Luxembourg,+1050+Bruxelles&travelmode=walking" target="_blank" rel="noopener" class="conn-direction-btn">
+                    <i class="fas fa-directions"></i> Walking Directions (2 min)
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Category 2: Nearest Supermarkets & Grocery Markets -->
+          <div class="connectivity-card">
+            <div class="connectivity-card-header">
+              <h4><i class="fas fa-shopping-basket"></i> Nearest Markets & Groceries</h4>
+              <span class="header-badge">Daily Essentials</span>
+            </div>
+            <div class="connectivity-card-body">
+              
+              <!-- Item 2.1: Carrefour Express Rue du Luxembourg -->
+              <div class="conn-item">
+                <div class="conn-item-top">
+                  <div class="conn-item-title-wrap">
+                    <div class="conn-item-icon"><i class="fas fa-store"></i></div>
+                    <div>
+                      <h5 class="conn-item-name">Carrefour Express (Rue du Luxembourg)</h5>
+                      <div class="conn-item-sub">Rue du Luxembourg 46, 1000 Bruxelles</div>
+                    </div>
+                  </div>
+                  <span class="conn-distance-pill"><i class="fas fa-walking"></i> 180m &bull; 2 min</span>
+                </div>
+                <p class="conn-item-desc">
+                  The closest neighborhood supermarket to Renaissance Hotel. Perfect for purchasing cold bottled mineral water, fresh juices, cut fruits, snacks, Egyptian-friendly halal chips/nuts, boxed Belgian chocolates (Côte d'Or, Godiva, Guylian), and daily pharmacy/toiletries.
+                </p>
+                <div class="conn-transit-badge">
+                  <i class="fas fa-clock"></i> Mon–Sat 07:00 – 20:00 &bull; Sun 08:00 – 20:00
+                </div>
+                <div class="conn-actions-row">
+                  <a href="https://www.google.com/maps/dir/?api=1&origin=Renaissance+Brussels+Hotel,+Rue+du+Parnasse+19,+1050+Brussels&destination=Carrefour+Express,+Rue+du+Luxembourg+46,+1000+Bruxelles&travelmode=walking" target="_blank" rel="noopener" class="conn-direction-btn">
+                    <i class="fas fa-directions"></i> Walking Directions (2 min)
+                  </a>
+                </div>
+              </div>
+
+              <!-- Item 2.2: Delhaize Shop & Go Luxembourg Station -->
+              <div class="conn-item">
+                <div class="conn-item-top">
+                  <div class="conn-item-title-wrap">
+                    <div class="conn-item-icon"><i class="fas fa-coffee"></i></div>
+                    <div>
+                      <h5 class="conn-item-name">Delhaize Shop & Go (Station Luxembourg)</h5>
+                      <div class="conn-item-sub">Bruxelles-Luxembourg Station, Rue de Trèves</div>
+                    </div>
+                  </div>
+                  <span class="conn-distance-pill"><i class="fas fa-walking"></i> 220m &bull; 3 min</span>
+                </div>
+                <p class="conn-item-desc">
+                  Ideal for early mornings or late evenings with extended opening hours (06:00 to 22:00 daily). Features an in-store warm bakery (croissants, baguettes, pastries), fresh sandwiches, prepared salads, chilled drinks, and convenient grab-and-go travel refreshments.
+                </p>
+                <div class="conn-transit-badge">
+                  <i class="fas fa-clock"></i> Open 06:00 – 22:00 Daily (Extended Hours)
+                </div>
+                <div class="conn-actions-row">
+                  <a href="https://www.google.com/maps/dir/?api=1&origin=Renaissance+Brussels+Hotel,+Rue+du+Parnasse+19,+1050+Brussels&destination=Shop+%26+Go+Delhaize+Gare+du+Luxembourg,+Rue+de+Tr%C3%A8ves,+1050+Ixelles&travelmode=walking" target="_blank" rel="noopener" class="conn-direction-btn">
+                    <i class="fas fa-directions"></i> Walking Directions (3 min)
+                  </a>
+                </div>
+              </div>
+
+              <!-- Item 2.3: Carrefour Market Chaussée d'Ixelles -->
+              <div class="conn-item">
+                <div class="conn-item-top">
+                  <div class="conn-item-title-wrap">
+                    <div class="conn-item-icon"><i class="fas fa-cart-shopping"></i></div>
+                    <div>
+                      <h5 class="conn-item-name">Carrefour Market (Chaussée d'Ixelles)</h5>
+                      <div class="conn-item-sub">Chaussée d'Ixelles 85, 1050 Ixelles</div>
+                    </div>
+                  </div>
+                  <span class="conn-distance-pill"><i class="fas fa-walking"></i> 750m &bull; 9 min</span>
+                </div>
+                <p class="conn-item-desc">
+                  Full-scale large supermarket offering comprehensive grocery aisles, extensive organic Bio products, freshly baked goods, personal hygiene/skincare, and gift-packaged Belgian chocolates & speculoos biscuits at standard regular supermarket prices.
+                </p>
+                <div class="conn-transit-badge">
+                  <i class="fas fa-store-alt"></i> Full Supermarket &bull; Mon–Sat 08:00 – 20:00 (Fri 21:00)
+                </div>
+                <div class="conn-actions-row">
+                  <a href="https://www.google.com/maps/dir/?api=1&origin=Renaissance+Brussels+Hotel,+Rue+du+Parnasse+19,+1050+Brussels&destination=Carrefour+Market,+Chauss%C3%A9e+d%27Ixelles+85,+1050+Ixelles&travelmode=walking" target="_blank" rel="noopener" class="conn-direction-btn">
+                    <i class="fas fa-directions"></i> Walking Directions (9 min)
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Category 3: Nearest Shopping Malls & Commercial Boulevards -->
+          <div class="connectivity-card">
+            <div class="connectivity-card-header">
+              <h4><i class="fas fa-bag-shopping"></i> Nearest Shopping Malls & Centers</h4>
+              <span class="header-badge">Retail & Luxury</span>
+            </div>
+            <div class="connectivity-card-body">
+              
+              <!-- Item 3.1: City 2 Shopping Mall & Rue Neuve -->
+              <div class="conn-item">
+                <div class="conn-item-top">
+                  <div class="conn-item-title-wrap">
+                    <div class="conn-item-icon"><i class="fas fa-building"></i></div>
+                    <div>
+                      <h5 class="conn-item-name">City 2 Shopping Mall & Rue Neuve</h5>
+                      <div class="conn-item-sub">Rue Neuve 123, 1000 Bruxelles &bull; Metro Rogier</div>
+                    </div>
+                  </div>
+                  <span class="conn-distance-pill"><i class="fas fa-train"></i> 10 min &bull; Metro 2/6</span>
+                </div>
+                <p class="conn-item-desc">
+                  Belgium's premier 4-level enclosed shopping mall with 100+ international stores (Zara, Mango, H&M, Sephora, Fnac electronics, Apple reseller, Rituals), INNO luxury department store, and Global Blue <strong>Tax-Free refund counters</strong> for Egyptian visitors. Connects to Rue Neuve pedestrian boulevard.
+                </p>
+                <div class="conn-transit-badge">
+                  <i class="fas fa-subway"></i> Take Metro 2/6 from Trône directly to Rogier (8 min ride)
+                </div>
+                <div class="conn-actions-row">
+                  <a href="https://www.google.com/maps/dir/?api=1&origin=Renaissance+Brussels+Hotel,+Rue+du+Parnasse+19,+1050+Brussels&destination=City+2+Shopping+Mall,+Rue+Neuve+123,+1000+Bruxelles&travelmode=transit" target="_blank" rel="noopener" class="conn-direction-btn">
+                    <i class="fas fa-directions"></i> Transit Directions (10 min)
+                  </a>
+                  <a href="https://www.google.com/maps/dir/?api=1&origin=Renaissance+Brussels+Hotel,+Rue+du+Parnasse+19,+1050+Brussels&destination=City+2+Shopping+Mall,+Rue+Neuve+123,+1000+Bruxelles&travelmode=walking" target="_blank" rel="noopener" class="conn-direction-btn-alt">
+                    <i class="fas fa-walking"></i> Walk Route (~2.8 km)
+                  </a>
+                </div>
+              </div>
+
+              <!-- Item 3.2: Galerie Louise & Avenue de la Toison d'Or -->
+              <div class="conn-item">
+                <div class="conn-item-top">
+                  <div class="conn-item-title-wrap">
+                    <div class="conn-item-icon"><i class="fas fa-gem"></i></div>
+                    <div>
+                      <h5 class="conn-item-name">Galerie Louise & Avenue de la Toison d'Or</h5>
+                      <div class="conn-item-sub">Avenue Louise 43 & Blvd de la Toison d'Or</div>
+                    </div>
+                  </div>
+                  <span class="conn-distance-pill"><i class="fas fa-walking"></i> 950m &bull; 12 min</span>
+                </div>
+                <p class="conn-item-desc">
+                  Brussels' upscale luxury fashion avenue and covered shopping arcade. Hosts the flagship <strong>Apple Store Brussels</strong>, designer fashion houses, fine watch boutiques, luxury perfumeries, and covered shopping gallerias connecting Louise and Porte de Namur.
+                </p>
+                <div class="conn-transit-badge">
+                  <i class="fas fa-walking"></i> 12 min walk or 1 stop on Metro 2/6 (Trône &rarr; Louise)
+                </div>
+                <div class="conn-actions-row">
+                  <a href="https://www.google.com/maps/dir/?api=1&origin=Renaissance+Brussels+Hotel,+Rue+du+Parnasse+19,+1050+Brussels&destination=Galerie+Louise,+Avenue+Louise+43,+1050+Bruxelles&travelmode=walking" target="_blank" rel="noopener" class="conn-direction-btn">
+                    <i class="fas fa-directions"></i> Walking Directions (12 min)
+                  </a>
+                </div>
+              </div>
+
+              <!-- Item 3.3: Galeries Royales Saint-Hubert -->
+              <div class="conn-item">
+                <div class="conn-item-top">
+                  <div class="conn-item-title-wrap">
+                    <div class="conn-item-icon"><i class="fas fa-landmark"></i></div>
+                    <div>
+                      <h5 class="conn-item-name">Galeries Royales Saint-Hubert</h5>
+                      <div class="conn-item-sub">Galerie du Roi 5, 1000 Bruxelles (Grand-Place)</div>
+                    </div>
+                  </div>
+                  <span class="conn-distance-pill"><i class="fas fa-walking"></i> 1.6 km &bull; 18 min</span>
+                </div>
+                <p class="conn-item-desc">
+                  Europe's magnificent 1847 glazed architectural arcade. The global epicenter of artisanal Belgian chocolate masters (<strong>Neuhaus</strong> inventor of the praline in 1857, <strong>Pierre Marcolini</strong>, <strong>Corné Port-Royal</strong>, <strong>Mary Chocolatier</strong>), luxury leathercraft, and historic cafés.
+                </p>
+                <div class="conn-transit-badge">
+                  <i class="fas fa-bus"></i> 18 min scenic walk or Bus 38/95 from Place du Luxembourg
+                </div>
+                <div class="conn-actions-row">
+                  <a href="https://www.google.com/maps/dir/?api=1&origin=Renaissance+Brussels+Hotel,+Rue+du+Parnasse+19,+1050+Brussels&destination=Galeries+Royales+Saint-Hubert,+Galerie+du+Roi+5,+1000+Bruxelles&travelmode=walking" target="_blank" rel="noopener" class="conn-direction-btn">
+                    <i class="fas fa-directions"></i> Walking Directions (18 min)
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Neighborhood Practical Tip Banner -->
+        <div style="margin-top:20px; background:#eff6ff; border:1px solid #bfdbfe; border-radius:var(--radius-sm); padding:14px 18px; display:flex; align-items:center; gap:14px;">
+          <div style="font-size:1.5rem; color:#2563eb; flex-shrink:0;">
+            <i class="fas fa-info-circle"></i>
+          </div>
+          <div style="font-size:0.84rem; color:#1e40af; line-height:1.5;">
+            <strong>Helpful Guest Mobility Tip:</strong> Tapping any direction button above opens your device's native <strong>Google Maps</strong> app with real-time GPS navigation, public transit schedules, and live walking routes directly from <em>Renaissance Brussels Hotel</em>. Contactless payment (Visa / Mastercard) is accepted directly on all STIB buses, trams, and metro turnstiles.
+          </div>
+        </div>
+
       </div>
 
     </section>
@@ -1292,9 +1606,12 @@
               <p style="font-size:0.85rem; color:var(--text-main); margin-top:6px; line-height:1.5; flex:1;">
                 Belgium's premier pedestrian shopping boulevard. <strong>City2 Shopping Mall</strong> features over 100 international stores, Swiss watches, cosmetics, and a large Carrefour Market for Belgian biscuits and chocolates.
               </p>
-              <div style="margin-top:10px;">
+              <div style="margin-top:10px; display:flex; gap:8px; flex-wrap:wrap;">
                 <a href="https://maps.google.com/?q=City+2+Shopping+Mall+Brussels" target="_blank" rel="noopener" class="map-link-btn">
-                  <i class="fas fa-shopping-cart"></i> View City2 on Maps
+                  <i class="fas fa-shopping-cart"></i> View on Maps
+                </a>
+                <a href="https://www.google.com/maps/dir/?api=1&origin=Renaissance+Brussels+Hotel,+Rue+du+Parnasse+19,+1050+Brussels&destination=City+2+Shopping+Mall,+Rue+Neuve+123,+1000+Bruxelles&travelmode=transit" target="_blank" rel="noopener" class="map-link-btn" style="background:linear-gradient(135deg, var(--gold-primary) 0%, #b8860b 100%); color:var(--navy-deep) !important;">
+                  <i class="fas fa-directions" style="color:var(--navy-deep);"></i> Directions from Hotel
                 </a>
               </div>
             </div>
@@ -1309,9 +1626,12 @@
               <p style="font-size:0.85rem; color:var(--text-main); margin-top:6px; line-height:1.5; flex:1;">
                 Historic 18th-century mansions converted into luxury fashion boutiques, Flemish lace artisans, antique galleries, and artisanal praline chocolatiers in the heart of Flanders.
               </p>
-              <div style="margin-top:10px;">
+              <div style="margin-top:10px; display:flex; gap:8px; flex-wrap:wrap;">
                 <a href="https://maps.google.com/?q=Veldstraat+Ghent" target="_blank" rel="noopener" class="map-link-btn">
-                  <i class="fas fa-store"></i> View Veldstraat on Maps
+                  <i class="fas fa-store"></i> View on Maps
+                </a>
+                <a href="https://www.google.com/maps/dir/?api=1&origin=Renaissance+Brussels+Hotel,+Rue+du+Parnasse+19,+1050+Brussels&destination=Veldstraat+Ghent&travelmode=transit" target="_blank" rel="noopener" class="map-link-btn" style="background:linear-gradient(135deg, var(--gold-primary) 0%, #b8860b 100%); color:var(--navy-deep) !important;">
+                  <i class="fas fa-directions" style="color:var(--navy-deep);"></i> Directions from Hotel
                 </a>
               </div>
             </div>
